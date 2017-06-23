@@ -1,0 +1,89 @@
+
+
+body {
+    background: url("../images/Cell_Numbers_and_Firm_Directory.png") no-repeat top fixed;
+    background-size:60% 80%;
+}
+
+#lname{
+	position: absolute;
+	left:33%;
+	bottom:67%;
+	width:41%;
+
+}
+#fname{
+	position: absolute;
+	left:33%;
+	bottom:63%;
+	width:41%;
+
+}
+#initials{
+position: absolute;
+	left:43%;
+	bottom:59%;
+	width:31%;
+
+
+}
+#nickname{
+	position: absolute;
+	left:65%;
+	bottom:55%;
+	width:9%;
+
+}
+#address{
+	position: absolute;
+	left:50%;
+	bottom:51%;
+	width:24%;
+
+}
+
+#address2{
+		position: absolute;
+	left:25%;
+	bottom:48%;
+	width:49%;
+
+}
+#homenumber{
+		position: absolute;
+	left:39%;
+	bottom:44%;
+	width:35%;
+}
+
+#cellnumber{
+	position: absolute;
+	left:38%;
+	bottom:40%;
+	width:36%;
+}
+#officenumber{
+	position: absolute;
+	left:51%;
+	bottom:36%;
+	width:23%;
+}
+#birthday{
+	position: absolute;
+	left:51%;
+	bottom:32%;
+	width:23%;
+}
+#spouse{
+	position: absolute;
+	left:37%;
+	bottom:28%;
+	width:37%;
+}
+#department{
+	position: absolute;
+	left:63%;
+	bottom:24%;
+	width:11%;
+}
+
