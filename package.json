@@ -1,5 +1,5 @@
 {
-  "name": "signiturefdpaperwork",
+  "name": "signaturefdpaperwork",
   "version": "1.0.0",
   "description": "final group project",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emilykeen/SignitureFDPaperWork.git"
+    "url": "git+https://github.com/emilykeen/SignatureFDPaperWork.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emilykeen/SignitureFDPaperWork/issues"
+    "url": "https://github.com/emilykeen/SignatureFDPaperWork/issues"
   },
-  "homepage": "https://github.com/emilykeen/SignitureFDPaperWork#readme",
+  "homepage": "https://github.com/emilykeen/SignatureFDPaperWork#readme",
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
