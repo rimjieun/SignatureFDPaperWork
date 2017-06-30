@@ -26,7 +26,7 @@ var UserSchema = new Schema({
         type: String
     },
     Zip: {
-        type: Integer
+        type: Number
     },
     County: {
         type: String

@@ -5,8 +5,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require Schemas
-var Admin = require("./app/Models/admin.js");
-var User = require("./app/Models/user.js");
+var Admin = require("./models/admin.js");
+var User = require("./models/user.js");
 
 // Create Instance of Express
 var app = express();

@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-var Admin = new Schema({
+var AdminSchema = new Schema({
 
   LastName: {
     type: String
