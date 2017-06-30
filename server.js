@@ -6,8 +6,8 @@ var mongoose = require("mongoose");
 var appController = require("./controller/app_controller")
 
 // Require Schemas
-var Admin = require("./models/admin");
-var User = require("./models/user");
+var Admin = require("./models/admin.js");
+var User = require("./models/user.js");
 
 // Create Instance of Express
 var app = express();
