@@ -5,7 +5,8 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Require Schemas
-
+var Admin = require("./app/Models/admin.js");
+var User = require("./app/Models/user.js");
 
 // Create Instance of Express
 var app = express();
@@ -22,7 +23,7 @@ app.use(express.static("./public"));
 
 
 // MongoDB Configuration configuration
-mongoose.connect("");
+mongoose.connect("mongodb://heroku_3w462mdh:1r5oq9vp57okbbgkbi18nvue3i@ds053198.mlab.com:53198/heroku_3w462mdh");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
@@ -33,6 +34,41 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
+app.get("/", function(req, res) {
+  res.send("index.html");
+});
+app.get("/Fitness", function(req, res) {
+  User.find({}, function(error, doc) {
+    if (error) {
+      res.send(error);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
+
+
+app.get("/Handbook", function(req, res) {
+  User.find({}, function(error, doc) {
+    if (error) {
+      res.send(error);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
+app.get("/FirmDirectory", function(req, res) {
+  User.find({}, function(error, doc) {
+    if (error) {
+      res.send(error);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
