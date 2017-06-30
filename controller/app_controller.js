@@ -1,7 +1,12 @@
-app.get("/", function(req, res) {
+var express = require("express");
+
+var router = express.Router();
+
+router.get("/", function(req, res) {
   res.send("index.html");
 });
-app.get("/Fitness", function(req, res) {
+
+router.get("/Fitness", function(req, res) {
   User.find({}, function(error, doc) {
     if (error) {
       res.send(error);
@@ -13,7 +18,7 @@ app.get("/Fitness", function(req, res) {
 });
 
 
-app.get("/Handbook", function(req, res) {
+router.get("/Handbook", function(req, res) {
   User.find({}, function(error, doc) {
     if (error) {
       res.send(error);
@@ -23,7 +28,7 @@ app.get("/Handbook", function(req, res) {
     }
   });
 });
-app.get("/FirmDirectory", function(req, res) {
+router.get("/FirmDirectory", function(req, res) {
   User.find({}, function(error, doc) {
     if (error) {
       res.send(error);
@@ -33,3 +38,10 @@ app.get("/FirmDirectory", function(req, res) {
     }
   });
 });
+
+
+router.get("/reactIndex", function(req, res) {
+  res.send("reactIndex.html");
+});
+
+module.exports = router;
