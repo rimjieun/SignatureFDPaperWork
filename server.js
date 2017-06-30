@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
+var appController = require("./controller/app_controller")
 
 // Require Schemas
 var Admin = require("./models/admin.js");
@@ -33,6 +34,8 @@ db.on("error", function(err) {
 db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
+
+app.use("/", appController);
 
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
