@@ -98,7 +98,7 @@ ul:not(.browser-default) {
 }
 
 ul.side-nav.fixed {
-    overflow: hidden;
+    overflow: auto;
 }
 
 .side-nav.fixed {
@@ -115,12 +115,27 @@ ul.side-nav.fixed {
     font-weight: 500;
     height: 48px;
     line-height: 48px;
-    padding: 0 0px;
+    padding: 0 20px;
 }
 
-.side-nav li.active > a {
+.side-nav li.active > a, .side-nav li.active > a > i {
     color: whitesmoke !important;
     background-color: #8DD4F0;
+}
+
+.side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a {
+    background-color: #725C5E;
+    color: whitesmoke !important;
+}
+
+.side-nav li > a > i, .side-nav li > a > [class^="mdi-"], .side-nav li > a li > a > [class*="mdi-"], .side-nav li > a > i.material-icons {
+    float: left;
+    height: 48px;
+    line-height: 48px;
+    margin: 0 0px 0 0;
+    width: 15px;
+    color: rgba(0, 0, 0, 0.54);
+
 }
 
 nav ul a {
@@ -128,10 +143,19 @@ nav ul a {
     font-size: 1rem;
     color: #fff;
     display: block;
-    padding: 10px 15px 0px 15px;
+    /*padding: 10px 10px 0px 15px;*/
     cursor: pointer;
 }
 
+.fa-ul {
+    padding-left: 0;
+     margin-left: 0;
+    list-style-type: none;
+}
+
+.fa-li {
+    position: inherit;
+}
 /*-----------------------------------------------------------*/
 
 @media only screen and (min-width: 993px) {
