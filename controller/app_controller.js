@@ -2,6 +2,8 @@ var express = require("express");
 
 var router = express.Router();
 
+var path = require("path");
+
 router.get("/", function(req, res) {
   res.send("index.html");
 });
@@ -41,7 +43,7 @@ router.get("/FirmDirectory", function(req, res) {
 
 
 router.get("/reactIndex", function(req, res) {
-  res.send("reactIndex.html");
+  res.sendFile(path.join(__dirname, "../public/ReactIndex.html"));
 });
 
 module.exports = router;
