@@ -56,9 +56,15 @@ var UserSchema = new Schema({
         type: String
     },
     Date: {
-        type: Date
+        type: String
     },
     Employer: {
+        type: String
+    },
+     SuiteAddress: {
+        type: String
+    },
+    OfficePhone:{
         type: String
     },
     Gender: {
