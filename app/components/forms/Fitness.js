@@ -21,7 +21,8 @@ var Fitness = React.createClass({
   componentDidMount: function() {
     console.log(JSON.stringify(this.state, null, 2));
     helpers.getData().then(function(userData) {
-      console.log(userData);
+      console.log(userData.data[0]);
+      console.log(userData.data[0].FirstName);
       this.setState({
         Date: userData.data[0].Date,
         FirstName: userData.data[0].FirstName,
