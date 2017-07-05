@@ -12,7 +12,7 @@ var Fitness = React.createClass({
       SuiteAddress: "",
       OfficePhone: "",
       Gender: "",
-      EmailAddress: "",
+      EmailAddress: "user@gmail.com",
       EmergencyContact: "",
       EmergencyContactRelationshipAndContact: ""
     };
