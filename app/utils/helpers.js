@@ -14,8 +14,7 @@ var helper = {
       email: "user@gmail.com"
     };
     return axios.post("/data", newData).then(function(res) {
-      console.log("axios results", res);
-      return res;
+      return res.data;
     });
   }
 };
