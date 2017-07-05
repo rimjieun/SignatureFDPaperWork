@@ -21,7 +21,7 @@ router.get("/Fitness", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/Fitness.html"));
 });
 
-router.post("/Fitness", function(req, res) {
+router.post("/data", function(req, res) {
 
     var newUser = new User(req.body);
 
@@ -33,8 +33,7 @@ router.post("/Fitness", function(req, res) {
         }
         // or send the doc to our browser
         else {
-          res.sendFile(path.join(__dirname, "../public/Fitness.html"));
-            console.log(doc);
+            res.send({status: "Update Successful"});
 
         }
     });
