@@ -10,8 +10,8 @@ var helper = {
 
   postData: function(data) {
     return axios.post("/data", data).then(function(res) {
-      console.log("axios results", response.data._id);
-      return response.data._id;
+      console.log("axios results", res.data._id);
+      return res.data._id;
     });
   }
 };
