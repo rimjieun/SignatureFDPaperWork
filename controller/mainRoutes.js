@@ -2,7 +2,7 @@ var express = require("express");
 
 var mainRouter = express.Router();
 
-var User = require("./../models/User.js");
+var User = require("./../models/user.js");
 
 mainRouter.get("/data", function(req, res) {
   //get user data from mongodb
