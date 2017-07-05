@@ -21,7 +21,7 @@ var Main = React.createClass({
           </ul>
           <ul className="fa-ul">
             <li><a href="welcome.html">Welcome</a></li>
-            <li><a href="Handbook.html"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
+            <li><a href="#/"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
             <li><a href="HandbookReceipt.html">Handbook Receipt Acknowledgement</a></li>
             <li><a href="BenefitsGuide.html">Benefits Guide</a></li>
             <li><a href="Beneficiary.html">401k Beneficiary Designation Form</a></li>
