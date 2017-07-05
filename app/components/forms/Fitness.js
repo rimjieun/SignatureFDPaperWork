@@ -78,8 +78,8 @@ var Fitness = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     console.log(JSON.stringify(this.state, null, 2));
-    helpers.postData(this.state).then(function() {
-      console.log("Submit handled successfully.");
+    helpers.postData(this.state).then(function(status) {
+      console.log(status);
     });
   },
 

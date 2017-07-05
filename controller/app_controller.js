@@ -31,7 +31,7 @@ router.post("/data", function(req, res) {
         .exec(function(err, doc) {
             // Log any errors
             if (err) {
-                console.log(err);
+                res.send(err);
             } else {
                 // Or send the document to the browser
                 res.send({
