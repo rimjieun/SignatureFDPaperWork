@@ -24,8 +24,8 @@ app.use(express.static("./public"));
 
 
 // MongoDB Configuration configuration
-//mongoose.connect("mongodb://heroku_3w462mdh:1r5oq9vp57okbbgkbi18nvue3i@ds053198.mlab.com:53198/heroku_3w462mdh");
-mongoose.connect("mongodb://localhost/SignatureFD");
+mongoose.connect("mongodb://heroku_3w462mdh:1r5oq9vp57okbbgkbi18nvue3i@ds053198.mlab.com:53198/heroku_3w462mdh");
+// mongoose.connect("mongodb://localhost/SignatureFD");
 var db = mongoose.connection;
 
 db.on("error", function(err) {
