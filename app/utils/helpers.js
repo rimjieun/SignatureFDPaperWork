@@ -9,7 +9,11 @@ var helper = {
   },
 
   postData: function(data) {
-    return axios.post("/data", data).then(function(res) {
+    var newData = {
+      data: data,
+      email: "user@gmail.com"
+    };
+    return axios.post("/data", newData).then(function(res) {
       console.log("axios results", res);
       return res;
     });

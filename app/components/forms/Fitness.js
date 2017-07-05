@@ -7,12 +7,12 @@ var Fitness = React.createClass({
   getInitialState: function() {
     return {
       Date: "",
-      FirstName: "Mike",
-      Employer: "Jane",
+      FirstName: "",
+      Employer: "",
       SuiteAddress: "",
       OfficePhone: "",
       Gender: "",
-      EmailAddress: "user@gmail.com",
+      EmailAddress: "",
       EmergencyContact: "",
       EmergencyContactRelationshipAndContact: ""
     };
@@ -109,15 +109,15 @@ var Fitness = React.createClass({
               height: "2%"}}
             value={this.state.FirstName.trim()}
             onChange={this.handleFirstNameChange} />
-          <input id="employer"  name="EmailAddress"
+          <input id="employer"  name="Employer"
             className="absolute" type="text"
             style={{
               top: "32.95%",
               left: "55%",
               width: "28%",
               height: "2%"}}
-            value={this.state.EmailAddress.trim()}
-            onChange={this.handleEmailAddressChange} />
+            value={this.state.Employer.trim()}
+            onChange={this.handleEmployerChange} />
           <input id="suiteAddress" name="SuiteAddress"
             className="absolute" type="text"
             style={{
@@ -145,15 +145,15 @@ var Fitness = React.createClass({
               height: "2%"}}
             value={this.state.Gender.trim()}
             onChange={this.handleGenderChange} />
-          <input id="email"  name="Employer"
+          <input id="email"  name="EmailAddress"
             className="absolute" type="text"
             style={{
               top: "13.5%",
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.Employer.trim()}
-            onChange={this.handleEmployerChange} />
+            value={this.state.EmailAddress.trim()}
+            onChange={this.handleEmailAddressChange} />
           <input type="date" name="Date"
             className="date absolute"
             style={{

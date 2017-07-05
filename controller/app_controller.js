@@ -23,21 +23,24 @@ router.get("/Fitness", function(req, res) {
 
 router.post("/data", function(req, res) {
 
-    var newUser = new User(req.body);
-
-
-    newUser.save(function(error, doc) {
-        // send an error to the browser
-        if (error) {
-            res.send(error);
-        }
-        // or send the doc to our browser
-        else {
-            res.send({status: "Update Successful"});
-
-        }
-    });
+    User.findOneAndUpdate({
+            "EmailAddress": req.body.email
+        
+        },req.body)
+        // Execute the above query
+        .exec(function(err, doc) {
+            // Log any errors
+            if (err) {
+                console.log(err);
+            } else {
+                // Or send the document to the browser
+                res.send({
+                    status: "Update Successful"
+                });
+            }
+        });
 });
+
 
 router.get("/Handbook", function(req, res) {
     User.find({}, function(error, doc) {
