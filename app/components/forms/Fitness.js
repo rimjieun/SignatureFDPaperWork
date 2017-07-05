@@ -23,15 +23,15 @@ var Fitness = React.createClass({
     helpers.getData().then(function(userData) {
       console.log(userData);
       this.setState({
-        Date: userData.Date,
-        FirstName: userData.FirstName,
-        Employer: userData.Employer,
-        SuiteAddress: userData.SuiteAddress,
-        OfficePhone: userData.OfficePhone,
-        Gender: userData.Gender,
-        EmailAddress: userData.EmailAddress,
-        EmergencyContact: userData.EmergencyContact,
-        EmergencyContactRelationshipAndContact: userData.EmergencyContactRelationshipAndContact
+        Date: userData.data.Date,
+        FirstName: userData.data.FirstName,
+        Employer: userData.data.Employer,
+        SuiteAddress: userData.data.SuiteAddress,
+        OfficePhone: userData.data.OfficePhone,
+        Gender: userData.data.Gender,
+        EmailAddress: userData.data.EmailAddress,
+        EmergencyContact: userData.data.EmergencyContact,
+        EmergencyContactRelationshipAndContact: userData.data.EmergencyContactRelationshipAndContact
       });
     });
   },
