@@ -75,10 +75,11 @@ var Fitness = React.createClass({
     this.setState({ EmergencyContactRelationshipAndContact: e.target.value });
   },
 
-  handleSubmit: function() {
+  handleSubmit: function(e) {
+    e.preventDefault();
     console.log(JSON.stringify(this.state, null, 2));
     helpers.postData(this.state).then(function() {
-      console.log("Post successful.");
+      console.log("Submit handled successfully.");
     });
   },
 
