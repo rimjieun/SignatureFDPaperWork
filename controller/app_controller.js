@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/data", function(req, res) {
-    User.find({"EmailAddress": "user@gmail.com"}, function(error, doc) {
+    User.find({"email": "user@gmail.com"}, function(error, doc) {
         if (error) {
             res.send(error);
         } else {
@@ -24,7 +24,7 @@ router.post("/data", function(req, res) {
     console.log(req.body.email);
 
     User.findOneAndUpdate({
-            "EmailAddress": req.body.email
+            "email": req.body.email
         
         },req.body.data)
         // Execute the above query
