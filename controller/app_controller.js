@@ -22,11 +22,12 @@ router.get("/Fitness", function(req, res) {
 });
 
 router.post("/data", function(req, res) {
+    console.log(req.body.email);
 
     User.findOneAndUpdate({
             "EmailAddress": req.body.email
         
-        },req.body)
+        },req.body.data)
         // Execute the above query
         .exec(function(err, doc) {
             // Log any errors
