@@ -19,7 +19,6 @@ var Fitness = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log(JSON.stringify(this.state, null, 2));
     helpers.getData().then(function(userData) {
       console.log(userData.data[0]);
       console.log(userData.data[0].FirstName);
@@ -34,6 +33,7 @@ var Fitness = React.createClass({
         EmergencyContact: userData.data[0].EmergencyContact,
         EmergencyContactRelationshipAndContact: userData.data[0].EmergencyContactRelationshipAndContact
       });
+      console.log(JSON.stringify(this.state, null, 2));
     }.bind(this));
   },
 
