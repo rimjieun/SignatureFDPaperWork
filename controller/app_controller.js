@@ -9,16 +9,15 @@ router.get("/", function(req, res) {
     res.send("index.html");
 });
 
-router.get("/Fitness", function(req, res) {
-    // User.find({}, function(error, doc) {
-    //     if (error) {
-    //         res.send(error);
-    //     } else {
-    //         res.send(doc);
+router.get("/data", function(req, res) {
+    User.find({"EmailAddress": req.body.email}, function(error, doc) {
+        if (error) {
+            res.send(error);
+        } else {
+            res.send(doc);
 
-    //     }
-    // });
-    res.sendFile(path.join(__dirname, "../public/Fitness.html"));
+        }
+    });
 });
 
 router.post("/data", function(req, res) {

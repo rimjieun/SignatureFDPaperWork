@@ -2,7 +2,8 @@ var axios = require("axios");
 
 var helper = {
   getData: function() {
-    return axios.get("/data").then(function(data) {
+    var email = "user@gmail.com"
+    return axios.get("/data",email).then(function(data) {
       console.log("axios results", data);
       return data;
     });
