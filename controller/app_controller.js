@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
 });
 
 router.get("/data", function(req, res) {
-    User.find({"EmailAddress": req.body.email}, function(error, doc) {
+    User.find({"EmailAddress": "user@gmail.com"}, function(error, doc) {
         if (error) {
             res.send(error);
         } else {
