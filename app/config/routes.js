@@ -6,18 +6,19 @@ var Route = router.Route;
 
 var Router = router.Router;
 
-var browserHistory = router.browserHistory;
+var hashHistory = router.hashHistory;
 
 var IndexRoute = router.IndexRoute;
 
 var Main = require("../components/Main");
+var Handbook = require("../components/forms/Handbook");
 var Fitness = require("../components/forms/Fitness")
 
 module.exports = (
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <Route path="fitness" component={Fitness} />
-      <IndexRoute component={Fitness} />
+      <IndexRoute component={Handbook} />
     </Route>
   </Router>
 );
