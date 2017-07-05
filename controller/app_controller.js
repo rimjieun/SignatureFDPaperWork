@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
 router.get("/data", function(req, res) {
     User.find({"email": "user@gmail.com"}, function(error, doc) {
         if (error) {
-            res.send(error);
+            res.send("GET error: "error);
         } else {
             res.send(doc);
 

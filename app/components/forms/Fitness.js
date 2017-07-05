@@ -34,7 +34,7 @@ var Fitness = React.createClass({
         EmergencyContact: userData.data[0].EmergencyContact,
         EmergencyContactRelationshipAndContact: userData.data[0].EmergencyContactRelationshipAndContact
       });
-    });
+    }.bind(this));
   },
 
   componentDidUpdate: function() {
