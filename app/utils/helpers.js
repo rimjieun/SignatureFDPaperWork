@@ -11,7 +11,7 @@ var helper = {
   postData: function(data) {
     var newData = {
       data: data,
-      email: "user@gmail.com"
+      email: "user@signaturefd.com"
     };
     return axios.post("/data", newData).then(function(res) {
       return res.data;
