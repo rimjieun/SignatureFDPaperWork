@@ -38,6 +38,8 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
+
+
 app.use("/", appController);
 
 app.listen(PORT, function() {
