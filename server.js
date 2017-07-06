@@ -3,7 +3,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
-var appController = require("./controller/app_controller")
+
+var authRoutes = require("./controller/authRoutes");
+var appController = require("./controller/app_controller");
 
 // Require Schemas
 var Admin = require("./models/admin.js");
