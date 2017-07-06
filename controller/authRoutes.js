@@ -7,7 +7,7 @@ var path = require("path");
 
 // Get login page
 authRouter.get("/", function(req, res) {
-  res.send("index.html");
+  res.send("hello");
 });
 
 // Get login page
