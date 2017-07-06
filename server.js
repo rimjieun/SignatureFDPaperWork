@@ -38,6 +38,28 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
+app.use("/", jwtExp({
+  secret: tokenSecret,
+  credentialsRequired: false,
+  getToken: function fromCookie(req) {
+
+    console.log("getToken fromCookie: " + JSON.stringify(req.body, null, 2));
+
+    if (req.headers.authorization && req.headers.authorization.split(" ")[0] === "Bearer") {
+      return req.headers.authorization.split(" ")[1];
+    } else if (req.query && req.query.token) {
+      return req.query.token;
+    }
+    return null;
+  }
+}), function(req, res, next) {
+  if (req.user) {
+    console.log(req.user);
+    next();
+  } else {
+    res.redirect("/auth/login");
+  }
+});
 
 
 app.use("/", appController);
