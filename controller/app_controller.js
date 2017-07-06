@@ -6,7 +6,7 @@ var path = require("path");
 var User = require("./../models/user.js")
 
 router.get("/", function(req, res) {
-    res.send("index.html");
+    res.send("hello");
 });
 
 router.get("/data", function(req, res) {
