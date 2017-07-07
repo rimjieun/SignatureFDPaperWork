@@ -18,27 +18,27 @@ var Login = React.createClass({
   render: function() {
     return (
       <div>
-        <div class="container">
-          <div class="row"></div>
-          <div class="row">
-            <form class="col s12">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" class="validate" />
+        <div className="container">
+          <div className="row"></div>
+          <div className="row">
+            <form className="col s12">
+              <div className="row">
+                <div className="input-field col s12">
+                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
                   <label for="email">Email</label>
                 </div>
               </div>
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="password" type="password" class="validate" />
+              <div className="row">
+                <div className="input-field col s12">
+                  <input id="password" type="password" className="validate" />
                   <label for="password">Password from Welcome Email</label>
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <div class="container">
-            <a class="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="/reactIndex">CONTINUE</a>
+        <div className="container">
+            <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="#/update/password">CONTINUE</a>
         </div>
       </div>
     );

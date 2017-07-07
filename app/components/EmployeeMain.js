@@ -1,6 +1,6 @@
 var React = require("react");
 
-var Main = React.createClass({
+var employeeMain = React.createClass({
   render: function() {
     return (
       <div>
@@ -20,7 +20,7 @@ var Main = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li classname="active"><a href="#/">Welcome</a></li>
+              <li className="active"><a href="#/">Welcome</a></li>
               <li><a href="#/handbook"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
               <li><a href="#/">Handbook Receipt Acknowledgement</a></li>
               <li><a href="#/">Benefits Guide</a></li>
@@ -119,4 +119,4 @@ var Main = React.createClass({
   }
 });
 
-module.exports = Main;
+module.exports = employeeMain;

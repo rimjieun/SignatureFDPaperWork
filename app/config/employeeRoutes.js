@@ -20,7 +20,7 @@ module.exports = (
     <Route path="/" component={EmployeeMain}>
       <Route path="handbook" component={Handbook} />
       <Route path="fitness" component={Fitness} />
-      <IndexRoute component={Welcome} />
+      <IndexRoute component={Handbook} />
     </Route>
   </Router>
 );

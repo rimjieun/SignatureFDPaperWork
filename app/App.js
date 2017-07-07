@@ -4,4 +4,4 @@ var indexRoutes = require("./config/indexRoutes")
 var employeeRoutes = require("./config/employeeRoutes");
 
 ReactDOM.render(indexRoutes, document.getElementById("index"));
-ReactDOM.render(employeeRoutes, document.getElementById("employee"));
+// ReactDOM.render(employeeRoutes, document.getElementById("employee"));

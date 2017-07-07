@@ -6,8 +6,13 @@ var path = require("path");
 var User = require("./../models/user.js")
 
 router.get("/", function(req, res) {
-    res.sendFile(path.join());
+    res.sendFile(path.join(__dirname, "../views/index.html"));
 });
+
+router.get("/login", function(req, res) {
+    res.sendFile(path.join(__dirname, "../views/employee.html"));
+});
+
 
 router.get("/data", function(req, res) {
     User.find({"email": "user@signaturefd.com"}, function(error, doc) {
