@@ -20,26 +20,26 @@ var employeeMain = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li className="active"><a href="#/">Welcome</a></li>
-              <li><a href="#/handbook"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
-              <li><a href="#/">Handbook Receipt Acknowledgement</a></li>
-              <li><a href="#/">Benefits Guide</a></li>
-              <li><a href="#/">401k Beneficiary Designation Form</a></li>
-              <li><a href="#/">401k Direction of Investment Form</a></li>
-              <li><a href="#/">401k Salary Deferral Agreement</a></li>
-              <li><a href="#/">Firm Directory Information Request</a></li>
-              <li><a href="#/">Dependant Care Application</a></li>
-              <li><a href="#/">Dependant Care Statement</a></li>
-              <li><a href="#/">Dependent Care Assistance Plan</a></li>
-              <li><a href="#/">Direct Deposit Form</a></li>
-              <li><a href="#/">G-4 Form</a></li>
-              <li><a href="#/">W-4 Form</a></li>
-              <li><a href="#/">I9 Form</a></li>
-              <li><a href="#/">Laz Parking Contract</a></li>
-              <li><a href="#/fitness">Pulse Fitness Agreement</a></li>
-              <li><a href="#/">Computer & Network Policy</a></li>
-              <li><a href="#/">Internet Access Policy</a></li>
-              <li><a href="#/">Unlawful Harassment Policy</a></li>
+              <li className="active"><a href="#/employee/welcome">Welcome</a></li>
+              <li><a href="#/employee/handbook"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
+              <li><a href="#/employee/welcome">Handbook Receipt Acknowledgement</a></li>
+              <li><a href="#/employee/welcome">Benefits Guide</a></li>
+              <li><a href="#/employee/welcome">401k Beneficiary Designation Form</a></li>
+              <li><a href="#/employee/welcome">401k Direction of Investment Form</a></li>
+              <li><a href="#/employee/welcome">401k Salary Deferral Agreement</a></li>
+              <li><a href="#/employee/welcome">Firm Directory Information Request</a></li>
+              <li><a href="#/employee/welcome">Dependant Care Application</a></li>
+              <li><a href="#/employee/welcome">Dependant Care Statement</a></li>
+              <li><a href="#/employee/welcome">Dependent Care Assistance Plan</a></li>
+              <li><a href="#/employee/welcome">Direct Deposit Form</a></li>
+              <li><a href="#/employee/welcome">G-4 Form</a></li>
+              <li><a href="#/employee/welcome">W-4 Form</a></li>
+              <li><a href="#/employee/welcome">I9 Form</a></li>
+              <li><a href="#/employee/welcome">Laz Parking Contract</a></li>
+              <li><a href="#/employee/fitness">Pulse Fitness Agreement</a></li>
+              <li><a href="#/employee/welcome">Computer & Network Policy</a></li>
+              <li><a href="#/employee/welcome">Internet Access Policy</a></li>
+              <li><a href="#/employee/welcome">Unlawful Harassment Policy</a></li>
             </ul>
           </ul>
         </div>

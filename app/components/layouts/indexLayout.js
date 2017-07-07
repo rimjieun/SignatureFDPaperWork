@@ -16,7 +16,7 @@ var indexMain = React.createClass({
           </div>
         </header>
 
-        <main>
+        <main style={{paddingLeft: "0px"}}>
           {this.props.children}
         </main>
         
