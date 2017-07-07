@@ -1,5 +1,7 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
-var routes = require("./config/routes");
+var indexRoutes = require("./config/indexRoutes")
+var employeeRoutes = require("./config/employeeRoutes");
 
-ReactDOM.render(routes, document.getElementById("app"));
+ReactDOM.render(indexRoutes, document.getElementById("index"));
+ReactDOM.render(employeeRoutes, document.getElementById("employee"));

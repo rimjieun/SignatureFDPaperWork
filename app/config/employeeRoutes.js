@@ -10,15 +10,17 @@ var hashHistory = router.hashHistory;
 
 var IndexRoute = router.IndexRoute;
 
-var Main = require("../components/Main");
+var EmployeeMain = require("../components/EmployeeMain");
+var Welcome = require("../components/forms/Welcome");
 var Handbook = require("../components/forms/Handbook");
-var Fitness = require("../components/forms/Fitness")
+var Fitness = require("../components/forms/Fitness");
 
 module.exports = (
   <Router history={hashHistory}>
-    <Route path="/" component={Main}>
+    <Route path="/" component={EmployeeMain}>
+      <Route path="handbook" component={Handbook} />
       <Route path="fitness" component={Fitness} />
-      <IndexRoute component={Handbook} />
+      <IndexRoute component={Welcome} />
     </Route>
   </Router>
 );
