@@ -1,6 +1,38 @@
 var React = require("react");
 
 var employeeMain = React.createClass({
+  printPDF: function(){
+      const doc = ReactDOMServer.renderToStaticMarkup('<main> {this.props.children} </main>');
+
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+
+      var data = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
+          '<foreignObject width="100%" height="100%">' +
+          doc +
+          '</foreignObject>' +
+          '</svg>';
+
+      var DOMURL = window.URL || window.webkitURL || window;
+
+      var img = new Image();
+      var svg = new Blob([data], {type: 'image/svg+xml'});
+      var url = DOMURL.createObjectURL(svg);
+
+      img.onload = function() {
+          ctx.drawImage(img, 0, 0);
+          DOMURL.revokeObjectURL(url);
+      };
+
+      img.src = url;
+
+      canvas.toBlob(function(blob) {
+          saveAs(blob, "fitness.png");
+      });
+
+  },
+
+
   render: function() {
     return (
       <div>
@@ -55,7 +87,7 @@ var employeeMain = React.createClass({
                 <div>
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
-                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
+                      <a className="list-group-item" href="#" onClick={this.props.printPDF}><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
                     </ul>
                   </div>
                 </div>
