@@ -119,4 +119,4 @@ var employeeMain = React.createClass({
   }
 });
 
-module.exports = employeeMain
+module.exports = employeeMain;
