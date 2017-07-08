@@ -2,8 +2,7 @@ var axios = require("axios");
 
 var helper = {
   getData: function() {
-    var email = "user@gmail.com"
-    return axios.get("/data",email).then(function(data) {
+    return axios.get("/data").then(function(data) {
       console.log("axios results", data);
       return data;
     });
@@ -12,11 +11,10 @@ var helper = {
   postData: function(data) {
     var newData = {
       data: data,
-      email: "user@gmail.com"
+      email: "user@signaturefd.com"
     };
     return axios.post("/data", newData).then(function(res) {
-      console.log("axios results", res);
-      return res;
+      return res.data;
     });
   }
 };

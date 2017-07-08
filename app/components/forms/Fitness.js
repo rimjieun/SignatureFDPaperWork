@@ -19,20 +19,22 @@ var Fitness = React.createClass({
   },
 
   componentDidMount: function() {
-    console.log(JSON.stringify(this.state, null, 2));
     helpers.getData().then(function(userData) {
+      console.log(userData.data[0]);
+      console.log(userData.data[0].FirstName);
       this.setState({
-        Date: userData.Date,
-        FirstName: userData.FirstName,
-        Employer: userData.Employer,
-        SuiteAddress: userData.SuiteAddress,
-        OfficePhone: userData.OfficePhone,
-        Gender: userData.Gender,
-        EmailAddress: userData.EmailAddress,
-        EmergencyContact: userData.EmergencyContact,
-        EmergencyContactRelationshipAndContact: userData.EmergencyContactRelationshipAndContact
+        Date: userData.data[0].Date,
+        FirstName: userData.data[0].FirstName,
+        Employer: userData.data[0].Employer,
+        SuiteAddress: userData.data[0].SuiteAddress,
+        OfficePhone: userData.data[0].OfficePhone,
+        Gender: userData.data[0].Gender,
+        EmailAddress: userData.data[0].EmailAddress,
+        EmergencyContact: userData.data[0].EmergencyContact,
+        EmergencyContactRelationshipAndContact: userData.data[0].EmergencyContactRelationshipAndContact
       });
-    });
+      console.log(JSON.stringify(this.state, null, 2));
+    }.bind(this));
   },
 
   componentDidUpdate: function() {
@@ -78,8 +80,8 @@ var Fitness = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     console.log(JSON.stringify(this.state, null, 2));
-    helpers.postData(this.state).then(function() {
-      console.log("Submit handled successfully.");
+    helpers.postData(this.state).then(function(status) {
+      console.log(status);
     });
   },
 
