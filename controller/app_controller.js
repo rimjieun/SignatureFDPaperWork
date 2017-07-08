@@ -6,8 +6,9 @@ var path = require("path");
 var User = require("./../models/user.js")
 
 router.get("/", function(req, res) {
-    res.send("hello");
+    res.sendFile(path.join(__dirname, "../views/index.html"));
 });
+
 
 router.get("/data", function(req, res) {
     User.find({"email": "user@signaturefd.com"}, function(error, doc) {
@@ -39,31 +40,6 @@ router.post("/data", function(req, res) {
                 });
             }
         });
-});
-
-
-router.get("/Handbook", function(req, res) {
-    User.find({}, function(error, doc) {
-        if (error) {
-            res.send(error);
-        } else {
-            res.send(doc);
-        }
-    });
-});
-router.get("/FirmDirectory", function(req, res) {
-    User.find({}, function(error, doc) {
-        if (error) {
-            res.send(error);
-        } else {
-            res.send(doc);
-        }
-    });
-});
-
-
-router.get("/reactIndex", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/ReactIndex.html"));
 });
 
 module.exports = router;

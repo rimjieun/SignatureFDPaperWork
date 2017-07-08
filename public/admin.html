@@ -38,29 +38,61 @@
 
 <main style="padding-left: 0px;">
     <div class="container">
-        <div class="row">
-        </div>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input placeholder="First.Last@SignatureFD.com" id="email" type="email" class="validate">
-                        <label for="email">Email</label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="password" type="password" class="validate">
-                        <label for="password">Password from Welcome Email</label>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    <div class="container">
-        <a class="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="/reactIndex">CONTINUE</a>
-    </div>
+        <table class="highlight">
+            <thead>
+            <tr>
+                <th></th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>START DATE</th>
+                <th>%</th>
+                <th>DOCUMENTS</th>
+            </tr>
+            </thead>
 
+            <tbody>
+            <tr>
+                <td class="center-align"><a class="btn-floating btn-small waves-effect waves-light light-blue centered"><i
+                        class="material-icons">add</i></a></td>
+                <td><input placeholder="Name" id="name" type="text" class="validate"></td>
+                <td><input placeholder="First.Last@SignatureFD.com" id="email" type="email" class="validate"></td>
+                <td><input id="startDate" type="date" class="validate"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a class="btn-flat waves-effect waves-blue"><i class="fa fa-minus-square"
+                                                                   aria-hidden="true"></i></a></td>
+                <td>Alvin</td>
+                <td>Alvin@SignatureFD.com</td>
+                <td>9/7/2017</td>
+                <td>71</td>
+                <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-download fa-3x"
+                                                                             aria-hidden="true"></i></a></td>
+            </tr>
+            <tr>
+                <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-minus-square"
+                                                                             aria-hidden="true"></i></a></td>
+                <td>Alan</td>
+                <td>Alan@SignatureFD.com</td>
+                <td>2/29/2013</td>
+                <td>16</td>
+                <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-download fa-3x"
+                                                                             aria-hidden="true"></i></a></td>
+            </tr>
+            <tr>
+                <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-minus-square"
+                                                                             aria-hidden="true"></i></a></td>
+                <td>Jonathan</td>
+                <td>Jonathan@SignatureFD.com</td>
+                <td>11/7/1973</td>
+                <td>100</td>
+                <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-download fa-3x"
+                                                                             aria-hidden="true"></i></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 
@@ -124,27 +156,6 @@
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="assets/js/materialize.js"></script>
 <script src="assets/js/init.js"></script>
-<script src="assets/js/frontend.js"></script>
 
 </body>
-</html>
-=======
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="assets/css/font-awesome.css" type="text/css" rel="stylesheet">
-    <script src="https://use.fontawesome.com/653d46a56d.js"></script>
-    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
-</head>
-
-<body>
-  <div id="react-index"></div>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="bundle.js"></script>
-  <script src="assets/js/materialize.js"></script>
-  <script src="assets/js/init.js"></script>
-
-</body>
-
 </html>
