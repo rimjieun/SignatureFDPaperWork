@@ -20,26 +20,26 @@ var employeeMain = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li className="active"><a href="#/employee/welcome">Welcome</a></li>
-              <li><a href="#/employee/handbook"><i className="fa-li fa fa-check-square"></i>{"\u00A0"}; Employee Handbook</a></li>
-              <li><a href="#/employee/welcome">Handbook Receipt Acknowledgement</a></li>
-              <li><a href="#/employee/welcome">Benefits Guide</a></li>
-              <li><a href="#/employee/welcome">401k Beneficiary Designation Form</a></li>
-              <li><a href="#/employee/welcome">401k Direction of Investment Form</a></li>
-              <li><a href="#/employee/welcome">401k Salary Deferral Agreement</a></li>
-              <li><a href="#/employee/welcome">Firm Directory Information Request</a></li>
-              <li><a href="#/employee/welcome">Dependant Care Application</a></li>
-              <li><a href="#/employee/welcome">Dependant Care Statement</a></li>
-              <li><a href="#/employee/welcome">Dependent Care Assistance Plan</a></li>
-              <li><a href="#/employee/welcome">Direct Deposit Form</a></li>
-              <li><a href="#/employee/welcome">G-4 Form</a></li>
-              <li><a href="#/employee/welcome">W-4 Form</a></li>
-              <li><a href="#/employee/welcome">I9 Form</a></li>
-              <li><a href="#/employee/welcome">Laz Parking Contract</a></li>
-              <li><a href="#/employee/fitness">Pulse Fitness Agreement</a></li>
-              <li><a href="#/employee/welcome">Computer & Network Policy</a></li>
-              <li><a href="#/employee/welcome">Internet Access Policy</a></li>
-              <li><a href="#/employee/welcome">Unlawful Harassment Policy</a></li>
+              <li><a href="welcome.html">Welcome</a></li>
+              <li><a href="Handbook.html"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
+              <li><a href="HandbookReceipt.html">Handbook Receipt Acknowledgement</a></li>
+              <li><a href="BenefitsGuide.html">Benefits Guide</a></li>
+              <li><a href="Beneficiary.html">401k Beneficiary Designation Form</a></li>
+              <li><a href="Investment.html">401k Direction of Investment Form</a></li>
+              <li><a href="SalaryDeferral.html">401k Salary Deferral Agreement</a></li>
+              <li><a href="FirmDirectory.html">Firm Directory Information Request</a></li>
+              <li><a href="DependantCareApp.html">Dependant Care Application</a></li>
+              <li><a href="cDependantCareStat.html">Dependant Care Statement</a></li>
+              <li><a href="DependentCarePlan.html">Dependent Care Assistance Plan</a></li>
+              <li><a href="DirectDeposit.html">Direct Deposit Form</a></li>
+              <li><a href="G-4.html">G-4 Form</a></li>
+              <li><a href="W-4.html">W-4 Form</a></li>
+              <li><a href="I9.html">I9 Form</a></li>
+              <li><a href="parking.html">Laz Parking Contract</a></li>
+              <li className="active"><a href="Fitness.html">Pulse Fitness Agreement</a></li>
+              <li><a href="ComputerPolicy.html">Computer & Network Policy</a></li>
+              <li><a href="InternetPolicy.html">Internet Access Policy</a></li>
+              <li><a href="HarassmentPolicy.html">Unlawful Harassment Policy</a></li>
             </ul>
           </ul>
         </div>
