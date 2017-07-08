@@ -21,7 +21,7 @@ var employeeMain = React.createClass({
             </ul>
             <ul className="fa-ul">
               <li className="active"><a href="#/employee/welcome">Welcome</a></li>
-              <li><a href="#/employee/handbook"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
+              <li><a href="#/employee/handbook"><i className="fa-li fa fa-check-square"></i>{"\u00A0"}; Employee Handbook</a></li>
               <li><a href="#/employee/welcome">Handbook Receipt Acknowledgement</a></li>
               <li><a href="#/employee/welcome">Benefits Guide</a></li>
               <li><a href="#/employee/welcome">401k Beneficiary Designation Form</a></li>
@@ -55,7 +55,7 @@ var employeeMain = React.createClass({
                 <div>
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
-                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp; CurrentFileName.PDF</a>
+                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
                     </ul>
                   </div>
                 </div>
@@ -101,15 +101,15 @@ var employeeMain = React.createClass({
           <div className="footer-copyright FDbrownDark white-text">
             <div className="container">
               <p>
-                ©2016 SignatureFD. All rights reserved. &nbsp
-                <span style={{color: "#ffffff"}}>&nbsp
+                ©2016 SignatureFD. All rights reserved. {"\u00A0"}
+                <span style={{color: "#ffffff"}}>{"\u00A0"}
                 <a href="http://www.signaturefd.com/definitions">Definitions</a> |
                 <a href="http://www.signaturefd.com/privacy">Privacy</a> |
-                <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>&nbsp&nbsp&nbsp</span>
-                <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp&nbsp&nbsp<i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp<i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp<i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i></a>
-                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">&nbsp<i className="fa fa-fw fa-rss fa-lg" aria-hidden="true"></i></a>
+                <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>{"\u00A0"}{"\u00A0"}{"\u00A0"}</span>
+                <a target="_blank" href="https://twitter.com/SignatureFD">{"\u00A0"}{"\u00A0"}{"\u00A0"}<i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.facebook.com/SignatureFD/">{"\u00A0"}<i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">{"\u00A0"}<i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">{"\u00A0"}<i className="fa fa-fw fa-rss fa-lg" aria-hidden="true"></i></a>
               </p>
             </div>
           </div>
