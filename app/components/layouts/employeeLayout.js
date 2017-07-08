@@ -1,8 +1,15 @@
 var React = require("react");
+var ReactDOMServer = require('react-dom/server');
+var Fitness = require('../forms/Fitness');
+var FileSaver = require('file-saver');
+
+
+
 
 var employeeMain = React.createClass({
   printPDF: function(){
-      const doc = ReactDOMServer.renderToStaticMarkup('<main> {this.props.children} </main>');
+
+      const doc = ReactDOMServer.renderToString(<Fitness />);
 
       var canvas = document.getElementById('canvas');
       var ctx = canvas.getContext('2d');
@@ -27,7 +34,7 @@ var employeeMain = React.createClass({
       img.src = url;
 
       canvas.toBlob(function(blob) {
-          saveAs(blob, "fitness.png");
+          FileSaver.saveAs(blob, "fitness.png");
       });
 
   },
@@ -68,7 +75,7 @@ var employeeMain = React.createClass({
               <li><a href="W-4.html">W-4 Form</a></li>
               <li><a href="I9.html">I9 Form</a></li>
               <li><a href="parking.html">Laz Parking Contract</a></li>
-              <li className="active"><a href="Fitness.html">Pulse Fitness Agreement</a></li>
+              <li className="active"><a href="#/employee/fitness">Pulse Fitness Agreement</a></li>
               <li><a href="ComputerPolicy.html">Computer & Network Policy</a></li>
               <li><a href="InternetPolicy.html">Internet Access Policy</a></li>
               <li><a href="HarassmentPolicy.html">Unlawful Harassment Policy</a></li>
@@ -87,7 +94,7 @@ var employeeMain = React.createClass({
                 <div>
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
-                      <a className="list-group-item" href="#" onClick={this.props.printPDF}><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
+                      <a className="list-group-item" href="#" onClick={this.printPDF}><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
                     </ul>
                   </div>
                 </div>
@@ -97,7 +104,7 @@ var employeeMain = React.createClass({
         </header>
 
         <main>
-          {this.props.children}
+            {this.props.children}
         </main>
 
         <footer className="page-footer FDbrownLight white-text">

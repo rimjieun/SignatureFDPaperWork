@@ -87,6 +87,7 @@ var Fitness = React.createClass({
 
   render: function() {
     return (
+        <canvas id="canvas">
       <form onSubmit={this.handleSubmit}>
         <div className="input-field">
           <input name="Date" type="date"
@@ -192,6 +193,7 @@ var Fitness = React.createClass({
           <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit"></input>
         </div>
       </form>
+        </canvas>
     );
   }
 });
