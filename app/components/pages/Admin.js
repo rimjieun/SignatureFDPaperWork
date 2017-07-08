@@ -29,7 +29,6 @@ var Admin = React.createClass({
               <th>DOCUMENTS</th>
             </tr>
           </thead>
-
           <tbody>
             <tr>
               <td class="center-align">
@@ -89,6 +88,7 @@ var Admin = React.createClass({
             </tbody>
           </table>
         </div>
+      </
     );
   }
 });
