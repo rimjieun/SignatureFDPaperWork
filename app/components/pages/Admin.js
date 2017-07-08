@@ -60,7 +60,7 @@ var Admin = React.createClass({
               <td>71</td>
               <td>
                 <a class="btn-flat btn-small waves-effect waves-blue">
-                <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
                 </a>
               </td>
             </tr>
@@ -75,20 +75,30 @@ var Admin = React.createClass({
               <td>2/29/2013</td>
               <td>16</td>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-download fa-3x" aria-hidden="true"></i></a></td>
+                <a class="btn-flat btn-small waves-effect waves-blue">
+                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                </a>
+              </td>
             </tr>
             <tr>
-              <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-minus-square" aria-hidden="true"></i></a></td>
+              <td>
+                <a class="btn-flat btn-small waves-effect waves-blue">
+                  <i class="fa fa-minus-square" aria-hidden="true"></i>
+                </a>
+              </td>
               <td>Jonathan</td>
               <td>Jonathan@SignatureFD.com</td>
               <td>11/7/1973</td>
               <td>100</td>
-              <td><a class="btn-flat btn-small waves-effect waves-blue"><i class="fa fa-download fa-3x" aria-hidden="true"></i></a></td>
+              <td>
+                <a class="btn-flat btn-small waves-effect waves-blue">
+                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                </a>
+              </td>
             </tr>
-            </tbody>
-          </table>
-        </div>
-      </
+          </tbody>
+        </table>
+      </div>
     );
   }
 });
