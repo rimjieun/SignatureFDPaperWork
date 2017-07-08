@@ -19,7 +19,9 @@ var indexMain = React.createClass({
         <main style={{paddingLeft: "0px"}}>
           {this.props.children}
         </main>
-        
+        <div className="container row">
+          <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit"></input>
+        </div>
         <footer className="page-footer FDbrownLight white-text" style={{paddingLeft: "0px"}}>
           <div className="container">
             <div className="row">
