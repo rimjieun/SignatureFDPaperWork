@@ -17,6 +17,9 @@ var Welcome = React.createClass({
             </video>
           </div>
         </div>
+        <div class="container">
+            <a class="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/handbook">CONTINUE</a>
+        </div>
       </div>
     );
   }

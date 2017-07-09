@@ -44,6 +44,9 @@ var UpdatePwd = React.createClass({
             </form>
           </div>
         </div>
+        <div class="container">
+          <a class="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/welcome">CONTINUE</a>
+        </div>
       </div>
     );
   }
