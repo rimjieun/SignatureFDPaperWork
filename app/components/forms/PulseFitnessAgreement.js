@@ -188,9 +188,6 @@ var Fitness = React.createClass({
         <div>
           <img className="page" src="assets/images/PulseFitnessAgreement_4.jpeg" alt="" />
         </div>
-        <div className="container">
-          <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit" href="#/"></input>
-        </div>
       </form>
     );
   }
