@@ -14,7 +14,7 @@ var employeeLayout = React.createClass({
                 </a>
                 <div className="collapsible-body" style={{display: "block"}}>
                   <ul>
-                    <li><a href="#/employee/password">Update Password</a></li>
+                    <li><a href="#/update/password">Update Password</a></li>
                     <li><a href="#/">Log Out</a></li>
                   </ul>
                 </div>
