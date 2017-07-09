@@ -1,6 +1,6 @@
 var React = require("react");
 
-var indexMain = React.createClass({
+var indexLayout = React.createClass({
   render: function() {
     return (
       <div>
@@ -76,4 +76,4 @@ var indexMain = React.createClass({
   }
 });
 
-module.exports = indexMain;
+module.exports = indexLayout;
