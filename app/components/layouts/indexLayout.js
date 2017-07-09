@@ -1,6 +1,6 @@
 var React = require("react");
 
-var indexMain = React.createClass({
+var indexLayout = React.createClass({
   render: function() {
     return (
       <div>
@@ -19,9 +19,6 @@ var indexMain = React.createClass({
         <main style={{paddingLeft: "0px"}}>
           {this.props.children}
         </main>
-        <div className="container row">
-          <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit"></input>
-        </div>
         <footer className="page-footer FDbrownLight white-text" style={{paddingLeft: "0px"}}>
           <div className="container">
             <div className="row">
@@ -54,20 +51,20 @@ var indexMain = React.createClass({
           </div>
           <div className="footer-copyright FDbrownDark white-text">
             <div className="container">
-              <p>©2016 SignatureFD. All rights reserved. &nbsp<span style={{color: "#ffffff"}}>&nbsp
+              <p>©2016 SignatureFD. All rights reserved. &nbsp;<span style={{color: "#ffffff"}}>&nbsp;
                 <a href="http://www.signaturefd.com/definitions">Definitions</a> |
                 <a href="http://www.signaturefd.com/privacy">Privacy</a> |
-                <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>&nbsp&nbsp&nbsp</span>
-                <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp&nbsp&nbsp
+                <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>&nbsp;&nbsp;&nbsp;</span>
+                <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp;&nbsp;&nbsp;
                   <i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i>
                 </a>
-                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp
+                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;
                   <i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i>
                 </a>
-                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp
+                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp;
                   <i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i>
                 </a>
-                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">&nbsp
+                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">&nbsp;
                   <i className="fa fa-fw fa-rss fa-lg" aria-hidden="true"></i>
                 </a>
               </p>
@@ -79,4 +76,4 @@ var indexMain = React.createClass({
   }
 });
 
-module.exports = indexMain;
+module.exports = indexLayout;

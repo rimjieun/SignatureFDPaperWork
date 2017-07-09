@@ -37,6 +37,9 @@ var Login = React.createClass({
             </form>
           </div>
         </div>
+        <div className="container">
+          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="#/update/password">CONTINUE</a>
+        </div>
       </div>
     );
   }
