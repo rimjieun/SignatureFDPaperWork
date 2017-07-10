@@ -1,93 +1,10 @@
 var React = require("react");
 
-var helpers = require("../../utils/helpers");
-
 var Fitness = React.createClass({
-
-  getInitialState: function() {
-    return {
-      Date: "",
-      FirstName: "",
-      Employer: "",
-      SuiteAddress: "",
-      OfficePhone: "",
-      Gender: "",
-      EmailAddress: "",
-      EmergencyContact: "",
-      EmergencyContactRelationshipAndContact: ""
-    };
-  },
-
-  componentDidMount: function() {
-    helpers.getData().then(function(userData) {
-      console.log(userData.data[0]);
-      console.log(userData.data[0].FirstName);
-      this.setState({
-        Date: userData.data[0].Date,
-        FirstName: userData.data[0].FirstName,
-        Employer: userData.data[0].Employer,
-        SuiteAddress: userData.data[0].SuiteAddress,
-        OfficePhone: userData.data[0].OfficePhone,
-        Gender: userData.data[0].Gender,
-        EmailAddress: userData.data[0].EmailAddress,
-        EmergencyContact: userData.data[0].EmergencyContact,
-        EmergencyContactRelationshipAndContact: userData.data[0].EmergencyContactRelationshipAndContact
-      });
-      console.log(JSON.stringify(this.state, null, 2));
-    }.bind(this));
-  },
-
-  componentDidUpdate: function() {
-    console.log(JSON.stringify(this.state, null, 2));
-  },
-
-  handleDateChange: function(e) {
-    this.setState({ Date: e.target.value });
-  },
-
-  handleFirstNameChange: function(e) {
-    this.setState({ FirstName: e.target.value });
-  },
-
-  handleEmployerChange: function(e) {
-    this.setState({ Employer: e.target.value });
-  },
-
-  handleSuiteAddressChange: function(e) {
-    this.setState({ SuiteAddress: e.target.value });
-  },
-
-  handleOfficePhoneChange: function(e) {
-    this.setState({ OfficePhone: e.target.value });
-  },
-
-  handleGenderChange: function(e) {
-    this.setState({ Gender: e.target.value });
-  },
-
-  handleEmailAddressChange: function(e) {
-    this.setState({ EmailAddress: e.target.value });
-  },
-
-  handleEmergencyContactChange: function(e) {
-    this.setState({ EmergencyContact: e.target.value });
-  },
-
-  handleEmergencyContactRelationshipAndContactChange: function(e) {
-    this.setState({ EmergencyContactRelationshipAndContact: e.target.value });
-  },
-
-  handleSubmit: function(e) {
-    e.preventDefault();
-    console.log(JSON.stringify(this.state, null, 2));
-    helpers.postData(this.state).then(function(status) {
-      console.log(status);
-    });
-  },
 
   render: function() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit}>
         <div className="input-field">
           <input name="Date" type="date"
             className="date absolute"
@@ -109,8 +26,9 @@ var Fitness = React.createClass({
               left: "52.8%",
               width: "30%",
               height: "2%"}}
-            value={this.state.FirstName.trim()}
-            onChange={this.handleFirstNameChange} />
+            value={this.props.appState.FirstName.trim()} 
+            onChange={this.props.handleChange} 
+            />
           <input id="employer"  name="Employer"
             className="absolute" type="text"
             style={{
@@ -118,8 +36,9 @@ var Fitness = React.createClass({
               left: "55%",
               width: "28%",
               height: "2%"}}
-            value={this.state.Employer.trim()}
-            onChange={this.handleEmployerChange} />
+            value={this.props.appState.Employer.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input id="suiteAddress" name="SuiteAddress"
             className="absolute" type="text"
             style={{
@@ -127,8 +46,9 @@ var Fitness = React.createClass({
               left: "57%",
               width: "25%",
               height: "2%"}}
-            value={this.state.SuiteAddress.trim()}
-            onChange={this.handleSuiteAddressChange} />
+            value={this.props.appState.SuiteAddress.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input id="officePhone" name="OfficePhone"
             className="absolute" type="text"
             style={{
@@ -136,8 +56,9 @@ var Fitness = React.createClass({
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.OfficePhone.trim()}
-            onChange={this.handleOfficePhoneChange} />
+            value={this.props.appState.OfficePhone.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input id="gender" name="Gender"
             className="absolute" type="text"
             style={{
@@ -145,8 +66,9 @@ var Fitness = React.createClass({
               left: "78.2%",
               width: "4.7%",
               height: "2%"}}
-            value={this.state.Gender.trim()}
-            onChange={this.handleGenderChange} />
+            value={this.props.appState.Gender.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input id="email"  name="EmailAddress"
             className="absolute" type="text"
             style={{
@@ -154,8 +76,9 @@ var Fitness = React.createClass({
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.EmailAddress.trim()}
-            onChange={this.handleEmailAddressChange} />
+            value={this.props.appState.EmailAddress.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input type="date" name="Date"
             className="date absolute"
             style={{
@@ -163,8 +86,9 @@ var Fitness = React.createClass({
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.Date.trim()}
-            onChange={this.handleDateChange} />
+            value={this.props.appState.Date.trim()}
+            onChange={this.props.handleChange} 
+            />
           <input id="emergencyContact" name="EmergencyContact"
             className="absolute" type="text"
             style={{
@@ -172,8 +96,9 @@ var Fitness = React.createClass({
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.EmergencyContact}
-            onChange={this.handleEmergencyContactChange} />
+            value={this.props.appState.EmergencyContact}
+            onChange={this.props.handleChange} 
+            />
           <input id="emergencyContactRelationship&Phone" name="EmergencyContactRelationshipAndContact"
             className="absolute" type="text"
             style={{
@@ -181,8 +106,9 @@ var Fitness = React.createClass({
               left: "50%",
               width: "20%",
               height: "2%"}}
-            value={this.state.EmergencyContactRelationshipAndContact}
-            onChange={this.handleEmergencyContactRelationshipAndContactChange} />
+            value={this.props.appState.EmergencyContactRelationshipAndContact}
+            onChange={this.props.handleChange} 
+            />
           <img className="page" src="assets/images/PulseFitnessAgreement_3.jpeg" alt="" />
         </div>
         <div>

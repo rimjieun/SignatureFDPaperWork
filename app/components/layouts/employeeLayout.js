@@ -1,8 +1,66 @@
 var React = require("react");
 
+var helpers = require("../../utils/helpers");
+
 var employeeLayout = React.createClass({
 
+  getInitialState: function() {
+    return {
+      Date: "",
+      FirstName: "",
+      Employer: "",
+      SuiteAddress: "",
+      OfficePhone: "",
+      Gender: "",
+      EmailAddress: "",
+      EmergencyContact: "",
+      EmergencyContactRelationshipAndContact: ""
+    };
+  },
+
+  componentDidMount: function() {
+    helpers.getData().then(function(employee) {
+      console.log(employee.data[0]);
+      console.log(employee.data[0].FirstName);
+      this.setState({
+        Date: employee.data[0].Date,
+        FirstName: employee.data[0].FirstName,
+        Employer: employee.data[0].Employer,
+        SuiteAddress: employee.data[0].SuiteAddress,
+        OfficePhone: employee.data[0].OfficePhone,
+        Gender: employee.data[0].Gender,
+        EmailAddress: employee.data[0].EmailAddress,
+        EmergencyContact: employee.data[0].EmergencyContact,
+        EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact
+      });
+    }.bind(this));
+  },
+
+  componentDidUpdate: function() {
+    console.log(JSON.stringify(this.state, null, 2));
+  },
+
+  handleChange: function(e) {
+    this.setState({[e.target.name]: e.target.value });
+  },
+
+  handleSubmit: function(e) {
+    e.preventDefault();
+    helpers.postData(this.state).then(function(status) {
+      console.log(status);
+    });
+  },
+
   render: function() {
+
+    var childrenWithProps = React.Children.map(this.props.children,
+      (child) => React.cloneElement(child, {
+        appState: this.state,
+        handleChange: this.handleChange,
+        handleSubmit: this.handleSubmit
+      })
+    );
+
     return (
       <div>
         <div>
@@ -66,7 +124,7 @@ var employeeLayout = React.createClass({
         </header>
 
         <main>
-            {this.props.children}
+          {childrenWithProps}
         </main>
 
         <div className="container row">
@@ -120,8 +178,8 @@ var employeeLayout = React.createClass({
           </div>
         </footer>
       </div>
-        );
-    }
+    );
+  }
 });
 
 module.exports = employeeLayout;
