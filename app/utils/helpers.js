@@ -1,14 +1,20 @@
 var axios = require("axios");
 
 var helpers = {
-  getData: function() {
+
+  authenticateUser: function(data) {
+    var credentials = data;
+    return axios.post("/auth/login", credentials);
+  },
+
+  getEmployeeData: function() {
     return axios.get("/data").then(function(data) {
       console.log("axios results", data);
       return data;
     });
   },
 
-  postData: function(data) {
+  postEmployeeData: function(data) {
     var newData = {
       data: data,
       dummyEmail: "user@signaturefd.com"

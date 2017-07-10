@@ -19,7 +19,7 @@ var employeeLayout = React.createClass({
   },
 
   componentDidMount: function() {
-    helpers.getData().then(function(employee) {
+    helpers.getEmployeeData().then(function(employee) {
       console.log(employee.data[0]);
       console.log(employee.data[0].FirstName);
       this.setState({
@@ -46,7 +46,7 @@ var employeeLayout = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    helpers.postData(this.state).then(function(status) {
+    helpers.postEmployeeData(this.state).then(function(status) {
       console.log(status);
     });
   },

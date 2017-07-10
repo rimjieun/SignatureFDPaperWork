@@ -11,7 +11,7 @@ var Login = React.createClass({
     };
   },
 
-  handleClick: function(e) {
+  handleSubmit: function(e) {
     e.preventDefault();
 
     var employeeCredentials = {
@@ -19,8 +19,14 @@ var Login = React.createClass({
       password: document.getElementById("password").value
     };
 
-    console.log(employeeCredentials);
+    helpers.authenticateUser(employeeCredentials).then(function(res) {
 
+      if (res.data.success === true) {
+        window.location = "#/update/password";
+      } else {
+        console.log(res.data.message);
+      }
+    });
 
   },
 
@@ -33,13 +39,15 @@ var Login = React.createClass({
             <form className="col s12">
               <div className="row">
                 <div className="input-field col s12">
-                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
+                  <input placeholder="First.Last@SignatureFD.com" type="email"
+                  id="email" className="validate" />
                   <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="password" type="password" className="validate" />
+                  <input placeholder="Password" type="password"
+                  id="password" className="validate" />
                   <label htmlFor="password">Password from Welcome Email</label>
                 </div>
               </div>
@@ -47,7 +55,8 @@ var Login = React.createClass({
           </div>
         </div>
         <div className="container row">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" onClick={this.handleClick}>CONTINUE</a>
+          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn"
+          onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );
