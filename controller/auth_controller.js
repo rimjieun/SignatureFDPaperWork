@@ -2,9 +2,9 @@ var bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
 var express = require("express");
 var authRouter = express.Router();
-var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 var path = require("path");
 var User = require("./../models/user");
+var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 authRouter.post("/login", function(req, res, next) {
 
