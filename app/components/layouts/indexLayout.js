@@ -57,18 +57,10 @@ var indexLayout = React.createClass({
                 <a href="http://www.signaturefd.com/definitions">Definitions</a> |
                 <a href="http://www.signaturefd.com/privacy">Privacy</a> |
                 <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>&nbsp;&nbsp;&nbsp;</span>
-                <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp;&nbsp;&nbsp;
-                  <i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i>
-                </a>
-                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;
-                  <i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i>
-                </a>
-                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp;
-                  <i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i>
-                </a>
-                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">&nbsp;
-                  <i className="fa fa-fw fa-rss fa-lg" aria-hidden="true"></i>
-                </a>
+                <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp;&nbsp;&nbsp;<i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;<i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp;<i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i></a>
+                <a target="_blank" href="http://www.signaturefd.com/feed/rss/">&nbsp;<i className="fa fa-fw fa-rss fa-lg" aria-hidden="true"></i></a>
               </p>
             </div>
           </div>

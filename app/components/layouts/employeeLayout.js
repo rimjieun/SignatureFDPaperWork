@@ -128,7 +128,7 @@ var employeeLayout = React.createClass({
         </main>
 
         <div className="container row">
-            <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#">SUBMIT</a>
+            <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#" onClick={this.handleSubmit}>SUBMIT</a>
         </div>
 
         <footer className="page-footer FDbrownLight white-text">
