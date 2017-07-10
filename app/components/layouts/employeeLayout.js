@@ -1,8 +1,66 @@
 var React = require("react");
 
+var helpers = require("../../utils/helpers");
+
 var employeeLayout = React.createClass({
 
+  getInitialState: function() {
+    return {
+      Date: "",
+      FirstName: "",
+      Employer: "",
+      SuiteAddress: "",
+      OfficePhone: "",
+      Gender: "",
+      EmailAddress: "",
+      EmergencyContact: "",
+      EmergencyContactRelationshipAndContact: ""
+    };
+  },
+
+  componentDidMount: function() {
+    helpers.getData().then(function(employee) {
+      console.log(employee.data[0]);
+      console.log(employee.data[0].FirstName);
+      this.setState({
+        Date: employee.data[0].Date,
+        FirstName: employee.data[0].FirstName,
+        Employer: employee.data[0].Employer,
+        SuiteAddress: employee.data[0].SuiteAddress,
+        OfficePhone: employee.data[0].OfficePhone,
+        Gender: employee.data[0].Gender,
+        EmailAddress: employee.data[0].EmailAddress,
+        EmergencyContact: employee.data[0].EmergencyContact,
+        EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact
+      });
+    }.bind(this));
+  },
+
+  componentDidUpdate: function() {
+    console.log(JSON.stringify(this.state, null, 2));
+  },
+
+  handleChange: function(e) {
+    this.setState({[e.target.name]: e.target.value });
+  },
+
+  handleSubmit: function(e) {
+    e.preventDefault();
+    helpers.postData(this.state).then(function(status) {
+      console.log(status);
+    });
+  },
+
   render: function() {
+
+    var childrenWithProps = React.Children.map(this.props.children,
+      (child) => React.cloneElement(child, {
+        appState: this.state,
+        handleChange: this.handleChange,
+        handleSubmit: this.handleSubmit
+      })
+    );
+
     return (
       <div>
         <div>
@@ -21,26 +79,26 @@ var employeeLayout = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li className="active"><a href="#/employee/welcome">Welcome</a></li>
-              <li><a href="#/employee/handbook"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
-              <li><a href="#/employee/welcome">Handbook Receipt Acknowledgement</a></li>
-              <li><a href="#/employee/welcome">Benefits Guide</a></li>
-              <li><a href="#/employee/welcome">401k Beneficiary Designation Form</a></li>
-              <li><a href="#/employee/welcome">401k Direction of Investment Form</a></li>
-              <li><a href="#/employee/welcome">401k Salary Deferral Agreement</a></li>
-              <li><a href="#/employee/welcome">Firm Directory Information Request</a></li>
-              <li><a href="#/employee/welcome">Dependant Care Application</a></li>
-              <li><a href="#/employee/welcome">Dependant Care Statement</a></li>
-              <li><a href="#/employee/welcome">Dependent Care Assistance Plan</a></li>
-              <li><a href="#/employee/welcome">Direct Deposit Form</a></li>
-              <li><a href="#/employee/welcome">G-4 Form</a></li>
-              <li><a href="#/employee/welcome">W-4 Form</a></li>
-              <li><a href="#/employee/welcome">I9 Form</a></li>
-              <li><a href="#/employee/welcome">Laz Parking Contract</a></li>
-              <li><a href="#/employee/fitness">Pulse Fitness Agreement</a></li>
-              <li><a href="#/employee/welcome">Computer & Network Policy</a></li>
-              <li><a href="#/employee/welcome">Internet Access Policy</a></li>
-              <li><a href="#/employee/welcome">Unlawful Harassment Policy</a></li>
+              <li className="sideNavBtn active"><a id='0' href="#/employee/welcome">Welcome</a></li>
+              <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
+              <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
+              <li className="sideNavBtn" data='3'><a id='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
+              <li className="sideNavBtn" data='4'><a id='4' href="#/employee/401kBeneficiaryDesignationForm">401k Beneficiary Designation Form</a></li>
+              <li className="sideNavBtn" data='5'><a id='5' href="#/employee/401kDirectionofInvestmentForm">401k Direction of Investment Form</a></li>
+              <li className="sideNavBtn" data='6'><a id='6' href="#/employee/401kSalaryDeferralAgreement">401k Salary Deferral Agreement</a></li>
+              <li className="sideNavBtn" data='7'><a id='7' href="#/employee/CellNumberandFirmDirectory-InformationRequest">Firm Directory Information Request</a></li>
+              <li className="sideNavBtn" data='8'><a id='8' href="#/employee/DependantCareApplication">Dependant Care Application</a></li>
+              <li className="sideNavBtn" data='9'><a id='9' href="#/employee/DependantCareFacilityStatement2017">Dependant Care Statement</a></li>
+              <li className="sideNavBtn" data='10'><a id='10' href="#/employee/DependentCareAssistancePlan">Dependent Care Assistance Plan</a></li>
+              <li className="sideNavBtn" data='11'><a id='11' href="#/employee/DirectDepositForm">Direct Deposit Form</a></li>
+              <li className="sideNavBtn" data='12'><a id='12' href="#/employee/FormG4">G-4 Form</a></li>
+              <li className="sideNavBtn" data='13'><a id='13' href="#/employee/FormW4">W-4 Form</a></li>
+              <li className="sideNavBtn" data='14'><a id='14' href="#/employee/i-9-paper-version">I9 Form</a></li>
+              <li className="sideNavBtn" data='15'><a id='15' href="#/employee/Lazparkingcontract-SignatureFD">Laz Parking Contract</a></li>
+              <li className="sideNavBtn" data='16'><a id='16' href="#/employee/PulseFitnessAgreement">Pulse Fitness Agreement</a></li>
+              <li className="sideNavBtn" data='17'><a id='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
+              <li className="sideNavBtn" data='18'><a id='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
+              <li className="sideNavBtn" data='19'><a id='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
             </ul>
           </ul>
         </div>
@@ -56,7 +114,7 @@ var employeeLayout = React.createClass({
                 <div>
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
-                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp; CurrentFileName.PDF</a>
+                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
                     </ul>
                   </div>
                 </div>
@@ -66,8 +124,12 @@ var employeeLayout = React.createClass({
         </header>
 
         <main>
-            {this.props.children}
+          {childrenWithProps}
         </main>
+
+        <div className="container row">
+            <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#" onClick={this.handleSubmit}>SUBMIT</a>
+        </div>
 
         <footer className="page-footer FDbrownLight white-text">
           <div className="container">
@@ -116,8 +178,8 @@ var employeeLayout = React.createClass({
           </div>
         </footer>
       </div>
-        );
-    }
+    );
+  }
 });
 
 module.exports = employeeLayout;
