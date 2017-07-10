@@ -11,8 +11,17 @@ var Login = React.createClass({
     };
   },
 
-  handleSubmit: function(e) {
+  handleClick: function(e) {
     e.preventDefault();
+
+    var employeeCredentials = {
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    };
+
+    console.log(employeeCredentials);
+
+
   },
 
   render: function() {
@@ -38,7 +47,7 @@ var Login = React.createClass({
           </div>
         </div>
         <div className="container row">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="#/update/password">CONTINUE</a>
+          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" onClick={this.handleClick}>CONTINUE</a>
         </div>
       </div>
     );
