@@ -60,7 +60,7 @@ var indexLayout = React.createClass({
                 <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp;&nbsp;&nbsp;
                   <i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i>
                 </a>
-                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;
+                <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;git fetch origin
                   <i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i>
                 </a>
                 <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp;
