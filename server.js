@@ -1,6 +1,7 @@
 // Include Server Dependencies
 var express = require("express");
 var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var appController = require("./controller/app_controller");
@@ -13,6 +14,10 @@ var User = require("./models/user.js");
 // Create Instance of Express
 var app = express();
 var PORT = process.env.PORT || 3000;
+
+var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
+
+app.use(cookieParser(tokenSecret));
 
 // Run Morgan for Logging
 app.use(logger("dev"));
