@@ -19,6 +19,8 @@ var indexLayout = React.createClass({
         <main style={{paddingLeft: "0px"}}>
           {this.props.children}
         </main>
+
+
         <footer className="page-footer FDbrownLight white-text" style={{paddingLeft: "0px"}}>
           <div className="container">
             <div className="row">
