@@ -14,6 +14,8 @@ var UpdatePwd = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
+
+    window.location = "#/employee/welcome";
   },
 
   render: function() {
@@ -44,8 +46,8 @@ var UpdatePwd = React.createClass({
             </form>
           </div>
         </div>
-        <div className="container">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/welcome">CONTINUE</a>
+        <div className="container row">
+          <a className="saveBTN waves-effect waves-brown btn white-text right" onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );

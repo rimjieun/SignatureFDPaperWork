@@ -9,6 +9,12 @@ var AdminSchema = new Schema({
   },
   FirstName: {
     type: String
+  },
+  EmailAddress: {
+    type: String
+  },
+  Password: {
+    type: String
   }
 });
 

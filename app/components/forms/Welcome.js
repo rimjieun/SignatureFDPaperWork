@@ -1,7 +1,5 @@
 var React = require("react");
 
-var helpers = require("../../utils/helpers");
-
 var Welcome = React.createClass({
 
   render: function() {
@@ -17,9 +15,9 @@ var Welcome = React.createClass({
             </video>
           </div>
         </div>
-        <div className="container">
-            <a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/handbook">CONTINUE</a>
-        </div>
+        {/*<div className="container row">*/}
+            {/*<a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/handbook">CONTINUE</a>*/}
+        {/*</div>*/}
       </div>
     );
   }
