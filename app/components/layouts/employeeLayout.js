@@ -54,6 +54,37 @@ var employeeLayout = React.createClass({
       console.log(status);
     });
   },
+    printPDF: function(){
+
+        const doc = ReactDOMServer.renderToString(<Fitness />);
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        var data = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
+            '<foreignObject width="100%" height="100%">' +
+            doc +
+            '</foreignObject>' +
+            '</svg>';
+
+        var DOMURL = window.URL || window.webkitURL || window;
+
+        var img = new Image();
+        var svg = new Blob([data], {type: 'image/svg+xml'});
+        var url = DOMURL.createObjectURL(svg);
+
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+            DOMURL.revokeObjectURL(url);
+        };
+
+        img.src = url;
+
+        canvas.toBlob(function(blob) {
+            FileSaver.saveAs(blob, "fitness.png");
+        });
+
+    },
 
   render: function() {
 
