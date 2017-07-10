@@ -7,18 +7,16 @@ var User = require("./../models/user");
 var Admin = require("./../models/admin");
 var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
+// authRouter.get("/login", function(req, res, next) {
+//   res.sendFile(path.join(__dirname, "../views/index.html"));
+// });
+
 authRouter.post("/login", function(req, res, next) {
 
-  // var baseURL = "http://www.signaturefd.herokuapp.com/";
+  User.findOne({"EmailAddress": req.body.email}, function(error, doc) {
 
-  // var baseURL = "http://localhost:3000/";
-
-  console.log(req.body.email, req.body.password);
-
-  User.findOne({"EmailAddress": req.body.email}, function(error1, doc) {
-
-    if (error1) {
-      res.send({ success: false, message: error1 });
+    if (error) {
+      res.send({ success: false, message: error });
     }
 
     if (doc) {
@@ -28,13 +26,13 @@ authRouter.post("/login", function(req, res, next) {
         } else {
           var jwtAuthToken = jwt.sign({
             exp: Math.floor(Date.now() / 1000) + (60 * 60),
-            data: {
+            user: {
               userId: doc._id,
               username: doc.EmailAddress
             }
           }, tokenSecret);
 
-          res.cookie('employeePassToken', jwtAuthToken, {
+          res.cookie('empAccessToken', jwtAuthToken, {
             secure: process.env.NODE_ENV === 'production',
             signed: true
           });
@@ -44,21 +42,21 @@ authRouter.post("/login", function(req, res, next) {
       });
     } else {
 
-      Admin.findOne({"EmailAddress": req.body.email}, function(error2, doc) {
+      Admin.findOne({"EmailAddress": req.body.email}, function(error1, doc) {
 
-        if (error2) {
-          res.send({ success: false, message: error2 });
+        if (error1) {
+          res.send({ success: false, message: error1 });
         }
 
         if (doc) {
-          bcrypt.compare(req.body.password, doc.Password, function(err, valid) {
-            if (err || !valid) {
+          bcrypt.compare(req.body.password, doc.Password, function(err1, valid) {
+            if (err1 || !valid) {
               res.send({ success: false, message: "Invalid username or password." });
             } else {
 
               var jwtAuthToken = jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + (60 * 60),
-                data: {
+                user: {
                   userId: doc._id,
                   username: doc.EmailAddress
                 }

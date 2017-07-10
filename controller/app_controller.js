@@ -6,6 +6,7 @@ var path = require("path");
 var User = require("./../models/user")
 
 router.get("/", function(req, res) {
+  // res.redirect("/auth/login");
   res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
@@ -40,5 +41,9 @@ router.post("/data", function(req, res) {
     }
   });
 });
+
+// router.get("/update/password", function(req, res) {
+//   res.send("POOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOP");
+// });
 
 module.exports = router;
