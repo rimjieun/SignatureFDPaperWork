@@ -4,43 +4,6 @@ var Fitness = require('../forms/Fitness');
 var FileSaver = require('file-saver');
 
 
-
-
-<<<<<<< HEAD
-var employeeMain = React.createClass({
-  printPDF: function(){
-
-      const doc = ReactDOMServer.renderToString(<Fitness />);
-
-      var canvas = document.getElementById('canvas');
-      var ctx = canvas.getContext('2d');
-
-      var data = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
-          '<foreignObject width="100%" height="100%">' +
-          doc +
-          '</foreignObject>' +
-          '</svg>';
-
-      var DOMURL = window.URL || window.webkitURL || window;
-
-      var img = new Image();
-      var svg = new Blob([data], {type: 'image/svg+xml'});
-      var url = DOMURL.createObjectURL(svg);
-
-      img.onload = function() {
-          ctx.drawImage(img, 0, 0);
-          DOMURL.revokeObjectURL(url);
-      };
-
-      img.src = url;
-
-      canvas.toBlob(function(blob) {
-          FileSaver.saveAs(blob, "fitness.png");
-      });
-
-  },
-
-=======
 var helpers = require("../../utils/helpers");
 
 var employeeLayout = React.createClass({
@@ -91,7 +54,6 @@ var employeeLayout = React.createClass({
       console.log(status);
     });
   },
->>>>>>> 0dff4fe81bb05862c6bdca7d3cd23ae118cd7f8a
 
   render: function() {
 
@@ -121,28 +83,6 @@ var employeeLayout = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-<<<<<<< HEAD
-              <li><a href="welcome.html">Welcome</a></li>
-              <li><a href="Handbook.html"><i className="fa-li fa fa-check-square"></i>&nbsp; Employee Handbook</a></li>
-              <li><a href="HandbookReceipt.html">Handbook Receipt Acknowledgement</a></li>
-              <li><a href="BenefitsGuide.html">Benefits Guide</a></li>
-              <li><a href="Beneficiary.html">401k Beneficiary Designation Form</a></li>
-              <li><a href="Investment.html">401k Direction of Investment Form</a></li>
-              <li><a href="SalaryDeferral.html">401k Salary Deferral Agreement</a></li>
-              <li><a href="FirmDirectory.html">Firm Directory Information Request</a></li>
-              <li><a href="DependantCareApp.html">Dependant Care Application</a></li>
-              <li><a href="cDependantCareStat.html">Dependant Care Statement</a></li>
-              <li><a href="DependentCarePlan.html">Dependent Care Assistance Plan</a></li>
-              <li><a href="DirectDeposit.html">Direct Deposit Form</a></li>
-              <li><a href="G-4.html">G-4 Form</a></li>
-              <li><a href="W-4.html">W-4 Form</a></li>
-              <li><a href="I9.html">I9 Form</a></li>
-              <li><a href="parking.html">Laz Parking Contract</a></li>
-              <li className="active"><a href="#/employee/fitness">Pulse Fitness Agreement</a></li>
-              <li><a href="ComputerPolicy.html">Computer & Network Policy</a></li>
-              <li><a href="InternetPolicy.html">Internet Access Policy</a></li>
-              <li><a href="HarassmentPolicy.html">Unlawful Harassment Policy</a></li>
-=======
               <li className="sideNavBtn active"><a id='0' href="#/employee/welcome">Welcome</a></li>
               <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
               <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
@@ -163,7 +103,6 @@ var employeeLayout = React.createClass({
               <li className="sideNavBtn" data='17'><a id='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
               <li className="sideNavBtn" data='18'><a id='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
               <li className="sideNavBtn" data='19'><a id='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
->>>>>>> 0dff4fe81bb05862c6bdca7d3cd23ae118cd7f8a
             </ul>
           </ul>
         </div>
@@ -179,12 +118,8 @@ var employeeLayout = React.createClass({
                 <div>
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
-<<<<<<< HEAD
-                      <a className="list-group-item" href="#" onClick={this.printPDF}><i className="fa fa-download fa-2x" aria-hidden="true"></i>{"\u00A0"}; CurrentFileName.PDF</a>
-=======
                       <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
->>>>>>> 0dff4fe81bb05862c6bdca7d3cd23ae118cd7f8a
-                    </ul>
+    </ul>
                   </div>
                 </div>
               </div>
@@ -193,11 +128,7 @@ var employeeLayout = React.createClass({
         </header>
 
         <main>
-<<<<<<< HEAD
-            {this.props.children}
-=======
           {childrenWithProps}
->>>>>>> 0dff4fe81bb05862c6bdca7d3cd23ae118cd7f8a
         </main>
 
         <div className="container row">
