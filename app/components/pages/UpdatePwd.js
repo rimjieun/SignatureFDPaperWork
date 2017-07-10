@@ -45,7 +45,7 @@ var UpdatePwd = React.createClass({
           </div>
         </div>
         <div className="container row">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/welcome">CONTINUE</a>
+          <a className="saveBTN waves-effect waves-brown btn white-text right" onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );

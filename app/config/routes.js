@@ -13,7 +13,7 @@ var IndexRoute = router.IndexRoute;
 var IndexLayout = require("../components/layouts/indexLayout");
 var Login = require("../components/pages/Login");
 var UpdatePwd = require("../components/pages/UpdatePwd");
-// var Admin = require("../components/pages/Admin");
+var Admin = require("../components/pages/Admin");
 
 var EmployeeLayout = require("../components/layouts/employeeLayout");
 var Welcome = require("../components/forms/Welcome");
@@ -44,6 +44,7 @@ module.exports = (
     <Route component={IndexLayout}>
       <Route path="/" component={Login} />
       <Route path="update/password" component={UpdatePwd} />
+      <Route path="admin" component={Admin} />
     </Route>
     <Route component={EmployeeLayout}>
       <Route path="employee/welcome" component={Welcome} />

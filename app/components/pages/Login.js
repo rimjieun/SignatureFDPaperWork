@@ -22,7 +22,11 @@ var Login = React.createClass({
     helpers.authenticateUser(employeeCredentials).then(function(res) {
 
       if (res.data.success === true) {
-        window.location = "#/update/password";
+        if (res.data.authorization === "employee") {
+          window.location = "#/update/password";
+        } else {
+          window.location = "#/admin";
+        }
       } else {
         console.log(res.data.message);
       }
