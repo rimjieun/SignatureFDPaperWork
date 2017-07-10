@@ -22,17 +22,18 @@ authRouter.post("/login", function(req, res, next) {
           res.send({ success: false, message: "Invalid username or password." });
         } else {
 
-          // var jwtAuthToken = jwt.sign({
-          //   exp: Math.floor(Date.now() / 1000) + (60 * 60),
-          //   data: {
-          //     userId: doc._id,
-          //     username: doc.EmailAddress
-          //   }
-          // }, tokenSecret);
-          // res.cookie('jwtAuthToken', jwtAuthToken, {
-          //   secure: process.env.NODE_ENV === 'production',
-          //   signed: true
-          // });
+          var jwtAuthToken = jwt.sign({
+            exp: Math.floor(Date.now() / 1000) + (60 * 60),
+            data: {
+              userId: doc._id,
+              username: doc.EmailAddress
+            }
+          }, tokenSecret);
+
+          res.cookie('jwtAuthToken', jwtAuthToken, {
+            secure: process.env.NODE_ENV === 'production',
+            signed: true
+          });
 
           res.send({ success: true, message: "Login successful." });
         }
