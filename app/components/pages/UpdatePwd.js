@@ -14,6 +14,8 @@ var UpdatePwd = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
+
+    window.location = "#/employee/welcome";
   },
 
   render: function() {
@@ -26,26 +28,26 @@ var UpdatePwd = React.createClass({
               <div className="row">
                 <div className="input-field col s12">
                   <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <input id="passwordNew" type="password" className="validate" />
-                  <label for="password">Create New Password</label>
+                  <label htmlFor="password">Create New Password</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
                   <input id="passwordNewConfirm" type="password" className="validate" />
-                  <label for="password">Confirm New Password</label>
+                  <label htmlFor="password">Confirm New Password</label>
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <div className="container">
-            <a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/welcome">CONTINUE</a>
+        <div className="container row">
+          <a className="saveBTN waves-effect waves-brown btn white-text right" onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );

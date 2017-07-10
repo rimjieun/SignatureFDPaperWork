@@ -13,6 +13,28 @@ var Login = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
+
+    var employeeCredentials = {
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    };
+
+    helpers.authenticateUser(employeeCredentials).then(function(res) {
+      if (res === "employee") {
+        // console.log("validate emp token");
+        // helpers.validateEmpAccessToken().then(function(res) {
+        //   console.log(res);
+        // });
+        window.location = "#/update/password";
+      } else if (res === "admin") {
+        console.log("validate admin token");
+        // helpers.validateAdminAuthToken
+        window.location = "#/admin"
+      } else {
+        console.log(res);
+      }
+    });
+
   },
 
   render: function() {
@@ -24,21 +46,24 @@ var Login = React.createClass({
             <form className="col s12">
               <div className="row">
                 <div className="input-field col s12">
-                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
-                  <label for="email">Email</label>
+                  <input placeholder="First.Last@SignatureFD.com" type="email"
+                  id="email" className="validate" />
+                  <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="password" type="password" className="validate" />
-                  <label for="password">Password from Welcome Email</label>
+                  <input placeholder="Password" type="password"
+                  id="password" className="validate" />
+                  <label htmlFor="password">Password from Welcome Email</label>
                 </div>
               </div>
             </form>
           </div>
         </div>
-        <div className="container">
-            <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="#/update/password">CONTINUE</a>
+        <div className="container row">
+          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn"
+          onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );

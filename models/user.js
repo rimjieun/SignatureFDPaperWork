@@ -8,7 +8,8 @@ var UserSchema = new Schema({
         type: String
     },
     FirstName: {
-        type: String
+        type: String,
+        name: "hello"
     },
     Initials: {
         type: String
@@ -159,6 +160,9 @@ var UserSchema = new Schema({
     },
     ParkingContract: {
         type: Boolean
+    },
+    Password: {
+        type: String
     }
 });
 
