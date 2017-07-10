@@ -14,6 +14,8 @@ var UpdatePwd = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
+
+    window.location = "#/employee/welcome";
   },
 
   render: function() {

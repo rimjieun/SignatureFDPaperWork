@@ -20,15 +20,18 @@ var Login = React.createClass({
     };
 
     helpers.authenticateUser(employeeCredentials).then(function(res) {
-
-      if (res.data.success === true) {
-        if (res.data.authorization === "employee") {
-          window.location = "#/update/password";
-        } else {
-          window.location = "#/admin";
-        }
+      if (res === "employee") {
+        // console.log("validate emp token");
+        // helpers.validateEmpAccessToken().then(function(res) {
+        //   console.log(res);
+        // });
+        window.location = "#/update/password";
+      } else if (res === "admin") {
+        console.log("validate admin token");
+        // helpers.validateAdminAuthToken
+        window.location = "#/admin"
       } else {
-        console.log(res.data.message);
+        console.log(res);
       }
     });
 
