@@ -9,6 +9,10 @@ var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 authRouter.post("/login", function(req, res, next) {
 
+  // var baseURL = "http://www.signaturefd.herokuapp.com/";
+
+  // var baseURL = "http://localhost:3000/";
+
   console.log(req.body.email, req.body.password);
 
   User.findOne({"EmailAddress": req.body.email}, function(error1, doc) {
@@ -22,6 +26,19 @@ authRouter.post("/login", function(req, res, next) {
         if (err || !valid) {
           res.send({ success: false, message: "Invalid username or password." });
         } else {
+          var jwtAuthToken = jwt.sign({
+            exp: Math.floor(Date.now() / 1000) + (60 * 60),
+            data: {
+              userId: doc._id,
+              username: doc.EmailAddress
+            }
+          }, tokenSecret);
+
+          res.cookie('employeePassToken', jwtAuthToken, {
+            secure: process.env.NODE_ENV === 'production',
+            signed: true
+          });
+
           res.send({ success: true, message: "Employee login successful.", authorization: "employee" });
         }
       });
@@ -47,7 +64,7 @@ authRouter.post("/login", function(req, res, next) {
                 }
               }, tokenSecret);
 
-              res.cookie('jwtAuthToken', jwtAuthToken, {
+              res.cookie('adminAuthToken', jwtAuthToken, {
                 secure: process.env.NODE_ENV === 'production',
                 signed: true
               });
@@ -63,9 +80,6 @@ authRouter.post("/login", function(req, res, next) {
 });
 
 
-// authRouter.post("/update/password", function(req, res, next) {
-
-// });
 
 
 
@@ -77,19 +91,6 @@ authRouter.post("/login", function(req, res, next) {
 
 
 
-// // Get login page
-// authRouter.get("/login", function(req, res, next) {
-
-//   // If user is logged in, direct user to homepage
-//   if (req.user) {
-//     res.redirect("/");
-//   // If user does not exist, render login page
-//   } else {
-//     res.render("login", {
-//       status: "Enter your username and password."
-//     });
-//   }
-// });
 
 // // Add use to database...
 // authRouter.post("/updatePassword", function(req, res) {
@@ -118,46 +119,6 @@ authRouter.post("/login", function(req, res, next) {
 //       });
 //     }
 //   });
-// });
-
-// // Search for existing user in database to log in
-// authRouter.post("/login", function(req, res, next) {
-//   db.user.findOne({
-//     email: req.body.email
-//   }).then(function(user) {
-
-//     // If user does not exist, render login page with error status
-//     if (!user) {
-//       res.render("login", {
-//         status: "Invalid username or password."
-//       });
-//     } else {
-//       bcrypt.compare(req.body.password, user.password, function(err, valid) {
-//         if (err || !valid) {
-//           res.render("login", {
-//             status: "Invalid username or password."
-//           });
-//         } else {
-//           var jwtAuthToken = jwt.sign({
-//             exp: Math.floor(Date.now() / 1000) + (60 * 60),
-//             data: {
-//               userId: user.userId
-//             }
-//           }, tokenSecret);
-
-//           //...and put token in cookie
-//           res.cookie("jwtAuthToken", jwtAuthToken, {
-//             secure: process.env.NODE_ENV === "production",
-//             signed: true
-//           });
-//         }
-        
-//       });
-      
-//       // If log in successful, direct user to homepage
-//       res.redirect("/");
-//     }
-//   }).catch(next);
 // });
 
 
