@@ -13,6 +13,7 @@ var employeeLayout = React.createClass({
     return {
       Date: "",
       FirstName: "",
+      LastName: "",
       Employer: "",
       SuiteAddress: "",
       OfficePhone: "",
@@ -24,7 +25,8 @@ var employeeLayout = React.createClass({
       MaritalStatus: "",
       PrimaryBeneficiary:"",
       ContingentBenficiary:"",
-      Signature:""
+      Signature:"",
+      GymAccessCard:""
     };
   },
 
@@ -35,6 +37,7 @@ var employeeLayout = React.createClass({
       this.setState({
         Date: employee.data[0].Date,
         FirstName: employee.data[0].FirstName,
+        LastName: employee.data[0].LastName,
         Employer: employee.data[0].Employer,
         SuiteAddress: employee.data[0].SuiteAddress,
         OfficePhone: employee.data[0].OfficePhone,
@@ -46,7 +49,8 @@ var employeeLayout = React.createClass({
         MaritalStatus: employee.data[0].MaritalStatus,
         PrimaryBeneficiary: employee.data[0].PrimaryBeneficiary,
         ContingentBenficiary: employee.data[0].ContingentBenficiary,
-        Signature: employee.data[0].Signature
+        Signature: employee.data[0].Signature,
+        GymAccessCard: employee.data[0].GymAccessCard
       });
     }.bind(this));
   },
