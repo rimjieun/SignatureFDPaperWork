@@ -5,7 +5,7 @@ var routes = require("./config/routes");
 
 ReactDOM.render(routes, document.getElementById("app"));
 
-$(window).load(function(){
+$(document).ready(function() {
 
     (function($){
         $(function(){
@@ -17,7 +17,7 @@ $(window).load(function(){
 
 
 
-    var navId = 0;
+    var navId = 1;
     var nextLink = 0;
     var thisLink = 0;
     var fileName;
@@ -26,7 +26,8 @@ $(window).load(function(){
 
 
     $('.saveBTN').on("click", function() {
-        $('#'+ navId).parent().click();
+        // $('#'+ navId).parent().click();
+        document.getElementById(navId).click();
         console.log("clicked");
 
     });

@@ -16,6 +16,7 @@ var UpdatePwd = React.createClass({
     e.preventDefault();
 
     window.location = "#/employee/welcome";
+      location.reload();
   },
 
   render: function() {
