@@ -116,74 +116,75 @@ var employeeLayout = React.createClass({
 
     return (
       <div>
-        <div>
-          <ul id="nav-side" className="side-nav fixed" style={{transform: "translateX(0%)"}}>
-            <ul className="collapsible collapsible-accordion">
-              <li className="bold active">
-                <a className="collapsible-header active waves-effect waves-brown FDbrownDark">
-                  <span className="FDblueText">User Name</span>
-                </a>
-                <div className="collapsible-body" style={{display: "block"}}>
-                  <ul>
-                    <li><a href="#/update/password">Update Password</a></li>
-                    <li><a href="#/">Log Out</a></li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-            <ul className="fa-ul">
-              <li className="sideNavBtn active" data='0'><a id='0' href="#/employee/welcome">Welcome</a></li>
-              <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
-              <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
-              <li className="sideNavBtn" data='3'><a id='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
-              <li className="sideNavBtn" data='4'><a id='4' href="#/employee/401kBeneficiaryDesignationForm">401k Beneficiary Designation Form</a></li>
-              <li className="sideNavBtn" data='5'><a id='5' href="#/employee/401kDirectionofInvestmentForm">401k Direction of Investment Form</a></li>
-              <li className="sideNavBtn" data='6'><a id='6' href="#/employee/401kSalaryDeferralAgreement">401k Salary Deferral Agreement</a></li>
-              <li className="sideNavBtn" data='7'><a id='7' href="#/employee/CellNumberandFirmDirectory-InformationRequest">Firm Directory Information Request</a></li>
-              <li className="sideNavBtn" data='8'><a id='8' href="#/employee/DependantCareApplication">Dependant Care Application</a></li>
-              <li className="sideNavBtn" data='9'><a id='9' href="#/employee/DependantCareFacilityStatement2017">Dependant Care Statement</a></li>
-              <li className="sideNavBtn" data='10'><a id='10' href="#/employee/DependentCareAssistancePlan">Dependent Care Assistance Plan</a></li>
-              <li className="sideNavBtn" data='11'><a id='11' href="#/employee/DirectDepositForm">Direct Deposit Form</a></li>
-              <li className="sideNavBtn" data='12'><a id='12' href="#/employee/FormG4">G-4 Form</a></li>
-              <li className="sideNavBtn" data='13'><a id='13' href="#/employee/FormW4">W-4 Form</a></li>
-              <li className="sideNavBtn" data='14'><a id='14' href="#/employee/i-9-paper-version">I9 Form</a></li>
-              <li className="sideNavBtn" data='15'><a id='15' href="#/employee/Lazparkingcontract-SignatureFD">Laz Parking Contract</a></li>
-              <li className="sideNavBtn" data='16'><a id='16' href="#/employee/PulseFitnessAgreement">Pulse Fitness Agreement</a></li>
-              <li className="sideNavBtn" data='17'><a id='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
-              <li className="sideNavBtn" data='18'><a id='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
-              <li className="sideNavBtn" data='19'><a id='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
-            </ul>
-          </ul>
-        </div>
+          <div className="content">
+            <div>
+              <ul id="nav-side" className="side-nav fixed" style={{transform: "translateX(0%)"}}>
+                <ul className="collapsible collapsible-accordion">
+                  <li className="bold active">
+                    <a className="collapsible-header active waves-effect waves-brown FDbrownDark">
+                      <span className="FDblueText">User Name</span>
+                    </a>
+                    <div className="collapsible-body" style={{display: "block"}}>
+                      <ul>
+                        <li><a href="#/update/password">Update Password</a></li>
+                        <li><a href="#/">Log Out</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+                <ul className="fa-ul">
+                  <li className="sideNavBtn" data='0'><a id='0' href="#/employee/welcome">Welcome</a></li>
+                  <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
+                  <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
+                  <li className="sideNavBtn" data='3'><a id='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
+                  <li className="sideNavBtn" data='4'><a id='4' href="#/employee/401kBeneficiaryDesignationForm">401k Beneficiary Designation Form</a></li>
+                  <li className="sideNavBtn" data='5'><a id='5' href="#/employee/401kDirectionofInvestmentForm">401k Direction of Investment Form</a></li>
+                  <li className="sideNavBtn" data='6'><a id='6' href="#/employee/401kSalaryDeferralAgreement">401k Salary Deferral Agreement</a></li>
+                  <li className="sideNavBtn" data='7'><a id='7' href="#/employee/CellNumberandFirmDirectory-InformationRequest">Firm Directory Information Request</a></li>
+                  <li className="sideNavBtn" data='8'><a id='8' href="#/employee/DependantCareApplication">Dependant Care Application</a></li>
+                  <li className="sideNavBtn" data='9'><a id='9' href="#/employee/DependantCareFacilityStatement2017">Dependant Care Statement</a></li>
+                  <li className="sideNavBtn" data='10'><a id='10' href="#/employee/DependentCareAssistancePlan">Dependent Care Assistance Plan</a></li>
+                  <li className="sideNavBtn" data='11'><a id='11' href="#/employee/DirectDepositForm">Direct Deposit Form</a></li>
+                  <li className="sideNavBtn" data='12'><a id='12' href="#/employee/FormG4">G-4 Form</a></li>
+                  <li className="sideNavBtn" data='13'><a id='13' href="#/employee/FormW4">W-4 Form</a></li>
+                  <li className="sideNavBtn" data='14'><a id='14' href="#/employee/i-9-paper-version">I9 Form</a></li>
+                  <li className="sideNavBtn" data='15'><a id='15' href="#/employee/Lazparkingcontract-SignatureFD">Laz Parking Contract</a></li>
+                  <li className="sideNavBtn" data='16'><a id='16' href="#/employee/PulseFitnessAgreement">Pulse Fitness Agreement</a></li>
+                  <li className="sideNavBtn" data='17'><a id='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
+                  <li className="sideNavBtn" data='18'><a id='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
+                  <li className="sideNavBtn" data='19'><a id='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
+                </ul>
+              </ul>
+            </div>
 
-        <header>
-          <div className="navbar-fixed">
-            <nav className="nav-extended  FDbrownLight" role="navigation">
-              <div className="container">
-                <div className="nav-wrapper">
-                  <a href="#" className="brand-logo"><img src="assets/images/logo-white.png" /></a>
-                  <a href="#" data-activates="nav-side" className="button-collapse"><i className="material-icons">menu</i></a>
-                </div>
-                <div>
-                  <div className="row">
-                    <ul className="left" style={{marginRight: "30%"}}>
-                      <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
-                    </ul>
+            <header>
+              <div className="navbar-fixed">
+                <nav className="nav-extended  FDbrownLight" role="navigation">
+                  <div className="container">
+                    <div className="nav-wrapper">
+                      <a href="#" className="brand-logo"><img src="assets/images/logo-white.png" /></a>
+                      <a href="#" data-activates="nav-side" className="button-collapse"><i className="material-icons">menu</i></a>
+                    </div>
+                    <div>
+                      <div className="row">
+                        <ul className="left" style={{marginRight: "30%"}}>
+                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                </nav>
               </div>
-            </nav>
+            </header>
+
+            <main>
+              {childrenWithProps}
+            </main>
+
+            <div id="btnRow" className="container row">
+                <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#" onClick={this.handleSubmit}>SUBMIT</a>
+            </div>
           </div>
-        </header>
-
-        <main>
-          {childrenWithProps}
-        </main>
-
-        <div id="btnRow" className="container row">
-            <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#" onClick={this.handleSubmit}>SUBMIT</a>
-        </div>
-
         <footer className="page-footer FDbrownLight white-text">
           <div className="container">
             <div className="row">
@@ -220,8 +221,8 @@ var employeeLayout = React.createClass({
                 ©2016 SignatureFD. All rights reserved. &nbsp;
                 <span style={{color: "#ffffff"}}>&nbsp;
                 <a href="http://www.signaturefd.com/definitions">Definitions</a> |
-                <a href="http://www.signaturefd.com/privacy">Privacy</a> |
-                <a href="http://www.signaturefd.com/disclosure-information">Disclosure</a>&nbsp;&nbsp;&nbsp;</span>
+                <a href="http://www.signaturefd.com/privacy"> Privacy</a> |
+                <a href="http://www.signaturefd.com/disclosure-information"> Disclosure</a>&nbsp;&nbsp;&nbsp;</span>
                 <a target="_blank" href="https://twitter.com/SignatureFD">&nbsp;&nbsp;&nbsp;<i className="fa fa-fw fa-twitter fa-lg" aria-hidden="true"></i></a>
                 <a target="_blank" href="https://www.facebook.com/SignatureFD/">&nbsp;<i className="fa fa-fw fa-facebook fa-lg" aria-hidden="true"></i></a>
                 <a target="_blank" href="https://www.linkedin.com/company/signaturefd">&nbsp;<i className="fa fa-fw fa-linkedin fa-lg" aria-hidden="true"></i></a>
