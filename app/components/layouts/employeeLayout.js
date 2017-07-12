@@ -42,7 +42,7 @@ var employeeLayout = React.createClass({
   },
 
   componentDidUpdate: function() {
-    this.runJS();
+    // this.runJS();
     console.log(JSON.stringify(this.state, null, 2));
   },
 
@@ -90,37 +90,7 @@ var employeeLayout = React.createClass({
 
   runJS: function() {
 
-      // $('.button-collapse').sideNav();
 
-      var navId = 0;
-      var nextLink = 0;
-      var thisLink = 0;
-      var fileName;
-
-
-
-
-      // $('.saveBTN').on("click", function() {
-      //     $('#'+ navId).parent().click();
-      //     console.log("clicked");
-      //
-      // });
-
-// side nav button highlight
-      $('.sideNavBtn').on("click", function() {
-
-          var self = this;
-          $('.sideNavBtn').removeClass("active");
-          $(self).addClass("active");
-          navId = 1 + parseInt($(self).attr('data'));
-          nextLink = $('#'+ navId).attr('href');
-          thisLink = $('#'+ (navId - 1)).attr('href')
-          console.log(navId);
-          console.log(nextLink);
-          fileName = " " + thisLink.substr(11) + ".pdf";
-          $('.saveBTN').attr('href',nextLink);
-          $('#downBtn').text(fileName);
-      });
 
   },
 
@@ -152,7 +122,7 @@ var employeeLayout = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li className="sideNavBtn active"><a id='0' href="#/employee/welcome">Welcome</a></li>
+              <li className="sideNavBtn active" data='0'><a id='0' href="#/employee/welcome">Welcome</a></li>
               <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
               <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
               <li className="sideNavBtn" data='3'><a id='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
@@ -250,7 +220,6 @@ var employeeLayout = React.createClass({
             </div>
           </div>
         </footer>
-          <script src="../../App.js"></script>
       </div>
     );
   }

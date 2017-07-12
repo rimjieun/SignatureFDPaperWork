@@ -46,6 +46,9 @@ header, main, footer {
     position: fixed;
     height: 140px;
 }
+footer{
+    z-index: 99;
+}
 
 
 
