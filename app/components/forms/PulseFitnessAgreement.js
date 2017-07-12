@@ -46,7 +46,7 @@ var Fitness = React.createClass({
               left: "67.8%",
               width: "15%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.LastName.trim()} 
             onChange={this.props.handleChange} 
             />
           <input id="employer"  name="Employer"
