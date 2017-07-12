@@ -5,6 +5,16 @@ var Handbook = React.createClass({
     return (
         <form>
         <div className="input-field">
+          <input id="Signature" name="Signature"
+            className="absolute" type="text"
+            style={{
+              top: "26.1%",
+              left: "51%",
+              width: "28.5%",
+              height: "2%"}}
+            value={this.props.appState.Signature.trim()} 
+            onChange={this.props.handleChange} 
+            />
              <input id="name" name="FirstName"
             className="absolute" type="text"
             style={{

@@ -19,7 +19,12 @@ var employeeLayout = React.createClass({
       Gender: "",
       EmailAddress: "",
       EmergencyContact: "",
-      EmergencyContactRelationshipAndContact: ""
+      EmergencyContactRelationshipAndContact: "",
+      SocailSecurityNumber:"",
+      MaritalStatus: "",
+      PrimaryBeneficiary:"",
+      ContingentBenficiary:"",
+      Signature:""
     };
   },
 
@@ -36,7 +41,12 @@ var employeeLayout = React.createClass({
         Gender: employee.data[0].Gender,
         EmailAddress: employee.data[0].EmailAddress,
         EmergencyContact: employee.data[0].EmergencyContact,
-        EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact
+        EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact,
+        SocailSecurityNumber: employee.data[0].SocailSecurityNumber,
+        MaritalStatus: employee.data[0].MaritalStatus,
+        PrimaryBeneficiary: employee.data[0].PrimaryBeneficiary,
+        ContingentBenficiary: employee.data[0].ContingentBenficiary,
+        Signature: employee.data[0].Signature
       });
     }.bind(this));
   },
