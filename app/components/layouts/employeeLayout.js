@@ -42,6 +42,17 @@ var employeeLayout = React.createClass({
 
   componentDidUpdate: function() {
     console.log(JSON.stringify(this.state, null, 2));
+    <script src="../../../public/bundle.js"></script>
+  },
+
+  handleNav: function(e) {
+    document.querySelector(".sideNavBtn").classList.remove("active");
+    document.
+    navId = parseInt(document.getElementById(e.target.id).getAttribute("data"));
+    nextLink = document.getElementById(e.target.id).getAttribute("href");
+    fileName = " " + nextLink.substr(11) + ".pdf";
+    document.getElementsByClassName("saveBTN").setAttribute("href", nextLink);
+    document.getElementById("downBtn").textContent = fileName; 
   },
 
   handleChange: function(e) {
@@ -114,26 +125,26 @@ var employeeLayout = React.createClass({
               </li>
             </ul>
             <ul className="fa-ul">
-              <li className="sideNavBtn active"><a id='0' href="#/employee/welcome">Welcome</a></li>
-              <li className="sideNavBtn" data='1'><a id='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
-              <li className="sideNavBtn" data='2'><a id='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
-              <li className="sideNavBtn" data='3'><a id='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
-              <li className="sideNavBtn" data='4'><a id='4' href="#/employee/401kBeneficiaryDesignationForm">401k Beneficiary Designation Form</a></li>
-              <li className="sideNavBtn" data='5'><a id='5' href="#/employee/401kDirectionofInvestmentForm">401k Direction of Investment Form</a></li>
-              <li className="sideNavBtn" data='6'><a id='6' href="#/employee/401kSalaryDeferralAgreement">401k Salary Deferral Agreement</a></li>
-              <li className="sideNavBtn" data='7'><a id='7' href="#/employee/CellNumberandFirmDirectory-InformationRequest">Firm Directory Information Request</a></li>
-              <li className="sideNavBtn" data='8'><a id='8' href="#/employee/DependantCareApplication">Dependant Care Application</a></li>
-              <li className="sideNavBtn" data='9'><a id='9' href="#/employee/DependantCareFacilityStatement2017">Dependant Care Statement</a></li>
-              <li className="sideNavBtn" data='10'><a id='10' href="#/employee/DependentCareAssistancePlan">Dependent Care Assistance Plan</a></li>
-              <li className="sideNavBtn" data='11'><a id='11' href="#/employee/DirectDepositForm">Direct Deposit Form</a></li>
-              <li className="sideNavBtn" data='12'><a id='12' href="#/employee/FormG4">G-4 Form</a></li>
-              <li className="sideNavBtn" data='13'><a id='13' href="#/employee/FormW4">W-4 Form</a></li>
-              <li className="sideNavBtn" data='14'><a id='14' href="#/employee/i-9-paper-version">I9 Form</a></li>
-              <li className="sideNavBtn" data='15'><a id='15' href="#/employee/Lazparkingcontract-SignatureFD">Laz Parking Contract</a></li>
-              <li className="sideNavBtn" data='16'><a id='16' href="#/employee/PulseFitnessAgreement">Pulse Fitness Agreement</a></li>
-              <li className="sideNavBtn" data='17'><a id='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
-              <li className="sideNavBtn" data='18'><a id='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
-              <li className="sideNavBtn" data='19'><a id='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
+              <li className="sideNavBtn active" id="0" onClick={this.handleNav}><a data='0' href="#/employee/welcome">Welcome</a></li>
+              <li className="sideNavBtn" id='1'><a data='1' href="#/employee/SignatureFDEmployeeHandbook">Employee Handbook</a></li>
+              <li className="sideNavBtn" id='2'><a data='2' href="#/employee/SignatureFDReceiptAcknowledgement-EmployeeHandbook">Handbook Receipt Acknowledgement</a></li>
+              <li className="sideNavBtn" id='3'><a data='3' href="#/employee/BenefitsGuideSigFD2017">Benefits Guide</a></li>
+              <li className="sideNavBtn" id='4'><a data='4' href="#/employee/401kBeneficiaryDesignationForm">401k Beneficiary Designation Form</a></li>
+              <li className="sideNavBtn" id='5'><a data='5' href="#/employee/401kDirectionofInvestmentForm">401k Direction of Investment Form</a></li>
+              <li className="sideNavBtn" id='6'><a data='6' href="#/employee/401kSalaryDeferralAgreement">401k Salary Deferral Agreement</a></li>
+              <li className="sideNavBtn" id='7'><a data='7' href="#/employee/CellNumberandFirmDirectory-InformationRequest">Firm Directory Information Request</a></li>
+              <li className="sideNavBtn" id='8'><a data='8' href="#/employee/DependantCareApplication">Dependant Care Application</a></li>
+              <li className="sideNavBtn" id='9'><a data='9' href="#/employee/DependantCareFacilityStatement2017">Dependant Care Statement</a></li>
+              <li className="sideNavBtn" id='10'><a data='10' href="#/employee/DependentCareAssistancePlan">Dependent Care Assistance Plan</a></li>
+              <li className="sideNavBtn" id='11'><a data='11' href="#/employee/DirectDepositForm">Direct Deposit Form</a></li>
+              <li className="sideNavBtn" id='12'><a data='12' href="#/employee/FormG4">G-4 Form</a></li>
+              <li className="sideNavBtn" id='13'><a data='13' href="#/employee/FormW4">W-4 Form</a></li>
+              <li className="sideNavBtn" id='14'><a data='14' href="#/employee/i-9-paper-version">I9 Form</a></li>
+              <li className="sideNavBtn" id='15'><a data='15' href="#/employee/Lazparkingcontract-SignatureFD">Laz Parking Contract</a></li>
+              <li className="sideNavBtn" id='16'><a data='16' href="#/employee/PulseFitnessAgreement">Pulse Fitness Agreement</a></li>
+              <li className="sideNavBtn" id='17'><a data='17' href="#/employee/SignatureFDComputer&NetworkPolicyHandbook">Computer & Network Policy</a></li>
+              <li className="sideNavBtn" id='18'><a data='18' href="#/employee/SignatureFDInternetAccessPolicy">Internet Access Policy</a></li>
+              <li className="sideNavBtn" id='19'><a data='19' href="#/employee/SignatureFDSexualandOtherUnlawfulHarassmentPolicy">Unlawful Harassment Policy</a></li>
             </ul>
           </ul>
         </div>
