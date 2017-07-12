@@ -47,10 +47,12 @@ header, main, footer {
     height: 140px;
 }
 footer{
-    z-index: 99;
+    height: 440px;
 }
 
-
+.content {
+    min-height: calc(100vh - 440px);
+}
 
 .btn, .btn:hover, .btn-large:hover, .btn:after, .btn:before{
     background-color: #8DD4F0;
