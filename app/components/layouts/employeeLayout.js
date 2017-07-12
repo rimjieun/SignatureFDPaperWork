@@ -2,6 +2,7 @@ var React = require("react");
 var ReactDOMServer = require('react-dom/server');
 var Fitness = require('../forms/Fitness');
 var FileSaver = require('file-saver');
+var $ = require('jquery');
 
 
 var helpers = require("../../utils/helpers");
@@ -41,6 +42,7 @@ var employeeLayout = React.createClass({
   },
 
   componentDidUpdate: function() {
+    this.runJS();
     console.log(JSON.stringify(this.state, null, 2));
   },
 
@@ -85,6 +87,42 @@ var employeeLayout = React.createClass({
         });
 
     },
+
+  runJS: function() {
+
+      // $('.button-collapse').sideNav();
+
+      var navId = 0;
+      var nextLink = 0;
+      var thisLink = 0;
+      var fileName;
+
+
+
+
+      // $('.saveBTN').on("click", function() {
+      //     $('#'+ navId).parent().click();
+      //     console.log("clicked");
+      //
+      // });
+
+// side nav button highlight
+      $('.sideNavBtn').on("click", function() {
+
+          var self = this;
+          $('.sideNavBtn').removeClass("active");
+          $(self).addClass("active");
+          navId = 1 + parseInt($(self).attr('data'));
+          nextLink = $('#'+ navId).attr('href');
+          thisLink = $('#'+ (navId - 1)).attr('href')
+          console.log(navId);
+          console.log(nextLink);
+          fileName = " " + thisLink.substr(11) + ".pdf";
+          $('.saveBTN').attr('href',nextLink);
+          $('#downBtn').text(fileName);
+      });
+
+  },
 
   render: function() {
 
@@ -150,7 +188,7 @@ var employeeLayout = React.createClass({
                   <div className="row">
                     <ul className="left" style={{marginRight: "30%"}}>
                       <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
-    </ul>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -162,7 +200,7 @@ var employeeLayout = React.createClass({
           {childrenWithProps}
         </main>
 
-        <div className="container row">
+        <div id="btnRow" className="container row">
             <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="#" onClick={this.handleSubmit}>SUBMIT</a>
         </div>
 
@@ -212,6 +250,7 @@ var employeeLayout = React.createClass({
             </div>
           </div>
         </footer>
+          <script src="../../App.js"></script>
       </div>
     );
   }

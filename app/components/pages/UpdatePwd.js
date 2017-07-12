@@ -27,7 +27,7 @@ var UpdatePwd = React.createClass({
             <form className="col s12">
               <div className="row">
                 <div className="input-field col s12">
-                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
+                  <input id="email" type="email" className="validate" />
                   <label htmlFor="email">Email</label>
                 </div>
               </div>
