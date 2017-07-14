@@ -2,6 +2,9 @@ var React = require("react");
 var ReactDOMServer = require('react-dom/server');
 var Fitness = require('../forms/PulseFitnessAgreement');
 var FileSaver = require('file-saver');
+var base64Img = require('base64-img');
+var pdfMake = require('pdfmake/build/pdfmake.js');
+
 
 
 var helpers = require("../../utils/helpers");
@@ -155,6 +158,21 @@ var employeeLayout = React.createClass({
 
     },
 
+    pdfMakeOpen: function() {
+        var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
+
+        console.log(data);
+
+        var docDefinition = {
+            background: [{
+                image: 'data:image/jpeg;base64,' + data
+            }],
+
+        };
+
+        pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
+    },
+
   render: function() {
 
     var childrenWithProps = React.Children.map(this.props.children,
@@ -219,7 +237,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true" onClick={this.runJS}><span id="downBtn" ></span></i></a>
+                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true" onClick={this.pdfMakeOpen}><span id="downBtn" ></span></i></a>
                         </ul>
                       </div>
                     </div>

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/emilykeen/SignatureFDPaperWork#readme",
   "dependencies": {
+    "base64-img": "^1.0.3",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
@@ -28,6 +29,7 @@
     "mongoose": "^4.10.8",
     "morgan": "^1.8.2",
     "path": "^0.12.7",
+    "pdfmake": "^0.1.31",
     "print.js": "^1.0.18",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
