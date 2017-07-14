@@ -21,9 +21,9 @@ var Login = React.createClass({
 
     helpers.authenticateUser(employeeCredentials).then(function(res) {
       if (res === "employee") {
-        window.location = "#/update/password";
+        location.href = "#/update/password";
       } else if (res === "admin") {
-        window.location = "#/admin"
+        location.href = "#/admin"
       } else {
         console.log(res);
       }
