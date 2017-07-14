@@ -12,20 +12,15 @@ var Login = React.createClass({
   },
 
   handleSubmit: function(e) {
-    e.preventDefault();
 
     var employeeCredentials = {
-      email: document.getElementById("email").value,
-      password: document.getElementById("password").value
+      email: document.getElementById("email").value.trim(),
+      password: document.getElementById("password").value.trim()
     };
 
-    helpers.authenticateUser(employeeCredentials).then(function(res) {
-      if (res === "employee") {
-        location.href = "#/update/password";
-      } else if (res === "admin") {
-        location.href = "#/admin"
-      } else {
-        console.log(res);
+    helpers.authenticateUser(employeeCredentials).then(function(nextLocation) {
+      if (nextLocation !== undefined) {
+        location.href = nextLocation;
       }
     });
 

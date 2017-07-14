@@ -5,10 +5,10 @@ var Handbook = React.createClass({
     return (
         <form>
         <div>
-          <img className="page" src="assets/images/SignatureFDInternetAccessPolicy_1.jpeg" alt="" />
+          <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_1.jpeg" alt="" />
         </div>
         <div>
-          <img className="page" src="assets/images/SignatureFDInternetAccessPolicy_2.jpeg" alt="" />
+          <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_2.jpeg" alt="" />
         </div>
 
         <div className="input-field">
@@ -29,7 +29,7 @@ var Handbook = React.createClass({
             value={this.props.appState.FirstName.trim()} 
             onChange={this.props.handleChange} 
             />
-          <img className="page" src="assets/images/SignatureFDInternetAccessPolicy_3.jpeg" alt="" />
+          <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_3.jpeg" alt="" />
         </div>
       </form>
     );

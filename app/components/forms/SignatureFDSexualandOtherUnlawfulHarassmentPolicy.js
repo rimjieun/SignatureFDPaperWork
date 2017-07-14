@@ -6,7 +6,7 @@ var Handbook = React.createClass({
       <form>
       <div>
         <div>
-          <img className="page" src="assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_1.jpeg" alt="" />
+          <img className="page" src="/assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_1.jpeg" alt="" />
         </div>
         <div>
           <div className="input-field">
@@ -27,7 +27,7 @@ var Handbook = React.createClass({
             value={this.props.appState.FirstName.trim()} 
             onChange={this.props.handleChange} 
             />
-          <img className="page" src="assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_2.jpeg" alt="" />
+          <img className="page" src="/assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_2.jpeg" alt="" />
         </div>
       </div>
       </div>
