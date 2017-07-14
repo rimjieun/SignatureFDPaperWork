@@ -57,6 +57,17 @@ var employeeLayout = React.createClass({
   componentDidUpdate: function() {
     // this.runJS();
     console.log(JSON.stringify(this.state, null, 2));
+    <script src="../../../public/bundle.js"></script>
+  },
+
+  handleNav: function(e) {
+    document.querySelector(".sideNavBtn").classList.remove("active");
+    document.
+    navId = parseInt(document.getElementById(e.target.id).getAttribute("data"));
+    nextLink = document.getElementById(e.target.id).getAttribute("href");
+    fileName = " " + nextLink.substr(11) + ".pdf";
+    document.getElementsByClassName("saveBTN").setAttribute("href", nextLink);
+    document.getElementById("downBtn").textContent = fileName; 
   },
 
   handleChange: function(e) {
