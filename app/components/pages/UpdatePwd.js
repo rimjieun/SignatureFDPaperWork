@@ -1,4 +1,5 @@
 var React = require("react");
+// var validator = require("validator");
 
 var helpers = require("../../utils/helpers");
 
@@ -6,17 +7,28 @@ var UpdatePwd = React.createClass({
 
   getInitialState: function() {
     return {
-      "EmailAddress": "",
-      "Password": "",
+      "newPassword": "",
       "ConfirmPassword": ""
     };
   },
 
-  handleSubmit: function(e) {
-    e.preventDefault();
+  handleChange: function(e) {
+    this.setState({[e.target.name]: e.target.value });
+  },
 
-    window.location = "#/employee/welcome";
-      location.reload();
+  handleSubmit: function(e) {
+
+    // if (this.state.newPassword )
+
+    var newPassword = {
+      password: this.state.newPassword
+    };
+
+    helpers.updatePassword(newPassword).then(function(nextLocation) {
+      if (nextLocation !== undefined) {
+        location.href = nextLocation;
+      }
+    });
   },
 
   render: function() {
@@ -28,13 +40,8 @@ var UpdatePwd = React.createClass({
             <form className="col s12">
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="email" type="email" className="validate" />
-                  <label htmlFor="email">Email</label>
-                </div>
-              </div>
-              <div className="row">
-                <div className="input-field col s12">
-                  <input id="passwordNew" type="password" className="validate" />
+                  <input id="passwordNew" type="password" className="validate"
+                  name="newPassword" onChange={this.handleChange} />
                   <label htmlFor="password">Create New Password</label>
                 </div>
               </div>
