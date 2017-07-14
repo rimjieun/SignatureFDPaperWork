@@ -1,6 +1,11 @@
 var React = require("react");
 
 var Handbook = React.createClass({
+
+  componentDidMount: function() {
+    this.props.updateCurrentForm("FormG4");
+  },
+
   render: function() {
     return (
       <div>

@@ -1,6 +1,11 @@
 var React = require("react");
 
 var Handbook = React.createClass({
+
+  componentDidMount: function() {
+    this.props.updateCurrentForm("SignatureFDComputer&NetworkPolicyHandbook");
+  },
+
   render: function() {
     return (
       <form>
@@ -62,7 +67,7 @@ var Handbook = React.createClass({
               left: "11.8%",
               width: "76%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.employee.FirstName} 
             onChange={this.props.handleChange} 
             />
              <input id="Signature" name="Signature"
@@ -72,7 +77,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "40%",
               height: "2%"}}
-            value={this.props.appState.Signature} 
+            value={this.props.appState.employee.Signature} 
             onChange={this.props.handleChange} 
             />
             <input name="Date" type="date"

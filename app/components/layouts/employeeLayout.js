@@ -1,9 +1,9 @@
 var React = require("react");
 var ReactDOMServer = require('react-dom/server');
 var Fitness = require('../forms/PulseFitnessAgreement');
-var FileSaver = require('file-saver');
-var base64Img = require('base64-img');
-var pdfMake = require('pdfmake/build/pdfmake.js');
+// var FileSaver = require('file-saver');
+// var base64Img = require('base64-img');
+// var pdfMake = require('pdfmake/build/pdfmake.js');
 var fonts = require('pdfmake/build/vfs_fonts.js');
 
 
@@ -14,51 +14,56 @@ var employeeLayout = React.createClass({
 
   getInitialState: function() {
     return {
-      Date: "",
-      FirstName: "",
-      LastName: "",
-      Employer: "",
-      SuiteAddress: "",
-      OfficePhone: "",
-      Gender: "",
-      EmailAddress: "",
-      EmergencyContact: "",
-      EmergencyContactRelationshipAndContact: "",
-      SocailSecurityNumber:"",
-      MaritalStatus: "",
-      PrimaryBeneficiary:"",
-      ContingentBenficiary:"",
-      Signature:"",
-      GymAccessCard:""
+      currentForm: "",
+      employee: {
+        Date: "",
+        FirstName: "",
+        LastName: "",
+        Employer: "",
+        SuiteAddress: "",
+        OfficePhone: "",
+        Gender: "",
+        EmailAddress: "",
+        EmergencyContact: "",
+        EmergencyContactRelationshipAndContact: "",
+        SocailSecurityNumber:"",
+        MaritalStatus: "",
+        PrimaryBeneficiary:"",
+        ContingentBenficiary:"",
+        Signature:"",
+        GymAccessCard:""
+      }
     };
   },
 
   componentDidMount: function() {
     helpers.getEmployeeData().then(function(employee) {
       this.setState({
-        Date: employee.data[0].Date,
-        FirstName: employee.data[0].FirstName,
-        LastName: employee.data[0].LastName,
-        Employer: employee.data[0].Employer,
-        SuiteAddress: employee.data[0].SuiteAddress,
-        OfficePhone: employee.data[0].OfficePhone,
-        Gender: employee.data[0].Gender,
-        EmailAddress: employee.data[0].EmailAddress,
-        EmergencyContact: employee.data[0].EmergencyContact,
-        EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact,
-        SocailSecurityNumber: employee.data[0].SocailSecurityNumber,
-        MaritalStatus: employee.data[0].MaritalStatus,
-        PrimaryBeneficiary: employee.data[0].PrimaryBeneficiary,
-        ContingentBenficiary: employee.data[0].ContingentBenficiary,
-        Signature: employee.data[0].Signature,
-        GymAccessCard: employee.data[0].GymAccessCard
+        employee: {
+          Date: employee.data[0].Date,
+          FirstName: employee.data[0].FirstName,
+          LastName: employee.data[0].LastName,
+          Employer: employee.data[0].Employer,
+          SuiteAddress: employee.data[0].SuiteAddress,
+          OfficePhone: employee.data[0].OfficePhone,
+          Gender: employee.data[0].Gender,
+          EmailAddress: employee.data[0].EmailAddress,
+          EmergencyContact: employee.data[0].EmergencyContact,
+          EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact,
+          SocailSecurityNumber: employee.data[0].SocailSecurityNumber,
+          MaritalStatus: employee.data[0].MaritalStatus,
+          PrimaryBeneficiary: employee.data[0].PrimaryBeneficiary,
+          ContingentBenficiary: employee.data[0].ContingentBenficiary,
+          Signature: employee.data[0].Signature,
+          GymAccessCard: employee.data[0].GymAccessCard
+        } 
       });
     }.bind(this));
   },
 
   componentDidUpdate: function() {
     // this.runJS();
-    console.log(JSON.stringify(this.state, null, 2));
+    console.log(JSON.stringify(this.state.employee, null, 2));
     <script src="../../../public/bundle.js"></script>
   },
 
@@ -72,13 +77,21 @@ var employeeLayout = React.createClass({
     document.getElementById("downBtn").textContent = fileName; 
   },
 
+  updateCurrentForm: function(fileName) {
+    if (fileName !== "Welcome") {
+      this.setState({"currentForm": fileName + ".pdf"});
+    } else {
+      document.getElementById("downloadBtn").style.display = "none";
+    }
+  },
+
   handleChange: function(e) {
     this.setState({[e.target.name]: e.target.value });
   },
 
   handleSubmit: function(e) {
     e.preventDefault();
-    helpers.postEmployeeData(this.state).then(function(status) {
+    helpers.postEmployeeData(this.state.employee).then(function(status) {
       console.log(status);
     });
   },
@@ -90,144 +103,145 @@ var employeeLayout = React.createClass({
     });
   },
 
-    printPDF: function(){
+    // printPDF: function(){
 
-        var formWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, { appState: this.state}));
+    //     var formWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, { appState: this.state}));
 
-        const doc = ReactDOMServer.renderToStaticMarkup(<div>{formWithProps}</div>);
+    //     const doc = ReactDOMServer.renderToStaticMarkup(<div>{formWithProps}</div>);
 
-        var canvas = this.refs.printCanvas;
-        canvas.width = 1700;
-        canvas.height = 2200;
-        var ctx = canvas.getContext('2d');
+    //     var canvas = this.refs.printCanvas;
+    //     canvas.width = 1700;
+    //     canvas.height = 2200;
+    //     var ctx = canvas.getContext('2d');
 
-        var textSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">' + '<foreignObject width="100%" height="100%">'+ '<div xmlns="http://www.w3.org/1999/xhtml">' + doc + '</div>' +'</foreignObject>' + '</svg>';
-
-
-        var background = new Image();
-        // Make sure the image is loaded first otherwise nothing will draw.
-        background.onload = function() {
-            ctx.drawImage(background,0,0);
-
-            var textImg = new Image();
-
-            textImg.onload = function() {
-
-                ctx.drawImage(textImg, 0, 0);
-                canvas.toBlob(function(blob) {
-                    FileSaver.saveAs(blob, "fitness.png");
-                });
-            };
-
-            textImg.src = 'data:image/svg+xml;utf8,'+textSvg;
+    //     var textSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">' + '<foreignObject width="100%" height="100%">'+ '<div xmlns="http://www.w3.org/1999/xhtml">' + doc + '</div>' +'</foreignObject>' + '</svg>';
 
 
-        }
+    //     var background = new Image();
+    //     // Make sure the image is loaded first otherwise nothing will draw.
+    //     background.onload = function() {
+    //         ctx.drawImage(background,0,0);
 
-        background.src = "/assets/images/PulseFitnessAgreement_3.jpeg";
+    //         var textImg = new Image();
 
-    },
+    //         textImg.onload = function() {
 
-    pdfMakeOpen: function() {
+    //             ctx.drawImage(textImg, 0, 0);
+    //             canvas.toBlob(function(blob) {
+    //                 FileSaver.saveAs(blob, "fitness.png");
+    //             });
+    //         };
 
-        // var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
-
-        // console.log(data);
-
-        // var docDefinition = {
-        //     background: [{
-        //         image: 'data:image/jpeg;base64,' + data
-        //     }],
-
-        // };
-
-        // pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
-
-        var dd = {
-            content: [
-                {
-                    text: '\n\n',
-                    style: 'subheader'
-                },
-                {
-                    text: 'Acknowledgement of Receipt of the Employee Handbook of SignatureFD, LLC \n\n\n',
-                    style: 'subheader'
-                },
-                {
-                    text: "I hereby acknowledge receipt of a copy of the Firm's Employee Handbook, which I have read and understand. I certify that, to the best of my knowledge, I have complied with these polices and procedures to the extent they have applied to me during the past year. I further understand and acknowledge that any violation of these policies and procedures may subject me to disciplinary action, including termination of employment.\n\n\n",
-                },
-
-                {
-                    columns: [
-                        {
-                            width: 'auto',
-                            alignment: "left",
-                            stack: [
-                                {
-                                    text: "Signature",
-                                    style: "form"
-                                },
-                                {
-                                    text: "Printed Name",
-                                    style: "form"
-                                },
-                                {
-                                    text: "Date",
-                                    style: "form"
-                                }
-
-                            ]
-                        },
-                        {
-                            width: 'auto',
-                            alignment: 'left',
-                            stack: [
-                                {
-                                    style: 'data',
-                                    text: this.state.Signature+"           "
-                                },
-                                {
-                                    style: 'data',
-                                    text: this.state.FirstName+" "+this.state.LastName+"           "
-                                },
-                                {
-                                    style: 'data',
-                                    text: this.state.Date+"           "
-                                }
-                            ]
-                        }
-                    ]
-                }
-
-            ],
-
-            styles: {
-
-                subheader: {
-                    fontSize: 14,
-                    bold: true,
-                    decoration: 'underline',
-                    alignment: 'center'
-
-                },
-                form: {
-                    margin: [240, 0, 0, 8]		},
-                data: {
-                    decoration: "underline",
-                    margin: [10, 0, 0, 8]
-                }
-            }
-        }
+    //         textImg.src = 'data:image/svg+xml;utf8,'+textSvg;
 
 
-        pdfMake.createPdf(dd).download("HandbookAcknowledgement.pdf");
-    },
+    //     }
+
+    //     background.src = "/assets/images/PulseFitnessAgreement_3.jpeg";
+
+    // },
+
+    // pdfMakeOpen: function() {
+
+    //     // var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
+
+    //     // console.log(data);
+
+    //     // var docDefinition = {
+    //     //     background: [{
+    //     //         image: 'data:image/jpeg;base64,' + data
+    //     //     }],
+
+    //     // };
+
+    //     // pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
+
+    //     var dd = {
+    //         content: [
+    //             {
+    //                 text: '\n\n',
+    //                 style: 'subheader'
+    //             },
+    //             {
+    //                 text: 'Acknowledgement of Receipt of the Employee Handbook of SignatureFD, LLC \n\n\n',
+    //                 style: 'subheader'
+    //             },
+    //             {
+    //                 text: "I hereby acknowledge receipt of a copy of the Firm's Employee Handbook, which I have read and understand. I certify that, to the best of my knowledge, I have complied with these polices and procedures to the extent they have applied to me during the past year. I further understand and acknowledge that any violation of these policies and procedures may subject me to disciplinary action, including termination of employment.\n\n\n",
+    //             },
+
+    //             {
+    //                 columns: [
+    //                     {
+    //                         width: 'auto',
+    //                         alignment: "left",
+    //                         stack: [
+    //                             {
+    //                                 text: "Signature",
+    //                                 style: "form"
+    //                             },
+    //                             {
+    //                                 text: "Printed Name",
+    //                                 style: "form"
+    //                             },
+    //                             {
+    //                                 text: "Date",
+    //                                 style: "form"
+    //                             }
+
+    //                         ]
+    //                     },
+    //                     {
+    //                         width: 'auto',
+    //                         alignment: 'left',
+    //                         stack: [
+    //                             {
+    //                                 style: 'data',
+    //                                 text: this.state.employee.Signature+"           "
+    //                             },
+    //                             {
+    //                                 style: 'data',
+    //                                 text: this.state.employee.FirstName+" "+this.state.employee.LastName+"           "
+    //                             },
+    //                             {
+    //                                 style: 'data',
+    //                                 text: this.state.employee.Date+"           "
+    //                             }
+    //                         ]
+    //                     }
+    //                 ]
+    //             }
+
+    //         ],
+
+    //         styles: {
+
+    //             subheader: {
+    //                 fontSize: 14,
+    //                 bold: true,
+    //                 decoration: 'underline',
+    //                 alignment: 'center'
+
+    //             },
+    //             form: {
+    //                 margin: [240, 0, 0, 8]		},
+    //             data: {
+    //                 decoration: "underline",
+    //                 margin: [10, 0, 0, 8]
+    //             }
+    //         }
+    //     }
+
+
+    //     pdfMake.createPdf(dd).download("HandbookAcknowledgement.pdf");
+    // },
 
   render: function() {
 
     var childrenWithProps = React.Children.map(this.props.children,
       (child) => React.cloneElement(child, {
         appState: this.state,
+        updateCurrentForm: this.updateCurrentForm,
         handleChange: this.handleChange,
         handleSubmit: this.handleSubmit
       })
@@ -241,7 +255,7 @@ var employeeLayout = React.createClass({
                 <ul className="collapsible collapsible-accordion">
                   <li className="bold active">
                     <a className="collapsible-header active waves-effect waves-brown FDbrownDark">
-                      <span className="FDblueText">{this.state.FirstName + " " + this.state.LastName}</span>
+                      <span className="FDblueText">{this.state.employee.FirstName + " " + this.state.employee.LastName}</span>
                     </a>
                     <div className="collapsible-body" style={{display: "block"}}>
                       <ul>
@@ -287,7 +301,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a className="list-group-item" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i></a>
+                          <a id="downloadBtn" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{this.state.currentForm}</a>
                         </ul>
                       </div>
                     </div>

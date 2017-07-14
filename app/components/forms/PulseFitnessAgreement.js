@@ -2,6 +2,10 @@ var React = require("react");
 
 var Fitness = React.createClass({
 
+  componentDidMount: function() {
+    this.props.updateCurrentForm("PulseFitnessAgreement");
+  },
+
   render: function() {
     return (
       <form>
@@ -27,7 +31,7 @@ var Fitness = React.createClass({
               left: "52%",
               width: "31.3%",
               height: "2%"}}
-            value={this.props.appState.Signature} 
+            value={this.props.appState.employee.Signature} 
             onChange={this.props.handleChange} 
             />
           <input id="fname" name="FirstName"
@@ -37,7 +41,7 @@ var Fitness = React.createClass({
               left: "52.8%",
               width: "15%",
               height: "2%"}}
-            value={this.props.appState.FirstName} 
+            value={this.props.appState.employee.FirstName} 
             onChange={this.props.handleChange} 
             />
             <input id="lname" name="LastName"
@@ -47,7 +51,7 @@ var Fitness = React.createClass({
               left: "67.8%",
               width: "15%",
               height: "2%"}}
-            value={this.props.appState.LastName} 
+            value={this.props.appState.employee.LastName} 
             onChange={this.props.handleChange} 
             />
           <input id="employer"  name="Employer"
@@ -57,7 +61,7 @@ var Fitness = React.createClass({
               left: "55%",
               width: "28%",
               height: "2%"}}
-            value={this.props.appState.Employer}
+            value={this.props.appState.employee.Employer}
             onChange={this.props.handleChange} 
             />
           <input id="suiteAddress" name="SuiteAddress"
@@ -67,7 +71,7 @@ var Fitness = React.createClass({
               left: "57%",
               width: "26%",
               height: "2%"}}
-            value={this.props.appState.SuiteAddress}
+            value={this.props.appState.employee.SuiteAddress}
             onChange={this.props.handleChange} 
             />
           <input id="officePhone" name="OfficePhone"
@@ -77,7 +81,7 @@ var Fitness = React.createClass({
               left: "65.5%",
               width: "17.5%",
               height: "2%"}}
-            value={this.props.appState.OfficePhone}
+            value={this.props.appState.employee.OfficePhone}
             onChange={this.props.handleChange} 
             />
           <input id="GymAccessCard" name="GymAccessCard"
@@ -87,7 +91,7 @@ var Fitness = React.createClass({
               left: "78.2%",
               width: "4.7%",
               height: "2%"}}
-            value={this.props.appState.GymAccessCard}
+            value={this.props.appState.employee.GymAccessCard}
             onChange={this.props.handleChange} 
             />
             <input id="gender" name="Gender"
@@ -97,7 +101,7 @@ var Fitness = React.createClass({
               left: "75.2%",
               width: "8%",
               height: "2%"}}
-            value={this.props.appState.Gender}
+            value={this.props.appState.employee.Gender}
             onChange={this.props.handleChange} 
             />
           <input id="email"  name="EmailAddress"
@@ -107,7 +111,7 @@ var Fitness = React.createClass({
               left: "57%",
               width: "26%",
               height: "2%"}}
-            value={this.props.appState.EmailAddress}
+            value={this.props.appState.employee.EmailAddress}
             onChange={this.props.handleChange} 
             />
           <input type="date" name="Date"
@@ -117,7 +121,7 @@ var Fitness = React.createClass({
               left: "54.7%",
               width: "28.5%",
               height: "2%"}}
-            value={this.props.appState.Date}
+            value={this.props.appState.employee.Date}
             onChange={this.props.handleChange} 
             />
           <input id="emergencyContact" name="EmergencyContact"
@@ -127,7 +131,7 @@ var Fitness = React.createClass({
               left: "40%",
               width: "43%",
               height: "2%"}}
-            value={this.props.appState.EmergencyContact}
+            value={this.props.appState.employee.EmergencyContact}
             onChange={this.props.handleChange} 
             />
           <input id="emergencyContactRelationship&Phone" name="EmergencyContactRelationshipAndContact"
@@ -137,7 +141,7 @@ var Fitness = React.createClass({
               left: "33%",
               width: "50%",
               height: "2%"}}
-            value={this.props.appState.EmergencyContactRelationshipAndContact}
+            value={this.props.appState.employee.EmergencyContactRelationshipAndContact}
             onChange={this.props.handleChange} 
             />
           <img className="page" src="/assets/images/PulseFitnessAgreement_3.jpeg" alt="" />
