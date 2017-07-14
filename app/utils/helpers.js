@@ -33,16 +33,6 @@ var helpers = {
     });
   },
 
-  validateEmpAccessToken: function() {
-    var empAccessToken = getCookie("empAccessToken");
-
-    console.log(empAccessToken);
-
-    return axios.get("/update/password").then(function(res) {
-      return res;
-    });
-  },
-
   updatePassword: function(data) {
     return ("poop");
   },
