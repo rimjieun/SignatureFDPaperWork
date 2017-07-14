@@ -4,7 +4,7 @@ var Fitness = React.createClass({
 
   render: function() {
     return (
-      <form>
+      <form id="aForm">
         <div className="input-field">
           <input name="Date" type="date"
             className="date absolute"
@@ -13,7 +13,7 @@ var Fitness = React.createClass({
               left: "49%",
               width: "20%",
               height: "2%"}} />
-          <img className="page" src="assets/images/PulseFitnessAgreement_1.jpeg" alt="" />
+                <img className="page" src="assets/images/PulseFitnessAgreement_1.jpeg" alt="" />
         </div>
         <div>
           <img className="page" src="assets/images/PulseFitnessAgreement_2.jpeg" alt="" />
