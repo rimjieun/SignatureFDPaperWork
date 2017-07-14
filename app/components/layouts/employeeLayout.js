@@ -2,8 +2,8 @@ var React = require("react");
 var ReactDOMServer = require('react-dom/server');
 var Fitness = require('../forms/PulseFitnessAgreement');
 var FileSaver = require('file-saver');
-var base64Img = require('base64-img');
 var pdfMake = require('pdfmake/build/pdfmake.js');
+var fonts = require('pdfmake/build/vfs_fonts.js')
 
 
 
@@ -89,43 +89,6 @@ var employeeLayout = React.createClass({
     });
   },
 
-
-    printPDF: function(){
-
-        const doc = ReactDOMServer.renderToString(<Fitness />);
-
-        var canvas = document.getElementById('canvas');
-        var ctx = canvas.getContext('2d');
-
-        var data = '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">' +
-            '<foreignObject width="100%" height="100%">' +
-            doc +
-            '</foreignObject>' +
-            '</svg>';
-
-        var DOMURL = window.URL || window.webkitURL || window;
-
-        var img = new Image();
-        var svg = new Blob([data], {type: 'image/svg+xml'});
-        var url = DOMURL.createObjectURL(svg);
-
-        img.onload = function() {
-            ctx.drawImage(img, 0, 0);
-            DOMURL.revokeObjectURL(url);
-        };
-
-        img.src = url;
-
-        canvas.toBlob(function(blob) {
-            FileSaver.saveAs(blob, "fitness.png");
-        });
-
-    },
-
-  runJS: function() {
-
-  },
-
     printPDF: function(){
 
         var formWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, { appState: this.state}));
@@ -165,18 +128,85 @@ var employeeLayout = React.createClass({
     },
 
     pdfMakeOpen: function() {
-        var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
 
-        console.log(data);
+        var dd = {
+            content: [
+                {
+                    text: '\n\n',
+                    style: 'subheader'
+                },
+                {
+                    text: 'Acknowledgement of Receipt of the Employee Handbook of SignatureFD, LLC \n\n\n',
+                    style: 'subheader'
+                },
+                {
+                    text: "I hereby acknowledge receipt of a copy of the Firm's Employee Handbook, which I have read and understand. I certify that, to the best of my knowledge, I have complied with these polices and procedures to the extent they have applied to me during the past year. I further understand and acknowledge that any violation of these policies and procedures may subject me to disciplinary action, including termination of employment.\n\n\n",
+                },
 
-        var docDefinition = {
-            background: [{
-                image: 'data:image/jpeg;base64,' + data
-            }],
+                {
+                    columns: [
+                        {
+                            width: 'auto',
+                            alignment: "left",
+                            stack: [
+                                {
+                                    text: "Signature",
+                                    style: "form"
+                                },
+                                {
+                                    text: "Printed Name",
+                                    style: "form"
+                                },
+                                {
+                                    text: "Date",
+                                    style: "form"
+                                }
 
-        };
+                            ]
+                        },
+                        {
+                            width: 'auto',
+                            alignment: 'left',
+                            stack: [
+                                {
+                                    style: 'data',
+                                    text: this.state.Signature+"           "
+                                },
+                                {
+                                    style: 'data',
+                                    text: this.state.FirstName+" "+this.state.LastName+"           "
+                                },
+                                {
+                                    style: 'data',
+                                    text: this.state.Date+"           "
+                                }
+                            ]
+                        }
+                    ]
+                }
 
-        pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
+            ],
+
+            styles: {
+
+                subheader: {
+                    fontSize: 14,
+                    bold: true,
+                    decoration: 'underline',
+                    alignment: 'center'
+
+                },
+                form: {
+                    margin: [240, 0, 0, 8]		},
+                data: {
+                    decoration: "underline",
+                    margin: [10, 0, 0, 8]
+                }
+            }
+        }
+
+
+        pdfMake.createPdf(dd).download("HandbookAcknowledgement.pdf");
     },
 
   render: function() {
@@ -243,7 +273,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true" onClick={this.pdfMakeOpen}><span id="downBtn" ></span></i></a>
+                          <a className="list-group-item" href="/assets/images/HandbookAcknowledgement.pdf"><i className="fa fa-download fa-2x" aria-hidden="true"></i></a>
                         </ul>
                       </div>
                     </div>

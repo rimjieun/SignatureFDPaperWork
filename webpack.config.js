@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
 
   // This is the entry point or start of our react applicaton
@@ -7,6 +9,17 @@ module.exports = {
   output: {
     filename: "public/bundle.js"
   },
+  node: {
+      fs: 'empty',
+      net: 'empty',
+      tls: 'empty',
+      'crypto': 'empty'
+  },
+    resolve: {
+        alias: {
+            fs: path.join(__dirname, './src/browser-extensions/virtual-fs.js')
+        }
+    },
   // This section desribes the transformations we will perform
   module: {
     loaders: [
@@ -22,7 +35,7 @@ module.exports = {
           presets: ["react", "es2015"]
         }
       }
-    ]
+    ],
   },
   // This lets us debug our react code in chrome dev tools. Errors will have lines and file names
   // Without this the console says all errors are coming from just coming from bundle.js
