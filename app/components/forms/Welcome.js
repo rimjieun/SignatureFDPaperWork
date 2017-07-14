@@ -2,6 +2,10 @@ var React = require("react");
 
 var Welcome = React.createClass({
 
+  componentDidMount: function() {
+    this.props.updateCurrentForm("Welcome");
+  },
+
   render: function() {
     return (
       <div className="container">

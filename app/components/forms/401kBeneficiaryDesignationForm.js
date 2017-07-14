@@ -1,6 +1,11 @@
 var React = require("react");
 
 var Handbook = React.createClass({
+
+  componentDidMount: function() {
+    this.props.updateCurrentForm("401kBeneficiaryDesignationForm");
+  },
+
     render: function () {
         return (
             <form>
@@ -13,7 +18,7 @@ var Handbook = React.createClass({
               left: "21%",
               width: "70.3%",
               height: "2%"}}
-            value={this.props.appState.FirstName} 
+            value={this.props.appState.employee.FirstName} 
             onChange={this.props.handleChange} 
             />
           <input id="socialSecurity" name="SocailSecurityNumber"
@@ -23,7 +28,7 @@ var Handbook = React.createClass({
               left: "24.8%",
               width: "25.3%",
               height: "2%"}}
-            value={this.props.appState.SocailSecurityNumber} 
+            value={this.props.appState.employee.SocailSecurityNumber} 
             onChange={this.props.handleChange} 
             />
                <input id="MaritalStatus" name="MaritalStatus"
@@ -33,7 +38,7 @@ var Handbook = React.createClass({
               left: "68%",
               width: "25.3%",
               height: "2%"}}
-            value={this.props.appState.MaritalStatus} 
+            value={this.props.appState.employee.MaritalStatus} 
             onChange={this.props.handleChange} 
             />
          <textarea id="PrimaryBeneficiary" name="PrimaryBeneficiary"
@@ -43,7 +48,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "77%",
               height: "8%"}}
-            value={this.props.appState.PrimaryBeneficiary} 
+            value={this.props.appState.employee.PrimaryBeneficiary} 
             onChange={this.props.handleChange} 
             />
                  <textarea id="ContingentBenficiary" name="ContingentBenficiary"
@@ -53,7 +58,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "77%",
               height: "8%"}}
-            value={this.props.appState.ContingentBenficiary} 
+            value={this.props.appState.employee.ContingentBenficiary} 
             onChange={this.props.handleChange} 
              />
             <input name="Date" type="date"
@@ -70,7 +75,7 @@ var Handbook = React.createClass({
               left: "53%",
               width: "39%",
               height: "2%"}}
-            value={this.props.appState.FirstName} 
+            value={this.props.appState.employee.FirstName} 
             onChange={this.props.handleChange} 
            
             />

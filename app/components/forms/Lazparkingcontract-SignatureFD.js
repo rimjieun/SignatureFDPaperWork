@@ -1,6 +1,11 @@
 var React = require("react");
 
 var Handbook = React.createClass({
+
+  componentDidMount: function() {
+    this.props.updateCurrentForm("Lazparkingcontract-SignatureFD");
+  },
+
   render: function() {
     return (
       <div>

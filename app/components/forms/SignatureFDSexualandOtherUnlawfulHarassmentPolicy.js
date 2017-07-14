@@ -1,6 +1,11 @@
 var React = require("react");
 
 var Handbook = React.createClass({
+
+  componentDidMount: function() {
+    this.props.updateCurrentForm("SignatureFDSexualandOtherUnlawfulHarassmentPolicy");
+  },
+
   render: function() {
     return (
       <form>
@@ -17,7 +22,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "40%",
               height: "2%"}}
-            value={this.props.appState.Signature} 
+            value={this.props.appState.employee.Signature} 
             onChange={this.props.handleChange} 
             />
           <input name="Date" type="date"
@@ -34,7 +39,7 @@ var Handbook = React.createClass({
               left: "11.9%",
               width: "76%",
               height: "2%"}}
-            value={this.props.appState.FirstName} 
+            value={this.props.appState.employee.FirstName} 
             onChange={this.props.handleChange} 
             />
           <img className="page" src="/assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_2.jpeg" alt="" />
