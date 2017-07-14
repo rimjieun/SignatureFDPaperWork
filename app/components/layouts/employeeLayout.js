@@ -273,7 +273,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a className="list-group-item" href="/assets/images/HandbookAcknowledgement.pdf"><i className="fa fa-download fa-2x" aria-hidden="true"></i></a>
+                          <a className="list-group-item" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i></a>
                         </ul>
                       </div>
                     </div>
