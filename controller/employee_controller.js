@@ -8,14 +8,14 @@ var Admin = require("./../models/admin");
 var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 router.post("/update/password", function(req, res) {
-  
+
   bcrypt.genSalt(10, function(err, salt) {
     if (err) {
       res.send(err);
     } else {
       bcrypt.hash(req.body.password, salt, function(err, hash) {
         User.findOneAndUpdate({
-          "EmailAddress": req.body.email
+          "EmailAddress": req.user.employee.email
         }, {
           "Password": hash,
           "isNewEmployee": false
