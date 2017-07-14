@@ -2,8 +2,9 @@ var React = require("react");
 var ReactDOMServer = require('react-dom/server');
 var Fitness = require('../forms/PulseFitnessAgreement');
 var FileSaver = require('file-saver');
+var base64Img = require('base64-img');
 var pdfMake = require('pdfmake/build/pdfmake.js');
-var fonts = require('pdfmake/build/vfs_fonts.js')
+var fonts = require('pdfmake/build/vfs_fonts.js');
 
 
 
@@ -128,6 +129,19 @@ var employeeLayout = React.createClass({
     },
 
     pdfMakeOpen: function() {
+
+        // var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
+
+        // console.log(data);
+
+        // var docDefinition = {
+        //     background: [{
+        //         image: 'data:image/jpeg;base64,' + data
+        //     }],
+
+        // };
+
+        // pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
 
         var dd = {
             content: [
