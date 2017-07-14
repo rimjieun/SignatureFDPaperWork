@@ -53,8 +53,8 @@ welcome();
         navId = 1 + parseInt($(self).attr('data'));
         nextLink = $('#'+ navId).attr('href');
         thisLink = $('#'+ (navId - 1)).attr('href')
-        // console.log(navId);
-        // console.log(nextLink);
+        console.log(navId);
+        console.log(nextLink);
         fileName = " " + thisLink.substr(11) + ".pdf";
         $('.saveBTN').attr('href',nextLink);
         $('#downBtn').text(fileName);
