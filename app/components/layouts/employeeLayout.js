@@ -1,8 +1,7 @@
 var React = require("react");
 var ReactDOMServer = require('react-dom/server');
-var Fitness = require('../forms/Fitness');
+var Fitness = require('../forms/PulseFitnessAgreement');
 var FileSaver = require('file-saver');
-var $ = require('jquery');
 
 
 var helpers = require("../../utils/helpers");
@@ -87,6 +86,7 @@ var employeeLayout = React.createClass({
     });
   },
 
+
     printPDF: function(){
 
         const doc = ReactDOMServer.renderToString(<Fitness />);
@@ -121,9 +121,45 @@ var employeeLayout = React.createClass({
 
   runJS: function() {
 
-
-
   },
+
+    printPDF: function(){
+
+        var formWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, { appState: this.state}));
+
+        const doc = ReactDOMServer.renderToStaticMarkup(<div>{formWithProps}</div>);
+
+        var canvas = this.refs.printCanvas;
+        canvas.width = 1700;
+        canvas.height = 2200;
+        var ctx = canvas.getContext('2d');
+
+        var textSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">' + '<foreignObject width="100%" height="100%">'+ '<div xmlns="http://www.w3.org/1999/xhtml">' + doc + '</div>' +'</foreignObject>' + '</svg>';
+
+
+        var background = new Image();
+        // Make sure the image is loaded first otherwise nothing will draw.
+        background.onload = function() {
+            ctx.drawImage(background,0,0);
+
+            var textImg = new Image();
+
+            textImg.onload = function() {
+
+                ctx.drawImage(textImg, 0, 0);
+                canvas.toBlob(function(blob) {
+                    FileSaver.saveAs(blob, "fitness.png");
+                });
+            };
+
+            textImg.src = 'data:image/svg+xml;utf8,'+textSvg;
+
+
+        }
+
+        background.src = "/assets/images/PulseFitnessAgreement_3.jpeg";
+
+    },
 
   render: function() {
 
@@ -189,7 +225,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true"><span id="downBtn" ></span></i></a>
+                          <a className="list-group-item" href="#"><i className="fa fa-download fa-2x" aria-hidden="true" onClick={this.runJS}><span id="downBtn" ></span></i></a>
                         </ul>
                       </div>
                     </div>

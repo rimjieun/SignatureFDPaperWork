@@ -65,6 +65,16 @@ var Handbook = React.createClass({
             value={this.props.appState.FirstName.trim()} 
             onChange={this.props.handleChange} 
             />
+             <input id="Signature" name="Signature"
+            className="absolute" type="text"
+            style={{
+              top: "85%",
+              left: "11.5%",
+              width: "40%",
+              height: "2%"}}
+            value={this.props.appState.Signature} 
+            onChange={this.props.handleChange} 
+            />
             <input name="Date" type="date"
             className="date absolute"
             style={{

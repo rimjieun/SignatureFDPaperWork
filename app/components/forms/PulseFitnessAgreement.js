@@ -4,7 +4,7 @@ var Fitness = React.createClass({
 
   render: function() {
     return (
-      <form>
+      <form id="aForm">
         <div className="input-field">
           <input name="Date" type="date"
             className="date absolute"
@@ -14,6 +14,7 @@ var Fitness = React.createClass({
               width: "20%",
               height: "2%"}} />
           <img className="page" src="/assets/images/PulseFitnessAgreement_1.jpeg" alt="" />
+
         </div>
         <div>
           <img className="page" src="/assets/images/PulseFitnessAgreement_2.jpeg" alt="" />
@@ -26,7 +27,7 @@ var Fitness = React.createClass({
               left: "52%",
               width: "31.3%",
               height: "2%"}}
-            value={this.props.appState.Signature.trim()} 
+            value={this.props.appState.Signature} 
             onChange={this.props.handleChange} 
             />
           <input id="fname" name="FirstName"
@@ -36,7 +37,7 @@ var Fitness = React.createClass({
               left: "52.8%",
               width: "15%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.FirstName} 
             onChange={this.props.handleChange} 
             />
             <input id="lname" name="LastName"
@@ -46,7 +47,7 @@ var Fitness = React.createClass({
               left: "67.8%",
               width: "15%",
               height: "2%"}}
-            value={this.props.appState.LastName.trim()} 
+            value={this.props.appState.LastName} 
             onChange={this.props.handleChange} 
             />
           <input id="employer"  name="Employer"
@@ -56,7 +57,7 @@ var Fitness = React.createClass({
               left: "55%",
               width: "28%",
               height: "2%"}}
-            value={this.props.appState.Employer.trim()}
+            value={this.props.appState.Employer}
             onChange={this.props.handleChange} 
             />
           <input id="suiteAddress" name="SuiteAddress"
@@ -66,7 +67,7 @@ var Fitness = React.createClass({
               left: "57%",
               width: "26%",
               height: "2%"}}
-            value={this.props.appState.SuiteAddress.trim()}
+            value={this.props.appState.SuiteAddress}
             onChange={this.props.handleChange} 
             />
           <input id="officePhone" name="OfficePhone"
@@ -76,7 +77,7 @@ var Fitness = React.createClass({
               left: "65.5%",
               width: "17.5%",
               height: "2%"}}
-            value={this.props.appState.OfficePhone.trim()}
+            value={this.props.appState.OfficePhone}
             onChange={this.props.handleChange} 
             />
           <input id="GymAccessCard" name="GymAccessCard"
@@ -86,7 +87,7 @@ var Fitness = React.createClass({
               left: "78.2%",
               width: "4.7%",
               height: "2%"}}
-            value={this.props.appState.GymAccessCard.trim()}
+            value={this.props.appState.GymAccessCard}
             onChange={this.props.handleChange} 
             />
             <input id="gender" name="Gender"
@@ -96,7 +97,7 @@ var Fitness = React.createClass({
               left: "75.2%",
               width: "8%",
               height: "2%"}}
-            value={this.props.appState.Gender.trim()}
+            value={this.props.appState.Gender}
             onChange={this.props.handleChange} 
             />
           <input id="email"  name="EmailAddress"
@@ -106,7 +107,7 @@ var Fitness = React.createClass({
               left: "57%",
               width: "26%",
               height: "2%"}}
-            value={this.props.appState.EmailAddress.trim()}
+            value={this.props.appState.EmailAddress}
             onChange={this.props.handleChange} 
             />
           <input type="date" name="Date"
@@ -116,7 +117,7 @@ var Fitness = React.createClass({
               left: "54.7%",
               width: "28.5%",
               height: "2%"}}
-            value={this.props.appState.Date.trim()}
+            value={this.props.appState.Date}
             onChange={this.props.handleChange} 
             />
           <input id="emergencyContact" name="EmergencyContact"
