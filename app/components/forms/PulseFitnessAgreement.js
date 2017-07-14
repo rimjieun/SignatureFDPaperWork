@@ -4,7 +4,7 @@ var Fitness = React.createClass({
 
   render: function() {
     return (
-      <form id="aForm">
+      <form>
         <div className="input-field">
           <input name="Date" type="date"
             className="date absolute"
