@@ -4,13 +4,6 @@ var helpers = require("../../utils/helpers");
 
 var Login = React.createClass({
 
-  getInitialState: function() {
-    return {
-      "EmailAddress": "",
-      "Password": ""
-    };
-  },
-
   handleSubmit: function(e) {
 
     var employeeCredentials = {

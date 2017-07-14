@@ -8,6 +8,9 @@ var Admin = require("./../models/admin");
 var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 authRouter.get("/login", function(req, res, next) {
+  res.clearCookie("empToken");
+  res.clearCookie("adminToken");
+  res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
   res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
