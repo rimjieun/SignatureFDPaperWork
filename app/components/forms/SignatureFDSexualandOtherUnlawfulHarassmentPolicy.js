@@ -10,6 +10,16 @@ var Handbook = React.createClass({
         </div>
         <div>
           <div className="input-field">
+          <input id="Signature" name="Signature"
+            className="absolute" type="text"
+            style={{
+              top: "53.1%",
+              left: "11.5%",
+              width: "40%",
+              height: "2%"}}
+            value={this.props.appState.Signature} 
+            onChange={this.props.handleChange} 
+            />
           <input name="Date" type="date"
             className="date absolute"
             style={{
@@ -24,7 +34,7 @@ var Handbook = React.createClass({
               left: "11.9%",
               width: "76%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.FirstName} 
             onChange={this.props.handleChange} 
             />
           <img className="page" src="assets/images/SignatureFDSexualandOtherUnlawfulHarassmentPolicy_2.jpeg" alt="" />

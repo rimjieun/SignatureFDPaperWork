@@ -12,7 +12,7 @@ var Handbook = React.createClass({
               left: "51%",
               width: "28.5%",
               height: "2%"}}
-            value={this.props.appState.Signature.trim()} 
+            value={this.props.appState.Signature} 
             onChange={this.props.handleChange} 
             />
              <input id="name" name="FirstName"
@@ -22,7 +22,7 @@ var Handbook = React.createClass({
               left: "53.9%",
               width: "25%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.FirstName} 
             onChange={this.props.handleChange} 
             />
             <input name="Date" type="date"

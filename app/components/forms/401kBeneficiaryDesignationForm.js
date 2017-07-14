@@ -13,7 +13,7 @@ var Handbook = React.createClass({
               left: "21%",
               width: "70.3%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.FirstName} 
             onChange={this.props.handleChange} 
             />
           <input id="socialSecurity" name="SocailSecurityNumber"
@@ -23,7 +23,7 @@ var Handbook = React.createClass({
               left: "24.8%",
               width: "25.3%",
               height: "2%"}}
-            value={this.props.appState.SocailSecurityNumber.trim()} 
+            value={this.props.appState.SocailSecurityNumber} 
             onChange={this.props.handleChange} 
             />
                <input id="MaritalStatus" name="MaritalStatus"
@@ -33,7 +33,7 @@ var Handbook = React.createClass({
               left: "68%",
               width: "25.3%",
               height: "2%"}}
-            value={this.props.appState.MaritalStatus.trim()} 
+            value={this.props.appState.MaritalStatus} 
             onChange={this.props.handleChange} 
             />
          <textarea id="PrimaryBeneficiary" name="PrimaryBeneficiary"
@@ -43,7 +43,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "77%",
               height: "8%"}}
-            value={this.props.appState.PrimaryBeneficiary.trim()} 
+            value={this.props.appState.PrimaryBeneficiary} 
             onChange={this.props.handleChange} 
             />
                  <textarea id="ContingentBenficiary" name="ContingentBenficiary"
@@ -53,7 +53,7 @@ var Handbook = React.createClass({
               left: "11.5%",
               width: "77%",
               height: "8%"}}
-            value={this.props.appState.ContingentBenficiary.trim()} 
+            value={this.props.appState.ContingentBenficiary} 
             onChange={this.props.handleChange} 
              />
             <input name="Date" type="date"
@@ -70,7 +70,7 @@ var Handbook = React.createClass({
               left: "53%",
               width: "39%",
               height: "2%"}}
-            value={this.props.appState.FirstName.trim()} 
+            value={this.props.appState.FirstName} 
             onChange={this.props.handleChange} 
            
             />
