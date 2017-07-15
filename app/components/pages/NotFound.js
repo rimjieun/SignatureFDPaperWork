@@ -9,7 +9,7 @@ var NotFound = React.createClass({
         <div className="container">
           <div className="row"></div>
           <div className="row">
-            <h3>Page not found.</h3>
+            Page not found. Click <a href="/">here</a> to go to log in page.
           </div>
         </div>
       </div>
