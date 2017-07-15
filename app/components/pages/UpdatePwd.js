@@ -43,15 +43,15 @@ var UpdatePwd = React.createClass({
           }
         });
       } else {
-        console.log("Passwords do not match.");
+        console.log("Password must be at least 8 characters long and must contain the following:");
+        console.log("- At least one lowercase letter.");
+        console.log("- At least one uppercase letter.");
+        console.log("- At least one numerical digit.");
+        console.log("- At least one special character.");
+        console.log("- No spaces.");
       }
     } else {
-      console.log("Password must be at least 8 characters long and must contain the following:");
-      console.log("- At least one lowercase letter.");
-      console.log("- At least one uppercase letter.");
-      console.log("- At least one numerical digit.");
-      console.log("- At least one special character.");
-      console.log("- No spaces.");
+      console.log("Passwords do not match.");
     }
   },
 
