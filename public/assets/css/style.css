@@ -44,11 +44,12 @@ header, main, footer {
 
 .navbar-fixed nav {
     position: fixed;
-    height: 140px;
+    height: 143.3px;
 }
-footer{
-    height: 440px;
-}
+
+/*footer{
+    height: 400px;
+}*/
 
 .content {
     min-height: calc(100vh - 440px);
@@ -198,6 +199,7 @@ background: white;
     font-size: 125%
 }
 
+/*Extra styling by Jieun*/
 #nav-side::-webkit-scrollbar {
   display: none;
 }
@@ -218,4 +220,8 @@ background: white;
 
 .fa-times-circle {
   color: #ff3333;
+}
+
+p {
+  font-size: 12px;
 }

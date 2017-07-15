@@ -8,8 +8,15 @@ var NotFound = React.createClass({
       <div>
         <div className="container">
           <div className="row"></div>
-          <div className="row">
-            Page not found. Click <a href="/">here</a> to go to log in page.
+          <div className="row"></div>
+          <div className="row" style={{color: "#564648"}}>
+            <div className="row col s12">
+              <h4>Page not found.</h4>
+            </div>
+            <div className="row col s12">
+              Click <a href="/">here</a> to go to log in page.
+            </div>
+            <div className="row"></div>
           </div>
         </div>
       </div>

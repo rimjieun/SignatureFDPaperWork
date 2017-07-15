@@ -25,6 +25,7 @@ var Login = React.createClass({
       <div>
         <div className="container">
           <div className="row"></div>
+          <div className="row"></div>
           <div className="row">
             <form className="col s12">
               <div className="row">

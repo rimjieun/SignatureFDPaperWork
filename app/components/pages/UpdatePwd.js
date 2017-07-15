@@ -91,6 +91,7 @@ var UpdatePwd = React.createClass({
                 - At least one special character<br />
                 - No spaces
               </div>
+              <div className="row"></div>
               <div className="row">
                 <div className="input-field col s12 createPwd">
                   <input id="passwordNew" type="password" className="validate"

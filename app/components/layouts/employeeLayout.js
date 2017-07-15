@@ -15,6 +15,7 @@ var employeeLayout = React.createClass({
   getInitialState: function() {
     return {
       currentForm: "",
+      fullName: "",
       employee: {
         Date: "",
         FirstName: "",
@@ -39,6 +40,7 @@ var employeeLayout = React.createClass({
   componentDidMount: function() {
     helpers.getEmployeeData().then(function(employee) {
       this.setState({
+        fullName: employee.data.FirstName + " " + employee.data.LastName,
         employee: {
           Date: employee.data.Date,
           FirstName: employee.data.FirstName,
@@ -270,7 +272,7 @@ var employeeLayout = React.createClass({
                 <ul className="collapsible collapsible-accordion">
                   <li className="bold active">
                     <a className="collapsible-header active waves-effect waves-brown FDbrownDark">
-                      <span className="FDblueText">{this.state.employee.FirstName + " " + this.state.employee.LastName}</span>
+                      <span className="FDblueText">{this.state.fullName}</span>
                     </a>
                     <div className="collapsible-body" style={{display: "block"}}>
                       <ul>
