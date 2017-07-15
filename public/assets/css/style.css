@@ -201,3 +201,21 @@ background: white;
 #nav-side::-webkit-scrollbar {
   display: none;
 }
+
+.createPwd {
+  position: relative;
+}
+
+.pwdIcon {
+  font-size: 30px;
+  position: absolute;
+  right: 30px;
+}
+
+.fa-check-circle {
+  color: #248f24;
+}
+
+.fa-times-circle {
+  color: #ff3333;
+}
