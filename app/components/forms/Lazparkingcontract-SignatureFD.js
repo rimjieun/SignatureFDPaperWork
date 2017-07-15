@@ -3,7 +3,9 @@ var React = require("react");
 var Handbook = React.createClass({
 
   componentDidMount: function() {
-    this.props.updateCurrentForm("Lazparkingcontract-SignatureFD");
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
   },
 
   render: function() {

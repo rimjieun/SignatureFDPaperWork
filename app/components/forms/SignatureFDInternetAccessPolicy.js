@@ -3,20 +3,20 @@ var React = require("react");
 var Handbook = React.createClass({
 
   componentDidMount: function() {
-      this.props.updateCurrentForm("SignatureFDInternetAccessPolicy");
-    },
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
+  },
 
   render: function() {
-
     return (
-        <form>
+      <form>
         <div>
           <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_1.jpeg" alt="" />
         </div>
         <div>
           <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_2.jpeg" alt="" />
         </div>
-
         <div className="input-field">
           <input id="Signature" name="Signature"
             className="absolute" type="text"
@@ -26,8 +26,7 @@ var Handbook = React.createClass({
               width: "40%",
               height: "2%"}}
             value={this.props.appState.employee.Signature} 
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input name="Date" type="date"
             className="date absolute"
             style={{
@@ -35,7 +34,7 @@ var Handbook = React.createClass({
               left: "53%",
               width: "35.3%",
               height: "2%"}} />
-                   <input id="name" name="FirstName"
+          <input id="name" name="FirstName"
             className="absolute" type="text"
             style={{
               top: "66.6%",
@@ -43,8 +42,7 @@ var Handbook = React.createClass({
               width: "77%",
               height: "2%"}}
             value={this.props.appState.employee.FirstName} 
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <img className="page" src="/assets/images/SignatureFDInternetAccessPolicy_3.jpeg" alt="" />
         </div>
       </form>

@@ -3,12 +3,14 @@ var React = require("react");
 var Handbook = React.createClass({
 
   componentDidMount: function() {
-    this.props.updateCurrentForm("SignatureFDReceiptAcknowledgement-EmployeeHandbook");
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
   },
 
   render: function() {
     return (
-        <form>
+      <form>
         <div className="input-field">
           <input id="Signature" name="Signature"
             className="absolute" type="text"
@@ -18,9 +20,8 @@ var Handbook = React.createClass({
               width: "28.5%",
               height: "2%"}}
             value={this.props.appState.employee.Signature} 
-            onChange={this.props.handleChange} 
-            />
-             <input id="name" name="FirstName"
+            onChange={this.props.handleChange} />
+          <input id="name" name="FirstName"
             className="absolute" type="text"
             style={{
               top: "29.2%",
@@ -28,19 +29,17 @@ var Handbook = React.createClass({
               width: "25%",
               height: "2%"}}
             value={this.props.appState.employee.FirstName} 
-            onChange={this.props.handleChange} 
-            />
-            <input name="Date" type="date"
+            onChange={this.props.handleChange} />
+          <input name="Date" type="date"
             className="date absolute"
             style={{
               top: "32.4%",
               left: "48%",
               width: "31.5%",
               height: "2%"}} />
-
           <img className="page" src="/assets/images/SignatureFDReceiptAcknowledgement-EmployeeHandbook_1.jpeg" alt="" />
         </div>
-        </form>
+      </form>
     );
   }
 });
