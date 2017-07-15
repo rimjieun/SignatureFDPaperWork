@@ -9,7 +9,7 @@ var NotFound = React.createClass({
         <div className="container">
           <div className="row"></div>
           <div className="row">
-            <h1>Page not found.</h1>
+            <h3>Page not found.</h3>
           </div>
         </div>
       </div>
