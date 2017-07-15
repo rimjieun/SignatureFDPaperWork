@@ -31,10 +31,8 @@ var UpdatePwd = React.createClass({
     var newPassword = this.state.newPassword;
     var confirmPassword = this.state.confirmPassword;
 
-    console.log(newPassword, confirmPassword);
-
-    if (schema.validate(newPassword)) {
-      if (newPassword === confirmPassword) {
+    if (newPassword === confirmPassword) {
+      if (schema.validate(newPassword)) {
         var newPassword = {
           password: this.state.newPassword
         };
