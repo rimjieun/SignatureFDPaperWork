@@ -8,7 +8,7 @@ var helpers = {
         if (status.data.auth_lvl === "employee" && status.data.isNew === true) {
           return "/employee/update/password";
         } else if (status.data.auth_lvl === "employee" && status.data.isNew === false) {
-          return "/employee/welcome";
+          return "/employee/Welcome";
         } else {
           return "/admin";
         }
@@ -21,7 +21,7 @@ var helpers = {
   updatePassword: function(update) {
     return axios.post("/employee/update/password", update).then(function(status) {
       if (status.data.success) {
-        return "/employee/welcome";
+        return "/employee/Welcome";
       }
     });
   },

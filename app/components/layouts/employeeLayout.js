@@ -63,7 +63,20 @@ var employeeLayout = React.createClass({
 
   componentDidUpdate: function() {
     // this.runJS();
-    document.getElementById(this.state.currentForm).classList.add("active");
+    var currentLocation = this.state.currentForm;
+    if (currentLocation === "Welcome") {
+      document.getElementById("download-btn").style.display = "none";
+      console.log("current loc: " + currentLocation);
+    }
+    switch (currentLocation) {
+      case "Welcome": case "SignatureFDEmployeeHandbook": case "BenefitsGuideSigFD2017": case "DependentCareAssistancePlan":
+      document.getElementById("submit-btn").text = "CONTINUE";
+    }
+    var navId = parseInt(document.getElementById(currentLocation).getAttribute("data-value"));
+    navId += 1;
+    var nextLocation = document.getElementById(navId).getAttribute("href");
+    document.getElementById("submit-btn").setAttribute("href", nextLocation);
+    document.getElementById(currentLocation).classList.add("active");
 
     // <script src="../../../public/bundle.js"></script>
   },
@@ -79,11 +92,7 @@ var employeeLayout = React.createClass({
   // },
 
   updateCurrentForm: function(fileName) {
-    if (fileName !== "Welcome") {
-      this.setState({"currentForm": fileName});
-    } else {
-      document.getElementById("downloadBtn").style.display = "none";
-    }
+    this.setState({"currentForm": fileName});
   },
 
   handleChange: function(e) {
@@ -95,14 +104,8 @@ var employeeLayout = React.createClass({
   },
 
   handleSubmit: function(e) {
-    e.preventDefault();
-    var currentLocation = this.state.currentForm;
     helpers.postEmployeeData(this.state.employee).then(function(status) {
       console.log(status);
-      var navId = parseInt(document.getElementById(currentLocation).getAttribute("data-value"));
-      navId += 1;
-      var nextLocation = document.getElementById(navId).getAttribute("href");
-      location.href = nextLocation;
     });
   },
 
@@ -299,7 +302,6 @@ var employeeLayout = React.createClass({
                 </ul>
               </ul>
             </div>
-
             <header>
               <div className="navbar-fixed">
                 <nav className="nav-extended  FDbrownLight" role="navigation">
@@ -311,7 +313,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a id="downloadBtn" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{this.state.currentForm + ".pdf"}</a>
+                          <a id="download-btn" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{this.state.currentForm + ".pdf"}</a>
                         </ul>
                       </div>
                     </div>
@@ -319,13 +321,11 @@ var employeeLayout = React.createClass({
                 </nav>
               </div>
             </header>
-
             <main>
               {childrenWithProps}
             </main>
-
             <div id="btnRow" className="container row">
-                <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" onClick={this.handleSubmit}>SUBMIT</a>
+                <a className="saveBTN waves-effect waves-brown btn white-text FDblue right" href="SignatureFDComputer&NetworkPolicyHandbook" onClick={this.handleSubmit} id="submit-btn">SUBMIT</a>
             </div>
           </div>
         <footer className="page-footer FDbrownLight white-text">
