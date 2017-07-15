@@ -70,8 +70,7 @@ module.exports = (
       <Route path="SignatureFDReceiptAcknowledgement-EmployeeHandbook" component={SignatureFDReceiptAcknowledgementEmployeeHandbook} />
       <Route path="SignatureFDSexualandOtherUnlawfulHarassmentPolicy" component={SignatureFDSexualandOtherUnlawfulHarassmentPolicy} />
     </Route>
-    
+    <Route path="*" component={Login}/>
   </Router>
 );
 
-// <Route path="*" component={Not Found}/>
