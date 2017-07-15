@@ -25,17 +25,17 @@ $(document).ready(function() {
     var fileName;
 
 // turns buttons off if on welcome page
-welcome();
- function welcome() {
-
-    if (navId === 1){
-        $('.saveBTN').text('continue');
-        $('.list-group-item').hide();
-    }else{
-        $('.saveBTN').text('submit');
-        $('.list-group-item').show();
-    }
-}
+// welcome();
+//  function welcome() {
+//     console.log("navid: " + navId);
+//     if (navId === 1){
+//         $('.saveBTN').text('continue');
+//         $('.list-group-item').hide();
+//     }else{
+//         $('.saveBTN').text('submit');
+//         $('.list-group-item').show();
+//     }
+// }
 
 // submit button triggers next page button in side nav
     $('.saveBTN').on("click", function() {
@@ -50,7 +50,7 @@ welcome();
         var self = this;
         $('.sideNavBtn').removeClass("active");
         $(self).addClass("active");
-        navId = 1 + parseInt($(self).attr('data'));
+        navId = 1 + parseInt($(self).attr('data-value'));
         nextLink = $('#'+ navId).attr('href');
         thisLink = $('#'+ (navId - 1)).attr('href')
         console.log(navId);

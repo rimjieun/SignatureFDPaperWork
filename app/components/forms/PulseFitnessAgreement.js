@@ -3,7 +3,9 @@ var React = require("react");
 var Fitness = React.createClass({
 
   componentDidMount: function() {
-    this.props.updateCurrentForm("PulseFitnessAgreement");
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
   },
 
   render: function() {
@@ -18,13 +20,12 @@ var Fitness = React.createClass({
               width: "20%",
               height: "2%"}} />
           <img className="page" src="/assets/images/PulseFitnessAgreement_1.jpeg" alt="" />
-
         </div>
         <div>
           <img className="page" src="/assets/images/PulseFitnessAgreement_2.jpeg" alt="" />
         </div>
         <div className="input-field">
-        <input id="Signature" name="Signature"
+          <input id="Signature" name="Signature"
             className="absolute" type="text"
             style={{
               top: "22.8%",
@@ -32,8 +33,7 @@ var Fitness = React.createClass({
               width: "31.3%",
               height: "2%"}}
             value={this.props.appState.employee.Signature} 
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="fname" name="FirstName"
             className="absolute" type="text"
             style={{
@@ -42,8 +42,7 @@ var Fitness = React.createClass({
               width: "15%",
               height: "2%"}}
             value={this.props.appState.employee.FirstName} 
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
             <input id="lname" name="LastName"
             className="absolute" type="text"
             style={{
@@ -52,8 +51,7 @@ var Fitness = React.createClass({
               width: "15%",
               height: "2%"}}
             value={this.props.appState.employee.LastName} 
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="employer"  name="Employer"
             className="absolute" type="text"
             style={{
@@ -62,8 +60,7 @@ var Fitness = React.createClass({
               width: "28%",
               height: "2%"}}
             value={this.props.appState.employee.Employer}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="suiteAddress" name="SuiteAddress"
             className="absolute" type="text"
             style={{
@@ -72,8 +69,7 @@ var Fitness = React.createClass({
               width: "26%",
               height: "2%"}}
             value={this.props.appState.employee.SuiteAddress}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="officePhone" name="OfficePhone"
             className="absolute" type="text"
             style={{
@@ -82,8 +78,7 @@ var Fitness = React.createClass({
               width: "17.5%",
               height: "2%"}}
             value={this.props.appState.employee.OfficePhone}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="GymAccessCard" name="GymAccessCard"
             className="absolute" type="text"
             style={{
@@ -92,9 +87,8 @@ var Fitness = React.createClass({
               width: "4.7%",
               height: "2%"}}
             value={this.props.appState.employee.GymAccessCard}
-            onChange={this.props.handleChange} 
-            />
-            <input id="gender" name="Gender"
+            onChange={this.props.handleChange} />
+          <input id="gender" name="Gender"
             className="absolute" type="text"
             style={{
               top: "44.3%",
@@ -102,8 +96,7 @@ var Fitness = React.createClass({
               width: "8%",
               height: "2%"}}
             value={this.props.appState.employee.Gender}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="email"  name="EmailAddress"
             className="absolute" type="text"
             style={{
@@ -112,8 +105,7 @@ var Fitness = React.createClass({
               width: "26%",
               height: "2%"}}
             value={this.props.appState.employee.EmailAddress}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input type="date" name="Date"
             className="date absolute"
             style={{
@@ -122,8 +114,7 @@ var Fitness = React.createClass({
               width: "28.5%",
               height: "2%"}}
             value={this.props.appState.employee.Date}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="emergencyContact" name="EmergencyContact"
             className="absolute" type="text"
             style={{
@@ -132,8 +123,7 @@ var Fitness = React.createClass({
               width: "43%",
               height: "2%"}}
             value={this.props.appState.employee.EmergencyContact}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <input id="emergencyContactRelationship&Phone" name="EmergencyContactRelationshipAndContact"
             className="absolute" type="text"
             style={{
@@ -142,8 +132,7 @@ var Fitness = React.createClass({
               width: "50%",
               height: "2%"}}
             value={this.props.appState.employee.EmergencyContactRelationshipAndContact}
-            onChange={this.props.handleChange} 
-            />
+            onChange={this.props.handleChange} />
           <img className="page" src="/assets/images/PulseFitnessAgreement_3.jpeg" alt="" />
         </div>
         <div>

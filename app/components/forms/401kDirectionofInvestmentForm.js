@@ -3,7 +3,9 @@ var React = require("react");
 var Handbook = React.createClass({
 
   componentDidMount: function() {
-    this.props.updateCurrentForm("401kDirectionofInvestmentForm");
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
   },
 
   render: function() {
@@ -18,7 +20,6 @@ var Handbook = React.createClass({
         <div>
           <img className="page" src="/assets/images/401kDirectionofInvestmentForm_3.jpeg" alt="" />
         </div>
-
       </div>
     );
   }

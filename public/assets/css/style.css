@@ -197,3 +197,7 @@ background: white;
     font-family: 'Homemade Apple', cursive;
     font-size: 125%
 }
+
+#nav-side::-webkit-scrollbar {
+  display: none;
+}

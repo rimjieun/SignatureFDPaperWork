@@ -3,7 +3,9 @@ var React = require("react");
 var Welcome = React.createClass({
 
   componentDidMount: function() {
-    this.props.updateCurrentForm("Welcome");
+    var fileName = location.href.split("/");
+    fileName = fileName[fileName.length - 1];
+    this.props.updateCurrentForm(fileName);
   },
 
   render: function() {
@@ -19,9 +21,6 @@ var Welcome = React.createClass({
             </video>
           </div>
         </div>
-        {/*<div className="container row">*/}
-            {/*<a className="saveBTN waves-effect waves-brown btn white-text right" href="#/employee/handbook">CONTINUE</a>*/}
-        {/*</div>*/}
       </div>
     );
   }
