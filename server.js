@@ -56,11 +56,32 @@ app.use("/", appController);
 
 app.use("/auth", authController);
 
+app.use("/update", jwtExp({
+  secret: tokenSecret,
+  getToken: function fromCookie(req) {
+    if (req.signedCookies) {
+      return req.signedCookies.updateToken;
+    }
+    return null;
+  }
+}));
+
+app.use("/update", function(err, req, res, next) {
+  if (err.name === "UnauthorizedError") {
+    res.redirect("/");
+  }
+});
+
 app.use("/employee", jwtExp({
   secret: tokenSecret,
   getToken: function fromCookie(req) {
     if (req.signedCookies) {
-      return req.signedCookies.empToken;
+      if (req.signedCookies.empToken) {
+        return req.signedCookies.empToken;
+      }
+      if (req.signedCookies.updateToken) {
+        return req.signedCookies.updateToken;
+      }
     }
     return null;
   }

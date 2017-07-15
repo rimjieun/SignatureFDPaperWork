@@ -8,6 +8,7 @@ var Admin = require("./../models/admin");
 var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 authRouter.get("/login", function(req, res, next) {
+  res.clearCookie("updateToken");
   res.clearCookie("empToken");
   res.clearCookie("adminToken");
   res.sendFile(path.join(__dirname, "../views/index.html"));
@@ -27,24 +28,26 @@ authRouter.post("/login", function(req, res, next) {
           res.send({ success: false, message: "Invalid username or password." });
         } else {
 
-          var jwtAuthToken = jwt.sign({
+          var empAuthToken = jwt.sign({
             exp: Math.floor(Date.now() / 1000) + (60 * 60),
             employee: {
               id: doc._id,
               email: doc.EmailAddress,
-              auth_lvl: "employee",
-              isNew: doc.isNewEmployee
+              auth_lvl: "employee"
             }
           }, tokenSecret);
 
-            res.cookie('empToken', jwtAuthToken, {
+          if (doc.isNewEmployee) {
+            res.cookie('updateToken', empAuthToken, {
               secure: process.env.NODE_ENV === 'production',
               signed: true
             });
-
-          if (doc.isNewEmployee === true) {
             res.send({ success: true, message: "Employee login successful.", auth_lvl: "employee", isNew: true });
           } else {
+            res.cookie('empToken', empAuthToken, {
+              secure: process.env.NODE_ENV === 'production',
+              signed: true
+            });
             res.send({ success: true, message: "Employee login successful.", auth_lvl: "employee", isNew: false });
           }
         }
@@ -88,6 +91,7 @@ authRouter.post("/login", function(req, res, next) {
 });
 
 authRouter.get("/logout", function(req, res) {
+  res.clearCookie("updateToken");
   res.clearCookie("empToken");
   res.clearCookie("adminToken");
   res.send({ success: true });

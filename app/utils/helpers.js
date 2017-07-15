@@ -6,7 +6,7 @@ var helpers = {
     return axios.post("/auth/login", credentials).then(function(status) {
       if (status.data.success) {
         if (status.data.auth_lvl === "employee" && status.data.isNew === true) {
-          return "/employee/update/password";
+          return "/update/password";
         } else if (status.data.auth_lvl === "employee" && status.data.isNew === false) {
           return "/employee/Welcome";
         } else {
