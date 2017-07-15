@@ -40,22 +40,22 @@ var employeeLayout = React.createClass({
     helpers.getEmployeeData().then(function(employee) {
       this.setState({
         employee: {
-          Date: employee.data[0].Date,
-          FirstName: employee.data[0].FirstName,
-          LastName: employee.data[0].LastName,
-          Employer: employee.data[0].Employer,
-          SuiteAddress: employee.data[0].SuiteAddress,
-          OfficePhone: employee.data[0].OfficePhone,
-          Gender: employee.data[0].Gender,
-          EmailAddress: employee.data[0].EmailAddress,
-          EmergencyContact: employee.data[0].EmergencyContact,
-          EmergencyContactRelationshipAndContact: employee.data[0].EmergencyContactRelationshipAndContact,
-          SocailSecurityNumber: employee.data[0].SocailSecurityNumber,
-          MaritalStatus: employee.data[0].MaritalStatus,
-          PrimaryBeneficiary: employee.data[0].PrimaryBeneficiary,
-          ContingentBenficiary: employee.data[0].ContingentBenficiary,
-          Signature: employee.data[0].Signature,
-          GymAccessCard: employee.data[0].GymAccessCard
+          Date: employee.data.Date,
+          FirstName: employee.data.FirstName,
+          LastName: employee.data.LastName,
+          Employer: employee.data.Employer,
+          SuiteAddress: employee.data.SuiteAddress,
+          OfficePhone: employee.data.OfficePhone,
+          Gender: employee.data.Gender,
+          EmailAddress: employee.data.EmailAddress,
+          EmergencyContact: employee.data.EmergencyContact,
+          EmergencyContactRelationshipAndContact: employee.data.EmergencyContactRelationshipAndContact,
+          SocailSecurityNumber: employee.data.SocailSecurityNumber,
+          MaritalStatus: employee.data.MaritalStatus,
+          PrimaryBeneficiary: employee.data.PrimaryBeneficiary,
+          ContingentBenficiary: employee.data.ContingentBenficiary,
+          Signature: employee.data.Signature,
+          GymAccessCard: employee.data.GymAccessCard
         } 
       });
     }.bind(this));

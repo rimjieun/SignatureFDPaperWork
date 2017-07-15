@@ -44,6 +44,7 @@ module.exports = (
   <Router history={browserHistory}>
     <Route path="/" component={IndexLayout}>
       <Route path="auth/login" component={Login} />
+      <Route path="update/password" component={UpdatePwd} />
       <Route path="employee/update/password" component={UpdatePwd} />
       <Route path="admin" component={Admin} />
     </Route>

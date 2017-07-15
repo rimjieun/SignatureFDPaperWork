@@ -23,6 +23,20 @@ router.post("/update/password", function(req, res) {
           if (err) {
             res.send(err);
           } else {
+            var empAuthToken = jwt.sign({
+              exp: Math.floor(Date.now() / 1000) + (60 * 60),
+              employee: {
+                id: doc._id,
+                email: doc.EmailAddress,
+                auth_lvl: "employee"
+              }
+            }, tokenSecret);
+
+            res.cookie('empToken', empAuthToken, {
+              secure: process.env.NODE_ENV === 'production',
+              signed: true
+            });
+
             res.send({ success: true });
           }
         });
@@ -32,7 +46,7 @@ router.post("/update/password", function(req, res) {
 });
 
 router.get("/data", function(req, res) {
-  User.find({"EmailAddress": req.user.employee.email}, function(err, doc) {
+  User.findOne({"EmailAddress": req.user.employee.email}, function(err, doc) {
     if (err) {
       res.send(err);
     } else {
