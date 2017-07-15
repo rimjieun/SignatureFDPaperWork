@@ -15,6 +15,8 @@ var Login = React.createClass({
     helpers.authenticateUser(employeeCredentials).then(function(nextLocation) {
       if (nextLocation !== undefined) {
         location.href = nextLocation;
+      } else {
+        document.getElementById("invalid-msg").style.display = "block";
       }
     });
 
@@ -29,6 +31,7 @@ var Login = React.createClass({
           <div className="row">
             <form className="col s12">
               <div className="row">
+                <div className="row col s12" id="invalid-msg" style={{color: "#ff3333", display: "none"}}>Invalid username or password.</div>
                 <div className="input-field col s12">
                   <input placeholder="First.Last@SignatureFD.com" type="email"
                   id="email" className="validate" />
