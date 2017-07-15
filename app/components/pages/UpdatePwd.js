@@ -2,6 +2,7 @@ var React = require("react");
 var passwordValidator = require("password-validator");
 
 var schema = new passwordValidator();
+var minSchema = new passwordValidator();
 var lowercaseSchema = new passwordValidator();
 var uppercaseSchema = new passwordValidator();
 var numberSchema = new passwordValidator();
@@ -17,6 +18,7 @@ schema
 .has().symbols()
 .has().not().spaces();
 
+minSchema.is().min(8);
 lowercaseSchema.has().lowercase();
 uppercaseSchema.has().uppercase();
 numberSchema.has().digits();
@@ -47,41 +49,12 @@ var UpdatePwd = React.createClass({
       }
     }
 
+    checkRequirements(minSchema, "min-char");
     checkRequirements(lowercaseSchema, "lowercase");
     checkRequirements(uppercaseSchema, "uppercase");
     checkRequirements(numberSchema, "number");
     checkRequirements(specialCharSchema, "special-char");
     checkRequirements(noSpacesSchema, "no-spaces");
-
-    // if (lowercaseSchema.validate(newPassword)) {
-    //   document.getElementById("lowercase").style.color = "green";
-    // } else {
-    //   document.getElementById("lowercase").style.color = "red";
-    // }
-
-    // if (uppercaseSchema.validate(newPassword)) {
-    //   document.getElementById("uppercase").style.color = "green";
-    // } else {
-    //   document.getElementById("uppercase").style.color = "red";
-    // }
-
-    // if (numberSchema.validate(newPassword)) {
-    //   document.getElementById("number").style.color = "green";
-    // } else {
-    //   document.getElementById("number").style.color = "red";
-    // }
-
-    // if (specialCharSchema.validate(newPassword)) {
-    //   document.getElementById("special-char").style.color = "green";
-    // } else {
-    //   document.getElementById("special-char").style.color = "red";
-    // }
-
-    // if (noSpacesSchema.validate(newPassword)) {
-    //   document.getElementById("no-spaces").style.color = "green";
-    // } else {
-    //   document.getElementById("no-spaces").style.color = "red";
-    // }
 
     if (!schema.validate(newPassword)) {
       document.getElementById("new-pwd").classList.remove("fa-check-circle");
@@ -139,7 +112,7 @@ var UpdatePwd = React.createClass({
           <div className="row">
             <form className="col s12">
               <div style={{fontSize: "12px", color: "#564648"}}>
-                Password must be at least <span style={{fontWeight: "800"}}>8 characters</span> long and must contain:<br />
+                Password must be at least <span id="min-char" style={{fontWeight: "800"}}>8 characters</span> long and must contain:<br />
                 <span id="lowercase" style={{fontWeight: "800"}}>- At least one lowercase letter</span><br />
                 <span id="uppercase" style={{fontWeight: "800"}}>- At least one uppercase letter</span><br />
                 <span id="number" style={{fontWeight: "800"}}>- At least one number</span><br />
