@@ -32,6 +32,8 @@ router.post("/update/password", function(req, res) {
               }
             }, tokenSecret);
 
+            res.clearCookie("updateToken");
+            
             res.cookie('empToken', empAuthToken, {
               secure: process.env.NODE_ENV === 'production',
               signed: true
