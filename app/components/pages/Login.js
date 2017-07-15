@@ -5,6 +5,7 @@ var helpers = require("../../utils/helpers");
 var Login = React.createClass({
 
   handleSubmit: function(e) {
+    e.preventDefault();
 
     var employeeCredentials = {
       email: document.getElementById("email").value.trim(),
@@ -40,12 +41,12 @@ var Login = React.createClass({
                   <label htmlFor="password">Password</label>
                 </div>
               </div>
+              <div className="row">
+                <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit" id="login-btn"
+                onClick={this.handleSubmit} value="LOG IN" />
+              </div>
             </form>
           </div>
-        </div>
-        <div className="container row">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn"
-          onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );

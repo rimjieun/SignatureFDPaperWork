@@ -8,6 +8,8 @@ var Admin = require("./../models/admin");
 var tokenSecret = "abcdefghijklmnopqrstuvwxyz";
 
 authRouter.get("/login", function(req, res, next) {
+  res.clearCookie("empToken");
+  res.clearCookie("adminToken");
   res.sendFile(path.join(__dirname, "../views/index.html"));
 });
 
@@ -30,7 +32,8 @@ authRouter.post("/login", function(req, res, next) {
             employee: {
               id: doc._id,
               email: doc.EmailAddress,
-              auth_lvl: "employee"
+              auth_lvl: "employee",
+              isNew: doc.isNewEmployee
             }
           }, tokenSecret);
 
