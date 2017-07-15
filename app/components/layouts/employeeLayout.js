@@ -64,14 +64,16 @@ var employeeLayout = React.createClass({
   componentDidUpdate: function() {
     // this.runJS();
     var currentLocation = this.state.currentForm;
+
     if (currentLocation === "Welcome") {
       document.getElementById("download-btn").style.display = "none";
-      console.log("current loc: " + currentLocation);
     }
+
     switch (currentLocation) {
       case "Welcome": case "SignatureFDEmployeeHandbook": case "BenefitsGuideSigFD2017": case "DependentCareAssistancePlan":
       document.getElementById("submit-btn").text = "CONTINUE";
     }
+    
     var navId = parseInt(document.getElementById(currentLocation).getAttribute("data-value"));
     navId += 1;
     var nextLocation = document.getElementById(navId).getAttribute("href");

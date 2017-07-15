@@ -1,5 +1,16 @@
 var React = require("react");
-// var validator = require("validator");
+var passwordValidator = require("password-validator");
+
+var schema = new passwordValidator();
+
+schema
+.is().min(8)
+.is().max(100)
+.has().uppercase()
+.has().lowercase()
+.has().digits()
+.has().symbols()
+.has().not().spaces();
 
 var helpers = require("../../utils/helpers");
 
@@ -8,7 +19,7 @@ var UpdatePwd = React.createClass({
   getInitialState: function() {
     return {
       "newPassword": "",
-      "ConfirmPassword": ""
+      "confirmPassword": ""
     };
   },
 
@@ -17,18 +28,33 @@ var UpdatePwd = React.createClass({
   },
 
   handleSubmit: function(e) {
+    var newPassword = this.state.newPassword;
+    var confirmPassword = this.state.confirmPassword;
 
-    // if (this.state.newPassword )
+    console.log(newPassword, confirmPassword);
 
-    var newPassword = {
-      password: this.state.newPassword
-    };
+    if (schema.validate(newPassword)) {
+      if (newPassword === confirmPassword) {
+        var newPassword = {
+          password: this.state.newPassword
+        };
 
-    helpers.updatePassword(newPassword).then(function(nextLocation) {
-      if (nextLocation !== undefined) {
-        location.href = nextLocation;
+        helpers.updatePassword(newPassword).then(function(nextLocation) {
+          if (nextLocation !== undefined) {
+            location.href = nextLocation;
+          }
+        });
+      } else {
+        console.log("Passwords do not match.");
       }
-    });
+    } else {
+      console.log("Password must be at least 8 characters long and must contain the following:");
+      console.log("- At least one lowercase letter.");
+      console.log("- At least one uppercase letter.");
+      console.log("- At least one numerical digit.");
+      console.log("- At least one special character.");
+      console.log("- No spaces.");
+    }
   },
 
   render: function() {
@@ -47,7 +73,8 @@ var UpdatePwd = React.createClass({
               </div>
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="passwordNewConfirm" type="password" className="validate" />
+                  <input id="passwordNewConfirm" type="password" className="validate"
+                   name="confirmPassword" onChange={this.handleChange}/>
                   <label htmlFor="password">Confirm New Password</label>
                 </div>
               </div>
