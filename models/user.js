@@ -8,8 +8,7 @@ var UserSchema = new Schema({
         type: String
     },
     FirstName: {
-        type: String,
-        name: "hello"
+        type: String
     },
     Initials: {
         type: String
