@@ -29,10 +29,10 @@ var employeeLayout = React.createClass({
         EmergencyContactRelationshipAndContact: "",
         SocailSecurityNumber:"",
         MaritalStatus: "",
-        PrimaryBeneficiary:"",
+        PrimaryBeneficiary:  "",
         ContingentBenficiary:"",
-        Signature:"",
-        GymAccessCard:""
+        Signature: "",
+        GymAccessCard: ""
       }
     };
   },
