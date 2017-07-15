@@ -158,100 +158,100 @@ var employeeLayout = React.createClass({
 
     // },
 
-    // pdfMakeOpen: function() {
+    pdfMakeOpen: function() {
 
-    //     // var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
+        // var data = base64Img.base64Sync('/assets/images/PulseFitnessAgreement_3.jpeg');
 
-    //     // console.log(data);
+        // console.log(data);
 
-    //     // var docDefinition = {
-    //     //     background: [{
-    //     //         image: 'data:image/jpeg;base64,' + data
-    //     //     }],
+        // var docDefinition = {
+        //     background: [{
+        //         image: 'data:image/jpeg;base64,' + data
+        //     }],
 
-    //     // };
+        // };
 
-    //     // pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
+        // pdfMake.createPdf(docDefinition).download("PulseFitness.pdf");
 
-    //     var dd = {
-    //         content: [
-    //             {
-    //                 text: '\n\n',
-    //                 style: 'subheader'
-    //             },
-    //             {
-    //                 text: 'Acknowledgement of Receipt of the Employee Handbook of SignatureFD, LLC \n\n\n',
-    //                 style: 'subheader'
-    //             },
-    //             {
-    //                 text: "I hereby acknowledge receipt of a copy of the Firm's Employee Handbook, which I have read and understand. I certify that, to the best of my knowledge, I have complied with these polices and procedures to the extent they have applied to me during the past year. I further understand and acknowledge that any violation of these policies and procedures may subject me to disciplinary action, including termination of employment.\n\n\n",
-    //             },
+        var dd = {
+            content: [
+                {
+                    text: '\n\n',
+                    style: 'subheader'
+                },
+                {
+                    text: 'Acknowledgement of Receipt of the Employee Handbook of SignatureFD, LLC \n\n\n',
+                    style: 'subheader'
+                },
+                {
+                    text: "I hereby acknowledge receipt of a copy of the Firm's Employee Handbook, which I have read and understand. I certify that, to the best of my knowledge, I have complied with these polices and procedures to the extent they have applied to me during the past year. I further understand and acknowledge that any violation of these policies and procedures may subject me to disciplinary action, including termination of employment.\n\n\n",
+                },
 
-    //             {
-    //                 columns: [
-    //                     {
-    //                         width: 'auto',
-    //                         alignment: "left",
-    //                         stack: [
-    //                             {
-    //                                 text: "Signature",
-    //                                 style: "form"
-    //                             },
-    //                             {
-    //                                 text: "Printed Name",
-    //                                 style: "form"
-    //                             },
-    //                             {
-    //                                 text: "Date",
-    //                                 style: "form"
-    //                             }
+                {
+                    columns: [
+                        {
+                            width: 'auto',
+                            alignment: "left",
+                            stack: [
+                                {
+                                    text: "Signature",
+                                    style: "form"
+                                },
+                                {
+                                    text: "Printed Name",
+                                    style: "form"
+                                },
+                                {
+                                    text: "Date",
+                                    style: "form"
+                                }
 
-    //                         ]
-    //                     },
-    //                     {
-    //                         width: 'auto',
-    //                         alignment: 'left',
-    //                         stack: [
-    //                             {
-    //                                 style: 'data',
-    //                                 text: this.state.employee.Signature+"           "
-    //                             },
-    //                             {
-    //                                 style: 'data',
-    //                                 text: this.state.employee.FirstName+" "+this.state.employee.LastName+"           "
-    //                             },
-    //                             {
-    //                                 style: 'data',
-    //                                 text: this.state.employee.Date+"           "
-    //                             }
-    //                         ]
-    //                     }
-    //                 ]
-    //             }
+                            ]
+                        },
+                        {
+                            width: 'auto',
+                            alignment: 'left',
+                            stack: [
+                                {
+                                    style: 'data',
+                                    text: this.state.employee.Signature+"           "
+                                },
+                                {
+                                    style: 'data',
+                                    text: this.state.employee.FirstName+" "+this.state.employee.LastName+"           "
+                                },
+                                {
+                                    style: 'data',
+                                    text: this.state.employee.Date+"           "
+                                }
+                            ]
+                        }
+                    ]
+                }
 
-    //         ],
+            ],
 
-    //         styles: {
+            styles: {
 
-    //             subheader: {
-    //                 fontSize: 14,
-    //                 bold: true,
-    //                 decoration: 'underline',
-    //                 alignment: 'center'
+                subheader: {
+                    fontSize: 14,
+                    bold: true,
+                    decoration: 'underline',
+                    alignment: 'center'
 
-    //             },
-    //             form: {
-    //                 margin: [240, 0, 0, 8]		},
-    //             data: {
-    //                 decoration: "underline",
-    //                 margin: [10, 0, 0, 8]
-    //             }
-    //         }
-    //     }
+                },
+                form: {
+                    margin: [240, 0, 0, 8]		},
+                data: {
+                    decoration: "underline",
+                    margin: [10, 0, 0, 8]
+                }
+            }
+        }
 
 
-    //     pdfMake.createPdf(dd).download("HandbookAcknowledgement.pdf");
-    // },
+        pdfMake.createPdf(dd).download("HandbookAcknowledgement.pdf");
+    },
 
   render: function() {
 
@@ -317,7 +317,7 @@ var employeeLayout = React.createClass({
                     <div>
                       <div className="row">
                         <ul className="left" style={{marginRight: "30%"}}>
-                          <a id="download-btn" href="/assets/images/HandbookAcknowledgement.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{this.state.currentForm + ".pdf"}</a>
+                          <a id="download-btn" href="/assets/images/SignatureFDReceiptAcknowledgement-EmployeeHandbook.pdf" target="_blank"><i className="fa fa-download fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{this.state.currentForm + ".pdf"}</a>
                         </ul>
                       </div>
                     </div>
