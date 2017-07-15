@@ -15,6 +15,7 @@ var IndexLayout = require("../components/layouts/indexLayout");
 var Login = require("../components/pages/Login");
 var UpdatePwd = require("../components/pages/UpdatePwd");
 var Admin = require("../components/pages/Admin");
+var NotFound = require("../components/pages/NotFound");
 
 var EmployeeLayout = require("../components/layouts/employeeLayout");
 var Welcome = require("../components/forms/Welcome");
@@ -71,7 +72,7 @@ module.exports = (
       <Route path="SignatureFDSexualandOtherUnlawfulHarassmentPolicy" component={SignatureFDSexualandOtherUnlawfulHarassmentPolicy} />
     </Route>
     <Route path="*" component={IndexLayout}>
-      <IndexRoute component={Login} />
+      <IndexRoute component={NotFound} />
     </Route>
   </Router>
 );
