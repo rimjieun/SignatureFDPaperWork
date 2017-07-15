@@ -30,13 +30,13 @@
     "jsonwebtoken": "^7.4.1",
     "mongoose": "^4.10.8",
     "morgan": "^1.8.2",
+    "password-validator": "^4.0.0",
     "path": "^0.12.7",
     "pdfmake": "^0.1.31",
     "print.js": "^1.0.18",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-router": "^3.0.0",
-    "validator": "^8.0.0"
+    "react-router": "^3.0.0"
   },
   "devDependencies": {
     "axios": "^0.12.0",

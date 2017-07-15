@@ -42,7 +42,7 @@ db.on("error", function(err) {
   console.log("Mongoose Error: ", err);
 });
 
-db.once("openUri", function() {
+db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
