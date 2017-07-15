@@ -25,9 +25,12 @@ var UpdatePwd = React.createClass({
 
   handleChange: function(e) {
     this.setState({[e.target.name]: e.target.value });
+    console.log("poop");
   },
 
   handleSubmit: function(e) {
+    e.preventDefault();
+
     var newPassword = this.state.newPassword;
     var confirmPassword = this.state.confirmPassword;
 
@@ -76,11 +79,12 @@ var UpdatePwd = React.createClass({
                   <label htmlFor="password">Confirm New Password</label>
                 </div>
               </div>
+              <div className="row">
+                <input className="saveBTN waves-effect waves-brown btn white-text right"
+                onClick={this.handleSubmit} type="submit" value="UPDATE" />
+              </div>
             </form>
           </div>
-        </div>
-        <div className="container row">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" onClick={this.handleSubmit}>CONTINUE</a>
         </div>
       </div>
     );
