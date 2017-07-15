@@ -4,21 +4,10 @@ var helpers = require("../../utils/helpers");
 
 var Admin = React.createClass({
 
-  getInitialState: function() {
-    return {
-      "EmailAddress": "",
-      "Password": ""
-    };
-  },
-
-  handleSubmit: function(e) {
-    e.preventDefault();
-  },
-
   render: function() {
     return (
-      <div class="container">
-        <table class="highlight">
+      <div className="container">
+        <table className="highlight">
           <thead>
             <tr>
               <th></th>
@@ -31,27 +20,27 @@ var Admin = React.createClass({
           </thead>
           <tbody>
             <tr>
-              <td class="center-align">
-                <a class="btn-floating btn-small waves-effect waves-light light-blue centered">
-                  <i class="material-icons">add</i>
+              <td className="center-align">
+                <a className="btn-floating btn-small waves-effect waves-light light-blue centered">
+                  <i className="material-icons">add</i>
                 </a>
               </td>
               <td>
-                <input placeholder="Name" id="name" type="text" class="validate" />
+                <input placeholder="Name" id="name" type="text" className="validate" />
               </td>
               <td>
-                <input placeholder="First.Last@SignatureFD.com" id="email" type="email" class="validate" />
+                <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
               </td>
               <td>
-                <input id="startDate" type="date" class="validate" />
+                <input id="startDate" type="date" className="validate" />
               </td>
               <td></td>
               <td></td>
             </tr>
             <tr>
               <td>
-                <a class="btn-flat waves-effect waves-blue">
-                  <i class="fa fa-minus-square" aria-hidden="true"></i>
+                <a className="btn-flat waves-effect waves-blue">
+                  <i className="fa fa-minus-square" aria-hidden="true"></i>
                 </a>
               </td>
               <td>Alvin</td>
@@ -59,15 +48,15 @@ var Admin = React.createClass({
               <td>9/7/2017</td>
               <td>71</td>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue">
-                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                <a className="btn-flat btn-small waves-effect waves-blue">
+                  <i className="fa fa-download fa-3x" aria-hidden="true"></i>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue">
-                  <i class="fa fa-minus-square" aria-hidden="true"></i>
+                <a className="btn-flat btn-small waves-effect waves-blue">
+                  <i className="fa fa-minus-square" aria-hidden="true"></i>
                 </a>
               </td>
               <td>Alan</td>
@@ -75,15 +64,15 @@ var Admin = React.createClass({
               <td>2/29/2013</td>
               <td>16</td>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue">
-                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                <a className="btn-flat btn-small waves-effect waves-blue">
+                  <i className="fa fa-download fa-3x" aria-hidden="true"></i>
                 </a>
               </td>
             </tr>
             <tr>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue">
-                  <i class="fa fa-minus-square" aria-hidden="true"></i>
+                <a className="btn-flat btn-small waves-effect waves-blue">
+                  <i className="fa fa-minus-square" aria-hidden="true"></i>
                 </a>
               </td>
               <td>Jonathan</td>
@@ -91,8 +80,8 @@ var Admin = React.createClass({
               <td>11/7/1973</td>
               <td>100</td>
               <td>
-                <a class="btn-flat btn-small waves-effect waves-blue">
-                  <i class="fa fa-download fa-3x" aria-hidden="true"></i>
+                <a className="btn-flat btn-small waves-effect waves-blue">
+                  <i className="fa fa-download fa-3x" aria-hidden="true"></i>
                 </a>
               </td>
             </tr>

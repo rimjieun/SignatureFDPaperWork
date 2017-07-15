@@ -70,7 +70,7 @@ var UserSchema = new Schema({
     Gender: {
         type: String
     },
-    AccessCard: {
+    GymAccessCard: {
         type: String
     },
     EmailAddress: {
@@ -158,6 +158,12 @@ var UserSchema = new Schema({
         type: Boolean
     },
     ParkingContract: {
+        type: Boolean
+    },
+    Password: {
+        type: String
+    },
+    isNewEmployee: {
         type: Boolean
     }
 });

@@ -1,22 +1,52 @@
 var axios = require("axios");
 
-var helper = {
-  getData: function() {
-    return axios.get("/data").then(function(data) {
-      console.log("axios results", data);
+var helpers = {
+
+  authenticateUser: function(credentials) {
+    return axios.post("/auth/login", credentials).then(function(status) {
+      if (status.data.success) {
+        if (status.data.auth_lvl === "employee" && status.data.isNew === true) {
+          return "/update/password";
+        } else if (status.data.auth_lvl === "employee" && status.data.isNew === false) {
+          return "/employee/Welcome";
+        } else {
+          return "/admin";
+        }
+      } else {
+        console.log(status.data.message);
+      }
+    });
+  },
+
+  updatePassword: function(update) {
+    return axios.post("/employee/update/password", update).then(function(status) {
+      if (status.data.success) {
+        return "/employee/Welcome";
+      }
+    });
+  },
+
+  getEmployeeData: function() {
+    return axios.get("/employee/data").then(function(data) {
       return data;
     });
   },
 
-  postData: function(data) {
-    var newData = {
-      data: data,
-      email: "user@signaturefd.com"
-    };
-    return axios.post("/data", newData).then(function(res) {
-      return res.data;
+  postEmployeeData: function(data) {
+    return axios.post("/employee/data", data).then(function(status) {
+      if (status.data.success) {
+        return "Update success.";
+      }
+    });
+  },
+
+  logout: function() {
+    return axios.get("/auth/logout").then(function(status) {
+      if (status.data.success) {
+        return "/";
+      }
     });
   }
 };
 
-module.exports = helper;
+module.exports = helpers;

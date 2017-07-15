@@ -44,13 +44,18 @@ header, main, footer {
 
 .navbar-fixed nav {
     position: fixed;
-    height: 140px;
+    height: 143.3px;
 }
 
+/*footer{
+    height: 400px;
+}*/
 
+.content {
+    min-height: calc(100vh - 440px);
+}
 
-.btn, .btn:hover, .btn-large:hover {
-    background-color: #2bbbad;
+.btn, .btn:hover, .btn-large:hover, .btn:after, .btn:before{
     background-color: #8DD4F0;
     margin-bottom: 20px;
 }
@@ -85,7 +90,15 @@ input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):
 }
 
 
-
+#downBtn{
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 20px;
+    display: block;
+}
 
 
 h5{
@@ -174,4 +187,41 @@ nav ul a {
     .side-nav a {
         padding: 0;
     }
+}
+#PrimaryBeneficiary{
+    background: white;
+}
+#ContingentBenficiary{
+background: white;
+}
+#Signature{
+    font-family: 'Homemade Apple', cursive;
+    font-size: 125%
+}
+
+/*Extra styling by Jieun*/
+#nav-side::-webkit-scrollbar {
+  display: none;
+}
+
+.createPwd {
+  position: relative;
+}
+
+.pwdIcon {
+  font-size: 30px;
+  position: absolute;
+  right: 30px;
+}
+
+.fa-check-circle {
+  color: #248f24;
+}
+
+.fa-times-circle {
+  color: #ff3333;
+}
+
+p {
+  font-size: 12px;
 }

@@ -4,15 +4,22 @@ var helpers = require("../../utils/helpers");
 
 var Login = React.createClass({
 
-  getInitialState: function() {
-    return {
-      "EmailAddress": "",
-      "Password": ""
-    };
-  },
-
   handleSubmit: function(e) {
     e.preventDefault();
+
+    var employeeCredentials = {
+      email: document.getElementById("email").value.trim(),
+      password: document.getElementById("password").value.trim()
+    };
+
+    helpers.authenticateUser(employeeCredentials).then(function(nextLocation) {
+      if (nextLocation !== undefined) {
+        location.href = nextLocation;
+      } else {
+        document.getElementById("invalid-msg").style.display = "block";
+      }
+    });
+
   },
 
   render: function() {
@@ -20,25 +27,30 @@ var Login = React.createClass({
       <div>
         <div className="container">
           <div className="row"></div>
+          <div className="row"></div>
           <div className="row">
             <form className="col s12">
               <div className="row">
+                <div className="row col s12" id="invalid-msg" style={{color: "#ff3333", display: "none"}}>Invalid username or password.</div>
                 <div className="input-field col s12">
-                  <input placeholder="First.Last@SignatureFD.com" id="email" type="email" className="validate" />
+                  <input placeholder="First.Last@SignatureFD.com" type="email"
+                  id="email" className="validate" />
                   <label htmlFor="email">Email</label>
                 </div>
               </div>
               <div className="row">
                 <div className="input-field col s12">
-                  <input id="password" type="password" className="validate" />
-                  <label htmlFor="password">Password from Welcome Email</label>
+                  <input placeholder="Password" type="password"
+                  id="password" className="validate" />
+                  <label htmlFor="password">Password</label>
                 </div>
+              </div>
+              <div className="row">
+                <input className="saveBTN waves-effect waves-brown btn white-text right" type="submit" id="login-btn"
+                onClick={this.handleSubmit} value="LOG IN" />
               </div>
             </form>
           </div>
-        </div>
-        <div className="container">
-          <a className="saveBTN waves-effect waves-brown btn white-text right" id="login-btn" href="#/update/password">CONTINUE</a>
         </div>
       </div>
     );
