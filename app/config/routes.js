@@ -70,7 +70,9 @@ module.exports = (
       <Route path="SignatureFDReceiptAcknowledgement-EmployeeHandbook" component={SignatureFDReceiptAcknowledgementEmployeeHandbook} />
       <Route path="SignatureFDSexualandOtherUnlawfulHarassmentPolicy" component={SignatureFDSexualandOtherUnlawfulHarassmentPolicy} />
     </Route>
-    <Route path="*" component={Login}/>
+    <Route path="*" component={IndexLayout}>
+      <IndexRoute component={Login} />
+    </Route>
   </Router>
 );
 
