@@ -9,6 +9,7 @@ var authController = require("./controller/auth_controller");
 var employeeController = require("./controller/employee_controller");
 var adminController = require("./controller/admin_controller");
 var jwtExp = require("express-jwt");
+var path = require("path");
 
 // Require Schemas
 var Admin = require("./models/admin.js");
@@ -41,16 +42,19 @@ db.on("error", function(err) {
   console.log("Mongoose Error: ", err);
 });
 
-db.once("open", function() {
+db.once("openUri", function() {
   console.log("Mongoose connection successful.");
 });
 
-var path = require("path");
+app.use(function(req, res, next) {
+  if (!req.user)
+    res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
+  next();
+});
 
 app.use("/", appController);
 
 app.use("/auth", authController);
-
 
 app.use("/employee", jwtExp({
   secret: tokenSecret,
@@ -69,6 +73,7 @@ app.use("/employee", function(err, req, res, next) {
 });
 
 app.use("/employee", employeeController);
+
 
 app.use("/admin", jwtExp({
   secret: tokenSecret,
