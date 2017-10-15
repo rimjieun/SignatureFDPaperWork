@@ -4,7 +4,7 @@ Go to https://signaturefd.herokuapp.com.
 
 SignatureFD Onboard was developed to streamline the onboarding process of new employees at SignatureFD, a financial planning company. Currently this is a voluntary project specific to the SignatureFD company.
 
-## Application
+## Application Usage
 The purpose of the application is to streamline the onboarding process of new employees and store employee documents for admin purposes.
 
 The new employee receives a temporary login from the HR department via e-mail.
@@ -16,8 +16,9 @@ The employee logs in with given credentials, creates a new password, and starts 
 
 The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
 
-## Development
+## Development Requirements
 Node.js 8.4.0
+
 MERN Framework
 - [MongoDB](https://www.mongodb.com/what-is-mongodb)
 - [Express.js](https://expressjs.com/)
