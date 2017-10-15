@@ -32,7 +32,7 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
   - [JSON Web Token](https://jwt.io/introduction/)
   - [JSON Web Signature](https://tools.ietf.org/html/rfc7515)
 
-| Node Packages       | Version |
+| Node Package        | Version |
 |---------------------|---------|
 | axios               | 0.12.0  |
 | babel-core          | 6.9.1   |
