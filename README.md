@@ -15,7 +15,7 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 
 ![Create Password Page](./screenshots/signaturefd4.JPG)
 
-#### The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
+#### The onboarding process ranges from watching introductory videos to filling out necessary paperwork, such as 401k forms, W-4 form, acknowledgement agreements, etc.
 
 ![Introductory Video Page](./screenshots/signaturefd2.JPG)
 ![Pulse Fitness Agreement Page](./screenshots/signaturefd3.JPG)
