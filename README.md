@@ -8,22 +8,26 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 The purpose of the application is to streamline the onboarding process of new employees and store employee documents for admin purposes.
 
 The new employee receives a temporary login from the HR department via e-mail.
+
 ![Login Page](./screenshots/signaturefd1.JPG)
 
 The employee logs in with given credentials, creates a new password, and starts the onboarding process.
-![Create Password Page](./screenshots/signaturefd4.JPG)
 
+![Create Password Page](./screenshots/signaturefd4.JPG)
 
 The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
 
-## Development Requirements
-Node.js 8.4.0
+![Introductory Video Page](./screenshots/signaturefd2.JPG)
+![Pulse Fitness Agreement Page](./screenshots/signaturefd3.JPG)
 
-MERN Framework
-- [MongoDB](https://www.mongodb.com/what-is-mongodb)
-- [Express.js](https://expressjs.com/)
-- [React.js](https://reactjs.org/)
-- [Node.js](https://nodejs.org/en/)
+## Development Requirements
+- Node.js 8.4.0
+
+- MERN Framework
+  - [MongoDB](https://www.mongodb.com/what-is-mongodb)
+  - [Express.js](https://expressjs.com/)
+  - [React.js](https://reactjs.org/)
+  - [Node.js](https://nodejs.org/en/)
 
 | Node Packages       | Version |
 |---------------------|---------|
@@ -53,7 +57,5 @@ MERN Framework
 | react-router        | 3.0.0   |
 | webpack             | 1.13.1  |
 
-
-
 ## Contributing
-Currently SignatureFD Onboard is not open to contributions. Thank you for your interest!
+SignatureFD Onboard is currently not open to contributions. Thank you for your interest!
