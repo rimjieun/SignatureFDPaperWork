@@ -22,12 +22,14 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 
 ## Development Implementation
 - Node.js 8.4.0
-- MERN Framework
+
+#### MERN Framework
   - [MongoDB](https://www.mongodb.com/what-is-mongodb)
   - [Express.js](https://expressjs.com/)
   - [React.js](https://reactjs.org/)
   - [Node.js](https://nodejs.org/en/)
-- User Authentication
+  
+#### User Authentication
   - [bcrypt](https://www.npmjs.com/package/bcrypt)
   - [JSON Web Token](https://jwt.io/introduction/)
   - [JSON Web Signature](https://tools.ietf.org/html/rfc7515)
