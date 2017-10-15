@@ -22,7 +22,6 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 
 ## Development Requirements
 - Node.js 8.4.0
-
 - MERN Framework
   - [MongoDB](https://www.mongodb.com/what-is-mongodb)
   - [Express.js](https://expressjs.com/)
