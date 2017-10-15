@@ -7,15 +7,15 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 ## Application Usage
 The purpose of the application is to streamline the onboarding process of new employees and store employee documents for admin purposes.
 
-### The new employee receives a temporary login from the HR department via e-mail.
+#### The new employee receives a temporary login from the HR department via e-mail.
 
 ![Login Page](./screenshots/signaturefd1.JPG)
 
-### The employee logs in with given credentials, creates a new password, and starts the onboarding process.
+#### The employee logs in with given credentials, creates a new password, and starts the onboarding process.
 
 ![Create Password Page](./screenshots/signaturefd4.JPG)
 
-### The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
+#### The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
 
 ![Introductory Video Page](./screenshots/signaturefd2.JPG)
 ![Pulse Fitness Agreement Page](./screenshots/signaturefd3.JPG)
