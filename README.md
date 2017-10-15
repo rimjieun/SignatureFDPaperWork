@@ -20,7 +20,7 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 ![Introductory Video Page](./screenshots/signaturefd2.JPG)
 ![Pulse Fitness Agreement Page](./screenshots/signaturefd3.JPG)
 
-## Development Implementation
+## Development Implementations
 - Node.js 8.4.0
 - MERN Framework
   - [MongoDB](https://www.mongodb.com/what-is-mongodb)
