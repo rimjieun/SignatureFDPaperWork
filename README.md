@@ -1,50 +1,54 @@
-# SignatureFD Paperwork
+# SignatureFD Onboard
 
 Go to https://signaturefd.herokuapp.com.
 
+SignatureFD Onboard was developed to streamline the onboarding process of new employees at SignatureFD, a financial planning company. Currently this is a voluntary project specific to the SignatureFD company.
+
+## Application
+The purpose of the application is to streamline the onboarding process of new employees and store employee documents for admin purposes.
+
+![The new employee receives a temporary login from the HR department via e-mail.]
+(./screenshots/signaturefd1.JPG)
+- The employee logs in with given credentials, creates a new password, and starts the onboarding process.
+- The onboarding process ranges from watching introductory videos to filling out necessary paperwork (e.g. 401k forms, W-4 form, acknowledgement agreements, etc.).
+
+## Development
+Node.js 8.4.0
+MERN Framework
+- [MongoDB](https://www.mongodb.com/what-is-mongodb)
+- [Express.js](https://expressjs.com/)
+- [React.js](https://reactjs.org/)
+- [Node.js](https://nodejs.org/en/)
+
+| Node Packages       | Version |
+|---------------------|---------|
+| axios               | 0.12.0  |
+| babel-core          | 6.9.1   |
+| babel-loader        | 6.2.4   |
+| babel-preset-es2015 | 6.9.0   |
+| babel-preset-react  | 6.5.0   |
+| base64-img          | 1.0.3   |
+| bcrypt              | 1.0.2   |
+| body-parser         | 1.17.2  |
+| cookie-parser       | 1.4.3   |
+| express             | 4.15.3  |
+| express-jwt         | 5.3.0   |
+| file-saver          | 1.3.3   |
+| image-base64        | 1.0.2   |
+| jquery              | 3.2.1   |
+| jsonwebtoken        | 7.4.1   |
+| mongoose            | 4.10.8  |
+| morgan              | 1.8.2   |
+| password-validator  | 4.0.0   |
+| path                | 0.12.7  |
+| pdfmake             | 0.1.31  |
+| print.js            | 1.0.18  |
+| react               | 15.6.1  |
+| react-dom           | 15.6.1  |
+| react-router        | 3.0.0   |
+| webpack             | 1.13.1  |
 
 
-## Installation Requirements
 
-- Python 3.6.3
-
-```
-pip install -r requirements.txt
-```
-
-Required packages are listed in [`requirements.txt`](https://github.com/rimjieun/aclu-bail-reform/blob/master/src/webscraper/dekalb/requirements.txt).
-
-## Commands & Usage
-
-- The following commands output a CSV file (dekalb-\*.csv) into the [`data`](https://github.com/rimjieun/aclu-bail-reform/tree/master/data) folder.
-- Each row is a jail record. Jail records are sorted by inmate booking number.
-- An inmate may have multiple records if there are multiple charges.
-- Some records may be missing due to unknown circumstances. Jail IDs for missing records will be logged at the end of the scrape.
-
-#### All Records
-```
-python webscraper.py all 0 100
-```
-Scrapes records starting from an index number for a certain number of records (e.g. `python webscraper.py all 12000 50` will search for 50 records starting from index 12000). An **index number** and **record size** must be specified as arguments.
-
-**Note:** The larger the record size, the longer the runtime. For large record sizes, make sure network connection is stable for the entire duration of the scrape.
-
-#### Today
-```
-python webscraper.py today
-```
-Scrapes all records, if any, for the current date. If this command is used before any inmate booking, it will respond with `No records found.`
-
-#### Custom Date
-```
-python webscraper.py custom 1900-01-01
-```
-Scrapes all records for a custom date. A **custom date** (yyyy-mm-dd) must be specified as an argument. If there are no records for a specified date, it will respond with `No records found.`
-
-#### Default
-```
-python webscraper.py
-```
-Scrapes records starting from index 0 for 100 records.
-
-## Available Data
+## Contributing
+Currently SignatureFD Onboard is not open to contributions. Thank you for your interest!
