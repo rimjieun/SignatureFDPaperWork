@@ -5,7 +5,7 @@ Go to https://signaturefd.herokuapp.com.
 SignatureFD Onboard was developed to streamline the onboarding process of new employees at SignatureFD, a financial planning company. Currently this is a voluntary project specific to the SignatureFD company.
 
 ## Application Usage
-- The purpose of the application is to streamline the onboarding process of new employees and store employee documents for admin purposes.
+- The purpose of the application is to facilitate the onboarding process of new employees and store employee documents for admin purposes.
 
 #### The new employee receives a temporary login from the HR department via e-mail.
 
