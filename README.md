@@ -63,4 +63,10 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 | webpack             | 1.13.1  |
 
 ## Contributing
+Members of our development team:
+- [Martin Ade](https://github.com/maade7)
+- [Ryan Rodwell](https://github.com/rrodwell)
+- [Emily Keen](https://github.com/emilykeen)
+- [Jieun Rim](https://github.com/rimjieun).
+
 SignatureFD Onboard is currently not open to contributions. Thank you for your interest!
