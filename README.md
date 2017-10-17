@@ -19,7 +19,7 @@ SignatureFD Onboard was developed to streamline the onboarding process of new em
 
 ![Introductory Video Page](./screenshots/signaturefd2.JPG)
 
-#### to filling out necessary paperwork, such as the W-4 form, 401k forms, acknowledgement agreements, etc.
+#### ...to filling out necessary paperwork, such as the W-4 form, 401k forms, acknowledgement agreements, etc.
 
 ![Pulse Fitness Agreement Page](./screenshots/signaturefd3.JPG)
 
